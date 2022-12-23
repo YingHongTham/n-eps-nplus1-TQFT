@@ -1,0 +1,84 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb,amsfonts,amsmath,graphicx,mathtools}
+\usepackage[alphabetic,y2k,lite]{amsrefs}
+\usepackage{fullpage, mystyle}
+\usepackage{MnSymbol}
+
+\usepackage{tikz-cd}
+
+\newcommand{\disk}[1]{{D^{#1}}}
+\newcommand{\sphr}[1]{{S^{#1}}}
+\newcommand{\empt}[1]{{\emptyset^{#1}}}
+
+\begin{document}
+
+\title{Upgrading an $(n+\veps)$-TQFT to an extended $(n+1)$-TQFT}
+\author{Ying Hong Tham}
+\maketitle
+
+
+In this note, we show that one can promote an
+$(n+\veps)$-TQFT to an extended $(n+1)$-TQFT
+by only specifying the value associated to
+the $(n+1)$-disk $Z(\disk{n+1}) \in Z(S^n)$.
+
+Suppose we are given an $(n+\veps)$-TQFT $Z$,
+that is,
+it assigns a category $Z(N)$ to a closed $(n-1)$-manifold $N$,
+and a functor $Z(M):Z(N) \to Z(N')$ to an $n$-dimensional
+cobordisms $M:N\to N'$ between $(n-1)$-manifolds.
+
+TODO perhaps comment on requirements on $Z$,
+e.g. a natural isom for $M \simeq M'$,
+especially for $Z(M' \circ M) \simeq Z(M') \circ Z(M)$
+that is consistent.
+Or say, at this point, no assumption on existence of
+adjointness of functors $Z(M) \dashv Z(\ov{M})$.
+
+The empty $k$-manifold is denoted by $\empt{k}$.
+Composition of cobordisms is written from right to left,
+so composition of $M: N \to N'$ and $M' : N' \to N''$
+is denoted by $M' \circ M: N \to N''$.
+
+\begin{proposition}
+Consider functors
+$Z(\disk{n}) : Z(\empt{n-1}) \rightleftharpoons
+	Z(\sphr{n-1}) : Z(\ov{\disk{n}})$.
+
+Let $\eta_0: Z(\empt{n}) \Rightarrow
+	Z(\sphr{n} = \ov{\disk{n}} \circ \disk{n})
+	: Z(\empt{n-1}) \to Z(\empt{n-1})$
+be a natural transformation,
+and suppose it is the unit to an adjunction
+$Z(\disk{n}) \dashv Z(\ov{\disk{n}})$.
+
+Then if $Z',Z''$ are extended $(n+1)$-TQFTs
+such that $Z',Z''$ agree with $Z$ on $(n-1)$- and $n$-manifolds,
+and $Z'(\disk{n+1}) = Z''(\disk{n+1}) = \eta_0$,
+then $Z' \cong Z''$.
+\end{proposition}
+
+
+The proof of this proposition occupies the rest of this article.
+
+
+
+\subsection{Adjunctions from topology}
+
+In the 2-category with closed $(n-1)$-manifolds as objects,
+$n$-dimensional cobordisms as 1-morphisms,
+and $(n+1)$-dimensional relative cobordisms as 2-morphisms,
+the $n$-dimensional cobordisms
+$M: N \rightleftharpoons N' : \ov{M}$
+form an adjunction.
+
+-Consider simplest case, empty and sphere
+-then do adding $k$-handle
+-then in general
+
+(In [TODO Y-product paper],
+we considered this construction
+without realizing their connection to these adjunctions.)
+
+
+\end{document}

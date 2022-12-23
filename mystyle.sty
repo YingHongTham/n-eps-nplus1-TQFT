@@ -1,0 +1,217 @@
+\usepackage{bbm} % for \one = \mathbbm{1}
+\usepackage[english]{babel} % here to shut the compiler up
+                            %  has something to do with english
+                            %  typesetting standards
+
+% Reminder:
+% YOU CANNOT USE U_N_D_E_R_S_C_O_R_E IN COMMANDS
+% e.g. \newcommand{\a_b}{...} will fail
+
+% for ease of multiline-commenting
+\newcommand{\comment}[1]{}
+
+% some shortcuts for common symbols =======================
+\newcommand{\vphi}{\varphi}
+\newcommand{\veps}{\varepsilon}
+
+% fancy scripts ============================================
+% I am tempted to include all possible letters,
+%   but I tried it and it's quite distasteful
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\DD}{\mathbb{D}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\ee}{\mathbf{e}}
+\newcommand{\kk}{\mathbf{k}}
+
+% Note: Decl...ator doesn't seem to allow ^ or _,
+%   e.g. 5^\id will not work,
+%         but 5^{\id} will
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Rep}{Rep}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\Irr}{Irr}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom} % \hom is already defnd
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\End}{End}
+%\DeclareMathOperator{\ker}{ker} % ker already defined
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\ev}{ev}
+\DeclareMathOperator{\coev}{coev}
+\newcommand{\evtld}{\widetilde{\ev}}
+\newcommand{\coevtld}{\widetilde{\coev}}
+\DeclareMathOperator{\Obj}{Obj}
+
+
+% often used in categories ================================
+\newcommand{\ra}{\rightarrow} % use \to ... backward compatibility
+\newcommand{\del}{\partial} % used to be \dd
+\newcommand{\inv}{{-1}} % annoying to type {-1} when taking inverse
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\bop}{\mathrm{bop}}
+
+
+% langle rangle brackets
+\newcommand{\eval}[1]{\langle #1 \rangle}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+
+% intuitive names for things ================================
+\newcommand{\dirsum}{\bigoplus}
+\newcommand{\tnsr}{\otimes}
+
+% Just shortening things
+\newcommand{\xxto}{\xrightarrow}     % {over}[under]
+\newcommand{\ov}{\overline}
+\newcommand{\wrt}{ with respect to }
+
+% environments ===============================================
+% mostly s t o l e n  from Kirillov, incorporate later
+\usepackage{amsthm}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{examples}[theorem]{Examples}
+\newtheorem{xca}[theorem]{Exercise}
+\newtheorem{convention}[theorem]{Convention}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{remarks}[theorem]{Remarks}
+\newtheorem{claim}[theorem]{Claim}
+
+\numberwithin{equation}{section}
+
+
+\newenvironment{proofsketch}{%
+  \renewcommand{\proofname}{Proof Sketch}\proof}{\endproof}
+
+% put a black box at the end of a definition/remark
+% because it's sometimes not clear where a definition/remark
+% ends
+\newcommand{\boxmark}{\hfill $\blacksquare$}
+
+\comment{ %%%%%
+\usepackage{amsthm}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{lem}{Lemma}[section]
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{exmp}{Example}[section]
+
+\theoremstyle{remark}
+\newtheorem{remk}{Remark}[section]
+}
+
+
+% Referencing ================================================
+% usage convention: for say figure,
+%   \label{fig:nameOfFigure}
+%   \figref{fig:nameOfFigure}
+\newcommand{\firef}[1]{Figure~{\rm\ref{#1}}}
+\newcommand{\figref}[1]{Figure \ref{#1}}
+\newcommand{\thmref}[1]{Theorem \ref{#1}}
+\newcommand{\prpref}[1]{Proposition \ref{#1}}
+\newcommand{\lemref}[1]{Lemma \ref{#1}}
+\newcommand{\corref}[1]{Corollary \ref{#1}}
+\newcommand{\clmref}[1]{Claim \ref{#1}}
+\newcommand{\cnjref}[1]{Conjecture \ref{#1}}
+\newcommand{\defref}[1]{Definition \ref{#1}}
+\newcommand{\xmpref}[1]{Example \ref{#1}}
+\newcommand{\exeref}[1]{Exercise \ref{#1}}
+\newcommand{\rmkref}[1]{Remark \ref{#1}}
+\newcommand{\queref}[1]{Question \ref{#1}}
+\newcommand{\seref}[1]{Section \ref{#1}}
+\newcommand{\secref}[1]{Section \ref{#1}}
+\newcommand{\ntnref}[1]{Notation \ref{#1}}
+\newcommand{\cvnref}[1]{Convention \ref{#1}}
+\newcommand{\eqnref}[1]{(\ref{#1})}
+
+
+% not quite sure about theorem envirnmt auto-numberings...
+% this is sometimes used? can't remember...
+\comment{
+\newcounter{all}[section]
+\newenvironment{defn}
+  {
+    \stepcounter{all}
+    \noindent
+    \textbf{Definition \thesection.\theall}
+  }
+  {
+  }
+
+\newenvironment{lemma}
+}
+
+% Stuff that is used less frequently
+%   - put here for easy access
+%   - copy to relevant file, don't un-comment
+
+% Biblio/references stuff (copy it to main.tex)
+\comment{
+\usepackage{cite}
+\bibliographystyle{alpha}
+\bibliography{abbr_long,pubext}
+}
+
+% no indent for all paragraphs
+\comment{
+\setlength\parindent{0pt}
+}
+
+
+
+%% useful grid for drawing
+%% \tikzgrid{x1,x2,y1,y2}
+%% doesn't seem to work..
+%\newcommand{\tikzgridmy}[4]{
+%\tikzmath{
+%	\xleftlim = -3;
+%	\xrightlim = 3;
+%	\ybotlim = -3;
+%	\ytoplim = 3;
+%	\xleftlimtimes = \xleftlim*10;
+%	\xrightlimtimes = \xrightlim*10;
+%	\ytoplimtimes = \ytoplim*10;
+%	\ybotlimtimes = \ybotlim*10;
+%}
+%\foreach \x in {\xleftlimtimes,...,\xrightlimtimes} {
+%	\draw[thin,opacity=0.3] (0.1*\x,\ybotlim) -- (0.1*\x,\ytoplim);
+%}
+%\foreach \x in {\xleftlim,...,\xrightlim} {
+%	\draw[thin] (\x,\ybotlim) -- (\x,\ytoplim);
+%	\node at (\x,\ybotlim - 0.2) {$\x$};
+%}
+%\foreach \y in {\ybotlimtimes,...,\ytoplimtimes} {
+%	\draw[thin,opacity=0.3] (\xleftlim,0.1*\y) -- (\xrightlim,0.1*\y);
+%}
+%\foreach \y in {\ybotlim,...,\ytoplim} {
+%	\draw[thin] (\xleftlim,\y) -- (\xrightlim,\y);
+%	\node at (\xleftlim - 0.2,\y) {$\y$};
+%}
+%};
+
