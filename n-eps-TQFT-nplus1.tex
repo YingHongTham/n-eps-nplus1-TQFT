@@ -41,6 +41,7 @@ so composition of $M: N \to N'$ and $M' : N' \to N''$
 is denoted by $M' \circ M: N \to N''$.
 
 \begin{proposition}
+\label{p:extend-uniqueness}
 Consider functors
 $Z(\disk{n}) : Z(\empt{n-1}) \rightleftharpoons
 	Z(\sphr{n-1}) : Z(\ov{\disk{n}})$.
@@ -72,8 +73,56 @@ the $n$-dimensional cobordisms
 $M: N \rightleftharpoons N' : \ov{M}$
 form an adjunction.
 
--Consider simplest case, empty and sphere
--then do adding $k$-handle
+Let us first consider a simple case,
+which is the main setting in \prpref{p:extend-uniqueness}.
+Consider $n$-dim cobordisms
+$\disk{n}: \empt{n-1} \rightleftharpoons
+	\sphr{n-1}: \ov{\disk{n}}$.
+This can be promoted to an adjunction
+$\disk{n} \dashv \ov{\disk{n}}$
+with the following unit and counit 2-morphisms:
+the unit is given by the $(n+1)$-disk
+$\disk{n+1}: \empt{n} \Rightarrow
+	(\ov{\disk{n}} \circ \disk{n}) = \sphr{n}$,
+and the counit is given by the $(n+1)$-disk which,
+as a manifold with corner $\sphr{0} \times \sphr{n-1}$,
+is a 2-morphism
+$\disk{n+1} = I \times \disk{n}: \disk{n} \circ \ov{\disk{n}}
+	\Rightarrow I \times \sphr{n-1} = \id_{\sphr{n-1}}$.
+This is easily checked to be an adjunction,
+the unit is an $(n+1)$-dimensional 0-handle,
+and the counit is attaching an $(n+1)$-dimensional 1-handle
+to $\disk{n} \sqcup \ov{\disk{n}}$
+(see \figref{f:disk-adjunction} for $n=1$ case).
+
+\begin{figure}
+\includegraphics[width=10cm]{disk-adjunction.png}
+\caption{[from TODO Schommer-Pries]
+Unit and counit for adjunction
+$\disk{n}: \empt{n-1} \rightleftharpoons
+	\sphr{n-1}: \ov{\disk{n}}$,
+for $n=1$.}
+\label{f:disk-adjunction}
+\end{figure}
+
+
+Now consider $M: N \rightleftharpoons N': \ov{M}$,
+where $M$ is an elementary cobordism of index $k$,
+i.e. it is obtained from $N \times I$
+by attaching a $k$-handle.
+Then $\ov{M}$ is the dual elementary cobordism
+which is of index $n-k$.
+
+We construct the counit
+$\veps: M \circ \ov{M} \Rightarrow \id_{N'} : N' \to N'$
+by attaching a $(k+1)$-handle to $M \cup_{N'} \ov{M}$,
+with attaching region being essentially the
+$k$-handle in $M$ plus the $(n-k)$-handle in $\ov{M}$;
+the attaching sphere is the union of the core of the
+$k$-handle in $M$
+with the co-core of the $(n-k)$-handle in $\ov{M}$.
+
+
 -then in general
 
 (In [TODO Y-product paper],
