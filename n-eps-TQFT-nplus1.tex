@@ -282,6 +282,34 @@ we need to present $M'$ as a composition
 N \to N' \sqcup \sphr{k} \times \sphr{n-k+1} \to N'
 \]
 which is always possible by basic Morse theory.
+So we have
+($M^\circ := M \backslash \ov{\sphr{k} \times \disk{n-k}}$):
+
+\begin{tikzpicture}
+\node at (-2,0) {$W' = $};
+% objects
+\node (a) at (0,0) {$N$};
+\node (b) at (4,0) {$N' \sqcup \sphr{k} \times \sphr{n-k+1}$};
+\node (c) at (8,0) {$N' \sqcup \empt{n-1}$};
+% 1-morph
+\draw[->] (a) -- (b)
+	node[pos=0.5,below] {\footnotesize $M^\circ$};
+\draw[->] (b) -- (c)
+	node[pos=0.5,below]
+	{\footnotesize $\ov{\sphr{k} \times \disk{n-k}}$};
+\draw[->] (b) .. controls +(-60:2cm) and +(-120:2cm) .. (c)
+	node[pos=0.5,below]
+	{\footnotesize $\ov{\disk{k+1} \times \sphr{n-k-1}}$};
+\draw[->] (a) .. controls +(60:3cm) and +(120:3cm) .. (c)
+	node[pos=0.5,above] {\footnotesize $M$};
+\draw[->] (a) .. controls +(30:2cm) and +(150:2cm) .. (c)
+	node[pos=0.5,above] {\footnotesize $M'$};
+% 2-morph
+\draw[-{Implies},double] (4,0.6) -- (4,0.3)
+	node[pos=0.5,right] {\footnotesize $\simeq$};
+\draw[-{Implies},double] (6,-0.6) -- (6,-1.2)
+	node[pos=0.5,right] {\footnotesize $\omega_{k+1}$};
+\end{tikzpicture}
 
 
 Now let us describe how to construct $\omega_{k+1}$
@@ -308,6 +336,7 @@ Then $\omega_{k+1}$ is given by the composition of 2-morphisms
 \]
 
 \begin{tikzpicture}
+\node at (-2,0) {$\omega_{k+1} = $};
 % objects
 \node (a) at (0,0) {$\sphr{k} \times \sphr{n-k-1}$};
 \node (b) at (4,0) {$\empt{n-1}$};

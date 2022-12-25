@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.25)  25 DEC 2022 02:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.25)  25 DEC 2022 03:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -710,17 +710,17 @@ ut line 202.
  [3 <./diagram-counit-unit-elementary-cobord.jpg>] [4] [5]
 (./n-eps-TQFT-nplus1.aux) ) 
 Here is how much of TeX's memory you used:
- 18697 strings out of 478599
- 356615 string characters out of 5854100
- 627275 words of memory out of 5000000
- 36243 multiletter control sequences out of 15000+600000
+ 18705 strings out of 478599
+ 356772 string characters out of 5854100
+ 628275 words of memory out of 5000000
+ 36251 multiletter control sequences out of 15000+600000
  426402 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,7n,89p,610b,640s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/
 mnsymbol/MnSymbolC.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsy
-mbol/MnSymbolA.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol
-/MnSymbolD.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnS
+mbol/MnSymbolD.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol
+/MnSymbolA.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnS
 ymbolE.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/mnsymbol/MnSy
 mbol10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/mnsymbol/MnSy
 mbol12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/mnsymbol/MnSy
@@ -742,10 +742,10 @@ exlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texl
 ive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
 /2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/20
 21/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on n-eps-TQFT-nplus1.pdf (5 pages, 1686694 bytes).
+Output written on n-eps-TQFT-nplus1.pdf (5 pages, 1691118 bytes).
 PDF statistics:
- 148 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
+ 151 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
