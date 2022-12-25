@@ -4,6 +4,7 @@
 \usepackage{fullpage, mystyle}
 \usepackage{MnSymbol}
 
+\usepackage{tikz}
 \usepackage{tikz-cd}
 
 \newcommand{\disk}[1]{{D^{#1}}}
@@ -40,6 +41,11 @@ Composition of cobordisms is written from right to left,
 so composition of $M: N \to N'$ and $M' : N' \to N''$
 is denoted by $M' \circ M: N \to N''$.
 
+2-Cob denotes the bicategory with
+closed $(n-1)$-manifolds as objects,
+$n$-dimensional cobordisms as 1-morphisms,
+and $(n+1)$-dimensional relative cobordisms as 2-morphisms.
+
 \begin{proposition}
 \label{p:extend-uniqueness}
 Consider functors
@@ -60,15 +66,27 @@ then $Z' \cong Z''$.
 \end{proposition}
 
 
-The proof of this proposition occupies the rest of this article.
+\begin{proof}
+From the topology section below,
+we know that a 2-morphism of 2-Cob that realizes
+the attachment of an $(n+1)$-dim $(k+1)$-handle,$0 \leq k \leq n$,
+is determined by some counit $\veps_k$
+of an adjunction,
+whose corresponding unit can be built from handles
+of index at most $k$,
+and thus, the value of extensions $Z'$ of $Z$ on 2-morphisms
+is completely determined by its value on the
+$(n+1)$-dim 0-handle, which is exactly $\eta_0$.
+\end{proof}
 
 
 
 \subsection{Adjunctions from topology}
 
-In the 2-category with closed $(n-1)$-manifolds as objects,
-$n$-dimensional cobordisms as 1-morphisms,
-and $(n+1)$-dimensional relative cobordisms as 2-morphisms,
+In 2-Cob,
+%In the 2-category with closed $(n-1)$-manifolds as objects,
+%$n$-dimensional cobordisms as 1-morphisms,
+%and $(n+1)$-dimensional relative cobordisms as 2-morphisms,
 the $n$-dimensional cobordisms
 $M: N \rightleftharpoons N' : \ov{M}$
 form an adjunction.
@@ -214,10 +232,152 @@ not necessarily the identity cobordism).
 \end{remark}
 
 
-For our applications,
-we will consider in detail the adjunction
-$\empt{n-1} : \empt{n} \rightleftharpoons
-	\sphr{k} \times \sphr{n-1-k} : \sphr{k} \times \disk{n-k}$.
+\subsection{Producing $(n+1)$-dim $k$-handles
+from some adjunctions}
+
+Throughout this section, $0 \leq k < n$.
+
+We show how to construct the $(n+1)$-dim $(k+1)$-handle
+from the counit $\veps_k$ of the adjunction
+$\sphr{k} \times \disk{n-k} : \empt{n} \rightleftharpoons
+	\sphr{k} \times \sphr{n-k-1} : \ov{\sphr{k} \times \disk{n-k}}$
+and the unit $\eta_0$ of the adjunction
+$\disk{n} : \empt{n-1} \rightleftharpoons
+	\sphr{n-1}: \ov{\disk{n}}$.
+(The 0-handle is already given by $\eta_0$,
+while the $(n+1)$-handle is the counit to the adjunction
+$\ov{\disk{n}} : \sphr{n-1} \rightleftharpoons
+	\empt{n-1}: \disk{n}$;
+we say a few more words about this at the end of this section.)
+
+
+The process of attaching a $(k+1)$-handle to an $(n+1)$-manifold
+can be implemented as postcomposing by a 2-morphism.
+More precisely, given an $(n+1)$-manifold $W$
+presented as a 2-morphism $W: M \Rightarrow M' : N \to N'$,
+and an attaching region $\sphr{k} \times \disk{n-k}$ in $M'$,
+the $(n+1)$-manifold $W'$ obtained from
+attaching a $(k+1)$-handle along the specified attaching region
+may be considered as a 2-morphism
+$W': M \Rightarrow M'': N \to N'$,
+where $M''$ is obtain from $M'$ by performing surgery
+along the attaching region
+(cutting it out and gluing in $\disk{k+1} \times \sphr{n-k-1}$);
+then $W' = \omega_{k+1} \cdot W$,
+where $\omega_{k+1}$ is a 2-morphism that we will describe below.
+
+
+Our 2-morphism $\omega_{k+1}$ is of the form
+$\omega_{k+1}: \sphr{k} \times \disk{n-k}
+	\Rightarrow \disk{k+1} \times \sphr{n-k-1} :
+	\sphr{k} \times \sphr{n-k-1} \to \empt{n-1}$.
+Since this is unchanged as $W$ varies,
+we clearly need to make some arrangements
+in order to use $\omega_{k+1}$.
+More specifically,
+we need to present $M'$ as a composition
+\[
+(\id_{N'} \sqcup \ov{\sphr{k} \times \disk{n-k}})
+\circ (M \backslash \ov{\sphr{k} \times \disk{n-k}}) :
+N \to N' \sqcup \sphr{k} \times \sphr{n-k+1} \to N'
+\]
+which is always possible by basic Morse theory.
+
+
+Now let us describe how to construct $\omega_{k+1}$
+out of $\veps_k$ and $\eta_0$,
+which are, as a reminder,
+the counit and unit of the adjunctions
+$\sphr{k} \times \disk{n-k} : \empt{n} \rightleftharpoons
+	\sphr{k} \times \sphr{n-k-1} : \ov{\sphr{k} \times \disk{n-k}}$
+and
+$\disk{n} : \empt{n-1} \rightleftharpoons
+	\sphr{n-1}: \ov{\disk{n}}$,
+respectively.
+
+We may consider $\sphr{n}: \empt{n-1} \to \empt{n-1}$
+as the composition $\ov{\disk{k+1} \times \sphr{n-k-1}}
+\circ \sphr{k} \times \disk{n-k} :
+\empt{n-1} \to \sphr{k} \times \sphr{n-k-1} \to \empt{n-1}$.
+
+Then $\omega_{k+1}$ is given by the composition of 2-morphisms
+\[
+\omega_{k+1} = (\id_{\ov{\disk{k+1} \times \sphr{n-k-1}}}
+		\circ \veps_k)
+	\cdot (\id_{\ov{\sphr{k} \times \disk{n-k}}} \circ \eta_0)
+\]
+
+\begin{tikzpicture}
+% objects
+\node (a) at (0,0) {$\sphr{k} \times \sphr{n-k-1}$};
+\node (b) at (4,0) {$\empt{n-1}$};
+\node (c) at (8,0) {$\sphr{k} \times \sphr{n-k-1}$};
+\node (d) at (12,0) {$\empt{n-1}$};
+% 1-morph
+\draw[->] (a) -- (b)
+	node[pos=0.5,above] {\footnotesize $\ov{\sphr{k} \times \disk{n-k}}$};
+\draw[->] (b) -- (c)
+	node[pos=0.5,above] {\footnotesize $\sphr{k} \times \disk{n-k}$};
+\draw[->] (c) -- (d)
+	node[pos=0.5,above] {\footnotesize $\ov{\disk{k+1} \times \sphr{n-k-1}}$};
+\draw[->] (b) .. controls +(60:3cm) and +(120:3cm) .. (d)
+	node[pos=0.5,above] {\footnotesize $\empt{n}$};
+\draw[->] (a) .. controls +(-60:3cm) and +(-120:3cm) .. (c)
+	node[pos=0.5,above] {\footnotesize $\id_{\sphr{k} \times \sphr{n-k-1}}$};
+% 2-morph
+\draw[-{Implies},double] (8,1.6) -- (8,0.5)
+	node[pos=0.5,right] {\footnotesize $\eta_0$};
+\draw[-{Implies},double] (4,-0.5) -- (4,-1.4)
+	node[pos=0.5,right] {\footnotesize $\veps_k$};
+\end{tikzpicture}
+
+
+A few words on the $(n+1)$-handle,
+more generally the adjunction
+$\ov{\disk{n}} : \sphr{n-1} \rightleftharpoons
+	\empt{n-1}: \disk{n}$.
+The unit is a 2-morphism
+$\eta: \id_{\sphr{n-1}} \Rightarrow \disk{n} \circ \ov{\disk{n}}$,
+which is clearly an elementary cobordism of index $n$.
+
+A similar phenomenon happens with $\veps_k$,
+that is, $\eta_k$, the unit to the adjunction
+$\sphr{k} \times \disk{n-k} \dashv
+	\ov{\sphr{k} \times \disk{n-k}}$,
+to which $\veps_k$ is the counit,
+is determined by handles of index at most $k$,
+and indeed,
+$\eta_k = \sphr{k} \times \disk{n-k+1}:
+\empt{n} \Rightarrow \sphr{k} \times \sphr{n-k}:
+\empt{n-1} \to \empt{n-1}$
+is built from a 0-handle and a $k$-handle.
+
+
+Thus, since the counit is uniquely determined by the unit,
+the $(n+1)$-dim $k$-handle, for $k > 0$,
+is determined by handles of lower index.
+This may not be very useful in the topology world,
+but on the algebraic side of a TQFT,
+this means that everything is determined by the 0-handle.
+
+
+
+[It may be helpful to note that the adjunction
+$\sphr{k} \times \disk{n-k} : \empt{n} \rightleftharpoons
+	\sphr{k} \times \sphr{n-k-1} : \ov{\sphr{k} \times \disk{n-k}}$
+is simply $\sphr{k}$ times
+the first example but with $n$ set to $n-k$,
+$\disk{n-k} : \empt{n-k} \rightleftharpoons
+	\sphr{n-1-k}: \ov{\disk{n-k}}$.
+]
+
+%(Note that one can study the adjunction
+%e.g. by considering the handle decomposition for
+%$\sphr{k} \times \disk{n-k} : \empt{n} \to
+%	\sphr{k} \times \sphr{n-k-1}$
+%is given by a 0-handle followed by a $k$-handle,
+%but this is 
+
 
 
 \begin{thebibliography}{1}
