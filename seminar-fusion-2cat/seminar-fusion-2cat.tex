@@ -8,6 +8,7 @@
 \usepackage{tikz-cd}
 
 
+<<<<<<< HEAD
 \newcommand{\cB}{{\mathcal{B}}}
 \newcommand{\cD}{{\mathcal{D}}}
 \newcommand{\Mod}{{\mathcal{M}od}}
@@ -17,6 +18,11 @@
 \newcommand{\Vect}{{\textrm{Vec}}}
 
 \newcommand{\bigboxplus}{\Huge \boxplus}%{{\scalebox{2}{\boxplus}}}
+=======
+\newcommand{\Mod}{{\mathcal{M}od}}
+\newcommand{\cHom}{{\mathcal{H}\text{om}}}
+
+>>>>>>> 43b4a2fa2badac226365f5902e431ef891fa0a96
 
 \begin{document}
 
@@ -25,10 +31,13 @@
 \date{28 December, 2022}
 \maketitle
 
+<<<<<<< HEAD
 [Almost everything here is from \cite{DRfusion};
 the only things that are new here are
 cleaner proofs of the main theorems]
 
+=======
+>>>>>>> 43b4a2fa2badac226365f5902e431ef891fa0a96
 
 The main goal of my talk today is to prove that
 a finite semisimple 2-category is the
@@ -64,6 +73,7 @@ of structures:
 
 In relation to a 2-category:
 \begin{itemize}
+<<<<<<< HEAD
 \item $\cC$ (caligraphic font): 2-category;
 
 \item $X,Y,F$ (upper case latin): object of 2-category,
@@ -72,6 +82,16 @@ In relation to a 2-category:
 \item $f,g$ (lower case latin): 1-morphism;
 	we write $\cC(X,Y)$ for the category of morphisms
 	from $X$ to $Y$;
+=======
+\item $\cC,\mathcal{F}$ (caligraphic font): 2-category,
+	functor between 2-categories
+
+\item $C,X,Y$ (upper case latin): object of 2-category
+
+\item $f,g$ (lower case latin): 1-morphism;
+	we write $\cC(X,Y)$ for the category of morphisms
+	from $X$ to $Y$
+>>>>>>> 43b4a2fa2badac226365f5902e431ef891fa0a96
 
 \item $\eta,\veps,\delta$ (lower case greek): 2-morphism;
 	for a 2-morphism $\alpha: f \Rightarrow g: X \to Y$,
@@ -82,14 +102,21 @@ In relation to a 2-category:
 
 In relation to a 1-category:
 \begin{itemize}
+<<<<<<< HEAD
 \item $C,A$ (upper case latin): category;
 
 \item $a,b,f,g$ (lower case latin): objects in category,
 	functor between categories;
+=======
+\item $C,A$ (upper case latin): category, functor between categoreis
+
+\item $a,b,f,g$ (lower case latin): objects in category
+>>>>>>> 43b4a2fa2badac226365f5902e431ef891fa0a96
 
 \item $\alpha,\beta$ (lower case greek): morphism in category
 \end{itemize}
 
+<<<<<<< HEAD
 [We use the same type of font for 1-functors and 1-morphisms
 because the 1-morphisms in the 2-category $\Mod(C)$
 of module categories are module functors,
@@ -98,6 +125,8 @@ we use the same type of font for 2-functors and objects
 because 2-functors are objects in the 2-category of
 2-functors]
 
+=======
+>>>>>>> 43b4a2fa2badac226365f5902e431ef891fa0a96
 We also compose morphisms from right to left:
 in a 2-category $\cC$,
 for $\alpha \in \cC(X,Y)(f,f'),
@@ -129,6 +158,7 @@ In general, if $P$ is a property of a 1-category,
 we say that a 2-category $\cC$ is \emph{locally $P$}
 if every hom-category $\cC(X,Y)$ satisfies $P$.
 
+<<<<<<< HEAD
 
 By 2-category we always mean a weak 2-category
 that is furthermore locally additive over $\kk$,
@@ -139,6 +169,8 @@ By 2-functor (sometimes just functor for simplicity)
 between 2-categories will always be locally $\kk$-linear.
 
 
+=======
+>>>>>>> 43b4a2fa2badac226365f5902e431ef891fa0a96
 \section{Review}
 
 Let us recall some definitions and facts concerning
@@ -146,6 +178,7 @@ semisimple 2-categories.
 These where covered in more detail in previous talks,
 so here we will simply state them without proof.
 
+<<<<<<< HEAD
 \subsection{Additive 2-category, direct sums of objects}
 
 \begin{definition}[direct sum of objects in 2-category]
@@ -203,6 +236,8 @@ $
 \end{itemize}
 \end{definition}
 
+=======
+>>>>>>> 43b4a2fa2badac226365f5902e431ef891fa0a96
 \subsection{Idempotent completeness, separable monads, splittings}
 
 \begin{definition}
@@ -227,13 +262,18 @@ then the monad $rl$ is separable.
 \begin{definition}
 Let $(t,\mu,\eta)$ be a separable monad on
 an object $X \in \cC$.
+<<<<<<< HEAD
 A \emph{(separable) splitting} of $t$ is a (separable) adjunction
+=======
+A \emph{splitting} of $t$ is a separable adjunction
+>>>>>>> 43b4a2fa2badac226365f5902e431ef891fa0a96
 $r \vdash l: X \to Y$
 together with an isomorphism
 $\psi: rl \simeq t$ as monads on $X$.
 \end{definition}
 
 Under the right conditions
+<<<<<<< HEAD
 (local idempotent completeness of $\cC$),
 separable splittings are unique:
 
@@ -243,6 +283,19 @@ separable splittings are unique:
 \label{p:splitting-unique}
 In a locally idempotent complete 2-category $\cC$,
 separable splittings of a separable monad are unique
+=======
+(local idempotent completeness of $\cC$), splittings are unique
+(see \prpref{p:splitting-unique}).
+
+
+
+
+\begin{proposition}[Uniqueness of splitting]
+[\cite{DRfusion}, Theorem A.3.1]
+\label{p:splitting-unique}
+In a locally idempotent complete 2-category $\cC$,
+splittings of a separable monad are unique
+>>>>>>> 43b4a2fa2badac226365f5902e431ef891fa0a96
 up to equivalence.
 \end{proposition}
 
@@ -273,6 +326,7 @@ $l' \circ t \circ r \Rightarrow l' \circ r$
 $tr \simeq rlr \Rightarrow r$;
 similarly $l'$ is a right $t$-module).
 Such a coequalizer does appear in the proof of
+<<<<<<< HEAD
 \cite{DRfusion}*{Theorem A.3.1} anyway,
 and I've found that this thought process
 makes the consideration of the Eilenberg-Moore and Kleisli
@@ -349,6 +403,12 @@ then we have equivalences of 2-categories
 \simeq \cFun(\cC^\nabla, \cD)
 \]
 
+=======
+\cite{DRfusion}[Theorem A.3.1] anyway,
+and I've found that this thought process
+makes the consideration of the Eilenberg-Moore and Kleisli
+objects less of an ass-pull.
+>>>>>>> 43b4a2fa2badac226365f5902e431ef891fa0a96
 
 
 \subsection{Simple objects}
@@ -357,6 +417,7 @@ then we have equivalences of 2-categories
 \begin{proposition}[equivalent notions of simple-ness]
 Let $\cC$ be a locally finite semisimple and
 idempotent complete 2-category,
+<<<<<<< HEAD
 and let $X \in \cC$ be a nonzero object.
 Then the following notions of $X$ being simple are equivalent:
 
@@ -397,6 +458,23 @@ Show $\delta$ is a section of the counit. Etc.
 
 \subsection{Semisimple 2-category}
 
+=======
+and let $X \in \cC$ be an object.
+Then the following notions of $X$ being simple are equivalent:
+\begin{itemize}
+\item any subobject $i: Y \to X$ of $X$
+ is either 0 ($Y \simeq 0$)
+ or ($i$ is) an equivalence;
+
+\item $X$ cannot be written as a non-trivial direct sum,
+	i.e. if $X = \boxplus X_i$,
+	then $X_i \simeq 0$ for all but one $i$;
+
+\item $\id_X$ is a simple object in $\cC(X,X)$.
+\end{itemize}
+\end{proposition}
+
+>>>>>>> 43b4a2fa2badac226365f5902e431ef891fa0a96
 
 \begin{definition}[(finite) semisimple 2-category]
 A 2-category $\cC$ is \emph{semisimple}
@@ -413,6 +491,7 @@ if it is also locally finite and
 has finitely many equivalence classes of simple objects.
 \end{definition}
 
+<<<<<<< HEAD
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
