@@ -8,11 +8,13 @@
 \usepackage{tikz-cd}
 
 
+\newcommand{\cB}{{\mathcal{B}}}
 \newcommand{\cD}{{\mathcal{D}}}
 \newcommand{\Mod}{{\mathcal{M}od}}
 \newcommand{\cHom}{{\mathcal{H}\text{om}}}
 \newcommand{\mmod}{{\textrm{mod}}}
 \newcommand{\cFun}{{\mathcal{F}un}}
+\newcommand{\Vect}{{\textrm{Vec}}}
 
 \newcommand{\bigboxplus}{\Huge \boxplus}%{{\scalebox{2}{\boxplus}}}
 
@@ -22,6 +24,10 @@
 \author{Ying Hong Tham}
 \date{28 December, 2022}
 \maketitle
+
+[Almost everything here is from \cite{DRfusion};
+the only things that are new here are
+cleaner proofs of the main theorems]
 
 
 The main goal of my talk today is to prove that
@@ -175,6 +181,28 @@ $i_k: A_k \to A_1 \boxplus A_2$ is fully faithful.
 \end{proposition}
 
 
+
+(I don't think the following was discussed,
+but it is a simple concept anyway)
+
+\begin{definition}[Direct sum of 2-categories]
+Given 2-categories $\cC_j$, $j \in J$,
+we may consider the direct sum 2-category
+$\cC := \bigboxplus_{j \in J} \cC_j$:
+\begin{itemize}
+\item $\Obj \cC = \bigsqcup_{j \in J} \Obj \cC_j$
+
+\item for $X \in \cC_i, Y \in \cC_j$,
+	$\cC(X,Y) =
+\begin{cases}
+	\cC_j(X,Y) \;\; \text{if } i = j
+	\\
+	0 \;\; \text{if } i \neq j
+\end{cases}
+$
+\end{itemize}
+\end{definition}
+
 \subsection{Idempotent completeness, separable monads, splittings}
 
 \begin{definition}
@@ -290,6 +318,24 @@ the Morita 2-category of algebras in some tensor category;
 indeed, this will be made precise in the proof
 of the main result.
 
+
+We can already the essence of this idea in the simple
+example below.
+Let $C$ be multifusion,
+and let $\cB C$ be the 2-category with one object $*$
+and endmorphisms given by $C$.
+Then by construction, we have
+\[
+(\cB C)^\nabla =
+\begin{cases}
+	\Obj: \text{ separable algebras in } C
+	\\
+	\text{Mor}: (\cB C)^\nabla (a,b) = b\text{-bimod-}a(C)
+\end{cases}
+\]
+
+
+
 \begin{proposition}
 $\cC^\nabla$ is idempotent complete.
 Moreover, if $\cC$ is already idempotent complete,
@@ -304,13 +350,14 @@ then we have equivalences of 2-categories
 \]
 
 
+
 \subsection{Simple objects}
 
 
 \begin{proposition}[equivalent notions of simple-ness]
 Let $\cC$ be a locally finite semisimple and
 idempotent complete 2-category,
-and let $X \in \cC$ be an object.
+and let $X \in \cC$ be a nonzero object.
 Then the following notions of $X$ being simple are equivalent:
 
 (1) any subobject $i: Y \to X$ of $X$
@@ -348,18 +395,6 @@ Show $\delta$ is a section of the counit. Etc.
 \end{proof}
 
 
-
-\section{New stuff}
-
-Beyond this point, we cover new stuff.
-Thus, the writing will be more speech like,
-and written to reflect more or less the order of presentation
-during the talk (at least how I plan to present it).
-
-
-\subsection{Schur's lemma}
-
-
 \subsection{Semisimple 2-category}
 
 
@@ -377,6 +412,123 @@ It is furthermore \emph{finite semisimple}
 if it is also locally finite and
 has finitely many equivalence classes of simple objects.
 \end{definition}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{New stuff}
+
+Beyond this point, we cover new stuff.
+Thus, the writing will be more speech like,
+and written to reflect more or less the order of presentation
+during the talk (at least how I plan to present it).
+
+
+\subsection{Schur's lemma}
+
+The equivalence between notions of a simple object
+in a seimsimple 2-category,
+as we just recalled,
+is quite similar to the semisimple 1-category case.
+However, there is a stark difference in that
+there can be nonzero morphisms between
+non-equivalent simple objects;
+indeed, recall our running example of a 2-category
+$\Mod(\Vect_{\ZZ/2})$:
+
+\[
+\begin{tikzpicture}
+\node (a) at (0,0) {$\Vect_{\ZZ/2}$};
+\node (b) at (4,0) {$\Vect$};
+\draw[->] (a) to[out=30,in=150] (b);
+\node at (2,1) {\footnotesize $\Vect$};
+\draw[->] (b) to[out=-150,in=-30] (a);
+\node at (2,-1) {\footnotesize $\Vect$};
+\draw[->] (a) .. controls +(-150:2cm) and +(150:2cm) .. (a);
+\node at (-2,0) {\footnotesize $\Vect_{\ZZ/2}$};
+\draw[->] (b) .. controls +(30:2cm) and +(-30:2cm) .. (b);
+\node at (6,0) {\footnotesize $\Vect_{\ZZ/2}$};
+\end{tikzpicture}
+\]
+
+
+The existence of nonzero 1-morphisms
+between non-equivalent simple objects
+turns out to be a very important aspect of semisimple 2-categories
+since, as we shall see,
+it captures 2-Morita equivalences between fusion categories.
+
+\begin{proposition}
+[Schur's Lemma, \cite{DRfusion}*{Prop 1.2.19}]
+\label{p:schur-lemma}
+In a semisimple 2-category $\cC$,
+if $f: A \to B, g: B \to C$ are nonzero 1-morphisms
+between simple objects $A,B,C$,
+then $g \circ f$ is also nonzero.
+\end{proposition}
+
+\begin{proof}[Proof of \prpref{p:schur-lemma}]
+Let $f^*: B \to A$ be a right adjoint to $f$.
+Since $\id_B$ is simple, there exists a section
+$\delta: \id_B \Rightarrow ff^*$
+to the counit $\veps: ff^* \Rightarrow \id_B$.
+Postcomposing with $g$,
+we have $\id_g = (\id_g \circ \veps) \cdot (\id_g \circ \delta):
+g \Rightarrow gff^* \Rightarrow g$.
+Thus if $gf = 0$, then $\id_g = 0$,
+contradicting nonzero-ness of $B$.
+\end{proof}
+
+Thus, this establishes transitivity on a weaker notion
+of equivalence among simple objects
+(namely, existence of nonzero 1-morphism);
+reflexivity is obvious,
+and symmetry is given by adjoints.
+
+\begin{definition}[component of semisimple 2-category]
+In a semisimple 2-category $\cC$,
+we say two simple objects $A,B$ belong to the same
+\emph{component} if there exists a nonzero 1-morphism
+$f: A \to B$.
+\end{definition}
+
+
+In a finite semisimple 2-category $\cC$,
+there will be finitely many components,
+say index by a set $J$.
+Consider one component $j \in J$,
+and consider the full subcategory $\cC_j$ of $\cC$
+consisting of objects that are equivalent
+to a direct sum of simples in the component $j$.
+Clearly, this gives us a decomposition of $\cC$ into a direct sum
+$\cC \simeq \bigboxplus_{j \in J} \cC_j$.
+
+
+\subsection{Main result}
+
+\begin{theorem}[\cite{DRfusion}*{Theorem 1.4.8}]
+The 2-category of finite semisimple module categories
+of a multifusion category
+is a finite semisimple 2-category.
+\end{theorem}
+
+\begin{proof}
+Let $C$ be a multifusion category.
+
+Hmm see Prop 1.3.13, should I put that in the discussion
+of idempotent completion?
+\end{proof}
+
+
+\begin{theorem}[\cite{DRfusion}*{Theorem 1.4.9}]
+Every finite semisimple 2-category is equivalent to
+the 2-category of finite semisimple module categories
+of a multifusion category.
+\end{theorem}
+
+\begin{proof}
+\end{proof}
+
 
 \begin{thebibliography}{1}
 
