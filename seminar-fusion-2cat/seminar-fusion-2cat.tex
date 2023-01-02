@@ -6,15 +6,23 @@
 \usepackage{tikz}
 \usepackage{tikz-cd}
 
+\tikzset{
+small_morphism/.style={fill=white,circle,draw=white,thin,inner sep=1pt, minimum size=10pt, scale=0.8},
+dotnode/.style={fill=black,circle,minimum size=2.5pt, inner sep=1pt, outer sep=0},
+}
 
 \newcommand{\cB}{{\mathcal{B}}}
 \newcommand{\cD}{{\mathcal{D}}}
-\newcommand{\Mod}{{\mathcal{M}od}}
+\newcommand{\Mod}{{\mathcal{M}\textrm{od}}}
 \newcommand{\cHom}{{\mathcal{H}\text{om}}}
-\newcommand{\mmod}{{\textrm{mod}}}
 \newcommand{\cFun}{{\mathcal{F}un}}
 \newcommand{\Vect}{{\textrm{Vec}}}
 \newcommand{\bigboxplus}{\Huge \boxplus}
+
+\newcommand{\bimod}[2]{{#1\textrm{-bimod-}#2}}
+\newcommand{\amod}[1]{{#1\textrm{-mod}}}
+\newcommand{\moda}[1]{{\textrm{mod-}#1}}
+\newcommand{\ModA}[1]{{\Mod(#1)}}
 
 
 \begin{document}
@@ -26,14 +34,14 @@
 
 [Almost everything here is from \cite{DRfusion};
 the only things that are new here are
-cleaner proofs of the main theorems]
+cleaner proofs of the main theorems
+as suggest by David Reutter.]
 
 
-The main goal of my talk today is to prove that
+The main goal of thie note is to prove that
 a finite semisimple 2-category is the
 category of finite semisimple modules
-over a multifusion category,
-and vice versa.
+over a multifusion category, and vice versa.
 
 
 That is, for a semisimple 2-category $\cC$,
@@ -45,11 +53,11 @@ such that
 \]
 
 Here $\Mod_{s.s.}^{fin}(C)$,
-which we will abbreviate to $\Mod-C$,
+which we will abbreviate to $\ModA{C}$,
 stands for finite semisimple right module categories over $C$.
 
 Conversely, for any mutifusion category $C$,
-$\Mod-C$ is a semisimple 2-category.
+$\ModA{C}$ is a finite semisimple 2-category.
 
 
 
@@ -204,12 +212,22 @@ $
 \subsection{Idempotent completeness, separable monads, splittings}
 
 \begin{definition}
+A \emph{separable algebra} $(a,\mu,\eta)$ in a tensor category $C$
+is an algebra that admits an $a$-$a$-bimodule section
+$\prescript{}{a}a_a \to \prescript{}{a}a \tnsr a_a$
+to $\mu$.
+\end{definition}
+
+\begin{definition}
 Let $(t, \mu, \eta)$ be a monad on an object $X$
 in a 2-category $\cC$.
 We say $t$ is \emph{separable} if there is a
 $t$-$t$-bimodule section
-$\delta: t \Rightarrow t \circ t$ to $\mu$.
+$t \Rightarrow t \circ t$ to $\mu$.
 \end{definition}
+
+In other words, a separable monad over $X$
+is a separable algebra in $\cC(X,X)$.
 
 \begin{definition}
 Let $r \vdash l: X \to Y$ be an adjunction
@@ -287,15 +305,13 @@ if every separable monad admits a splitting.
 \end{definition}
 
 \begin{definition}
-Let $\cC$ be a locally semisimple
-(more generally locally idempotent complete)
-2-category.
+Let $\cC$ be a locally idempotent complete 2-category.
 Define the \emph{idempotent completion of $\cC$},
 denoted $\cC^\nabla$, to be the 2-category whose objects
 are given by separable monads of $\cC$,
 and the hom-category of morphisms from
 separable monad $(X,p)$ to $(Y,q)$
-is the category $q$-mod-$p(\cC(X,Y))$
+is the category $\bimod{q}{p}(\cC(X,Y))$
 of $q$-$p$-bimodules in $\cC(X,Y)$.
 
 There is a natural 2-functor $I: \cC \to \cC^\nabla$
@@ -305,33 +321,6 @@ A 2-functor $F: \cC \to \cD$
 extends to a 2-functor $F^\nabla: \cC^\nabla \to \cD^\nabla$
 that commutes with $I$'s.
 \end{definition}
-
-This is a categorified version of the Karoubi completion
-operation.
-By going along the lines of \cite{Ostrik},
-the definition of $\cC^\nabla$
-is very suggestive of the idea that
-objects of $\cC^\nabla$ should be thought of as
-the Morita 2-category of algebras in some tensor category;
-indeed, this will be made precise in the proof
-of the main result.
-
-
-We can already the essence of this idea in the simple
-example below.
-Let $C$ be multifusion,
-and let $\cB C$ be the 2-category with one object $*$
-and endmorphisms given by $C$.
-Then by construction, we have
-\[
-(\cB C)^\nabla =
-\begin{cases}
-	\Obj: \text{ separable algebras in } C
-	\\
-	\text{Mor}: (\cB C)^\nabla (a,b) = b\text{-bimod-}a(C)
-\end{cases}
-\]
-
 
 
 \begin{proposition}
@@ -346,6 +335,88 @@ then we have equivalences of 2-categories
 \cFun(\cC,\cD) \simeq \cFun(\cC^\nabla,\cD^\nabla)
 \simeq \cFun(\cC^\nabla, \cD)
 \]
+
+\begin{proposition}
+If $F: \cC \to \cD$ is fully faithful,
+then $F^\nabla: \cC^\nabla \to \cD^\nabla$
+is also fully faithful.
+\end{proposition}
+
+
+
+$(-)^\nabla$ is a categorified version of the
+Karoubi completion operation.
+By going along the lines of \cite{Ostrik},
+the definition of $\cC^\nabla$
+is very suggestive of the idea that
+objects of $\cC^\nabla$ should be thought of as
+the Morita 2-category of algebras in some tensor category;
+indeed, let $C$ be multifusion,
+and let $\cB C$ be the 2-category with one object $*$
+and endmorphisms given by $C$
+(the ``delooping of $C$'').
+Then by construction, we have
+\[
+(\cB C)^\nabla =
+\begin{cases}
+	\Obj: \text{ separable algebras in } C
+	\\
+	\text{Mor}: (\cB C)^\nabla (a,b) = \bimod{b}{a}(C)
+\end{cases}
+\]
+
+
+\begin{proposition}[\cite{DRfusion}*{Prop 1.3.13}]
+\label{p:modC-deloop}
+For a multifusion category $C$,
+the following 2-functor is an equivalence:
+\[
+\begin{tikzcd}[row sep = tiny]
+\amod{(-)}(C) :
+	& (\cB C)^\nabla
+	\ar[r]
+	& \ModA{C}
+\\
+\Obj:
+	& a
+	\ar[r,mapsto]
+	& \amod{a}(C)
+\\
+1\textrm{-Mor}:
+	& \prescript{}{b}m_a
+	\ar[r,mapsto]
+	& m \tnsr_a -
+\\
+2\textrm{-Mor}:
+	& \vphi
+	\ar[r,mapsto]
+	& \vphi \tnsr_a -
+\end{tikzcd}
+\]
+\end{proposition}
+
+\begin{proof}
+Essential surjectivity follows from:\\
+-\cite{Ostrik}*{Theorem 1}: for a finite semisimple right module
+category over multifusion $C$, there exists a semisimple algebra
+$a$ in $C$ such that $M \simeq \amod{a}(C)$
+as right $C$-module categories; and\\
+-\cite{DSPSb}*{Corollary 2.6.9}: When $C$ is multifusion over
+a field of characterisitc 0,
+a right $C$-module category $M$ is separable
+($\simeq \amod{a}(C)$ for a separable algebra $a$)
+if and only if it is semisimple.
+
+Fully faithfulness follows from \cite{EGNO}*{Prop 7.11.1}.
+\end{proof}
+
+This is almost one half of the main result;
+one still needs to prove local semisimplicity
+and existence of adjoints.
+This will follow from more results from \cite{DSPSa},\cite{DSPSb},
+which we show later.
+
+
 
 
 \subsection{Simple objects}
@@ -413,11 +484,8 @@ has finitely many equivalence classes of simple objects.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{New stuff}
 
-Beyond this point, we cover new stuff.
-Thus, the writing will be more speech like,
-and written to reflect more or less the order of presentation
-during the talk (at least how I plan to present it).
-
+Beyond this point, we cover new stuff
+(i.e. not covered in previous talks).
 
 \subsection{Schur's lemma}
 
@@ -429,7 +497,7 @@ However, there is a stark difference in that
 there can be nonzero morphisms between
 non-equivalent simple objects;
 indeed, recall our running example of a 2-category
-$\Mod(\Vect_{\ZZ/2})$:
+$\ModA{\Vect_{\ZZ/2}}$:
 
 \[
 \begin{tikzpicture}
@@ -510,8 +578,46 @@ is a finite semisimple 2-category.
 \begin{proof}
 Let $C$ be a multifusion category.
 
-Hmm see Prop 1.3.13, should I put that in the discussion
-of idempotent completion?
+From \prpref{p:modC-deloop},
+we already see that $\ModA{C} \simeq (\cB C)^\nabla$
+is idempotent complete
+and locally idempotent complete.
+$\ModA{C}$ is clearly already additive.
+
+
+Locally semisimple-ness follows directly from
+\cite{DSPSb}*{Corollary 2.5.6},
+and existence of adjoints for 1-morphisms
+follows from \cite{DSPSa}*{Corollary 2.13}.
+
+For self understanding, more details of proofs of these two
+properties:
+
+Locally semisimple-ness:
+One of the main results of \cite{DSPSb} is
+Theorem 2.5.5, which states that
+the relatie Deligne tensor product
+of separable bimodule categories is also separable.
+Separable-ness is the stand in for semisimple-ness
+for arbitrary fields,
+and again by \cite{DSPSb}*{Corollary 2.6.9},
+is equivalent to semisimple-ness in our case of
+$\text{char }\kk = 0$.
+We have, for separable algebras $a,b$,
+$\bimod{b}{a}(C) \simeq \amod{b}(C) \boxtimes_{C} \moda{a}(C)$
+is separable, hence semisimple.
+
+Existence of adjoints for 1-morphisms:
+functors between semisimple 1-categories
+are automatically exact,
+hence admit both right and left adjoints.
+Then the results follows from \cite{DSPSa}*{Corollary 2.13},
+which states that the adjoints can be promoted
+to respect the bimodule structures.
+(As stated in \cite{DSPSa}, it only says there
+exists adjoints that respect bimodule structures,
+but the proof actually implies more,
+that the given adjoint can be promoted.)
 \end{proof}
 
 
@@ -522,7 +628,196 @@ of a multifusion category.
 \end{theorem}
 
 \begin{proof}
+For simplicity, let us assume that $\cC$ has only one component.
+Indeed, if there are multiple components,
+then from our previous discussion,
+we have a direct sum decomposition
+$\cC =\simeq \bigboxplus_{j \in J} \cC_j$,
+and if $\cC_j \simeq \ModA{C_j}$ for multifusion $C_j$,
+then $\cC \simeq \ModA{\bigoplus_{j \in J} C_j}$.
+
+Take a simple object $X$,
+and let $C = \cC(X,X)$.
+Since $\id_X$ is simple, $C$ is in fact fusion.
+
+Consider the inclusion 2-functor
+\begin{align*}
+F : \cB C &\to \cC
+\\
+* &\mapsto X
+\end{align*}
+which is fully faithful by construction.
+Then
+\[
+F^\nabla: \cB C \to \cC
+\]
+is fully faithful.
+It remains to show that $F^\nabla$ is essentially surjective,
+in particular, that any simple is in the essential image
+of $F^\nabla$.
+
+Let $Y$ be a simple object in $\cC$.
+Since $\cC$ only has one component,
+there exists a nonzero 1-morphism
+$f: X \to Y$;
+it has a (nonzero) right adjoint $g: Y \to X$,
+with counit $\veps : fg \Rightarrow \id_Y$.
+Since $Y$ is simple, $\id_Y$ is simple,
+so $\veps$ admits a section,
+hence $f \dashv g$ is a separable adjunction.
+Thus, by uniqueness of separable splittings,
+$Y$ is in the essential image of $F^\nabla$.
 \end{proof}
+
+
+In the proof above,
+the only property of $X$ that we used is the fact that
+there exists a nonzero 1-morphism from $X$ to every simple
+in $\cC$,
+and thus any $X$ will do.
+Taking, say, $X = \boxplus X_i$,
+where the sum is over equivalence classes of simples,
+would result in a multifusion $C = \cC(X,X)$.
+
+We can also avoid the first step of taking only one component
+of $\cC$,
+as long as we are careful to take $X$
+that has at least one object from each component
+in its direct sum decomposition.
+
+
+\begin{figure}
+\centering
+\begin{tikzpicture}
+\draw (0.9,0.5) circle (2.5cm);
+\node (x) at (0,0) {$X$};
+\node (y) at (2,0) {$Y$};
+%\node (z) at (1,1.5) {$Z$};
+\node (z) at (1,1.5) {$\amod{a}(C)$};
+%\node at (0.8,-1.3) {$X \boxplus Y$};
+%\node[small_morphism,label={-45:$X$}] (x) at (0,0) {};
+%\node[dotnode,label={-45:$Y$}] (y) at (2,0) {};
+%\node[dotnode,label={30:$Z$}] (z) at (1,1.5) {};
+%%
+\draw[->] (x) .. controls +(-120:1cm) and +(180:1cm) .. (x);
+\draw[->] (y) .. controls +(0:1cm) and +(-60:1cm) .. (y);
+\draw[->] (z) .. controls +(120:1cm) and +(60:1cm) .. (z);
+\node at (-0.2,-0.8) {$C \ni a$};
+%
+\draw[->] (x) .. controls +(20:0.8cm) and +(160:0.8cm) .. (y);
+%\draw[->] (y) .. controls +(140:0.8cm) and +(-80:0.8cm) .. (z);
+\draw[->] (z) .. controls +(-100:0.8cm) and +(40:0.8cm) .. (x);
+%
+\draw[->] (y) .. controls +(-160:0.8cm) and +(-20:0.8cm) .. (x);
+%\draw[->] (z) .. controls +(-40:0.8cm) and +(100:0.8cm) .. (y);
+\draw[->] (z) -- (y)
+	node[pos=0.5,right] {$\simeq$};
+\draw[->] (x) .. controls +(80:0.8cm) and +(-140:0.8cm) .. (z);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{scope}[shift={(5,0.5)}]
+\draw (1,0) circle (2cm);
+\node (a) at (0,0) {$A$};
+\node (b) at (2,0) {$B$};
+%\node at (1.5,1.5) {$A \boxplus B$};
+%%
+\draw[->] (a) .. controls +(-150:1cm) and +(150:1cm) .. (a);
+\draw[->] (b) .. controls +(30:1cm) and +(-30:1cm) .. (b);
+%
+\draw[->] (a) .. controls +(20:0.8cm) and +(160:0.8cm) .. (b);
+\draw[->] (b) .. controls +(-160:0.8cm) and +(-20:0.8cm) .. (a);
+\end{scope}
+\end{tikzpicture}
+\caption{Abstract picture of finite semisimple 2-categories,
+showing the simples separated into components;
+within each component,
+every simple can be recovered from the endomorphism category
+of other simples.
+}
+\end{figure}
+
+
+\begin{remark}
+Every object (assuming $\cC$ has one component)
+contains the information need to reconstruct every other object;
+given any nonzero $X$,
+every object is constructed from the endomorphisms of $X$.
+
+This is reminiscent of the metaphor of
+Indra's Net from Mahayana Buddhism,
+where, in the realm of the god Indra,
+there is a vast net that stretches infinitely in all directions;
+at each crossing there is a jewel that perfectly reflects,
+and in the reflection is every other jewel,
+and within them is again reflected every other jewel and so on.
+The metaphor is meant to capture the concept of the
+interconnectedness of all phenomena.
+
+A concrete ``picture'' of Indra's Net is the universal cover
+of $\mathbf{T}^3 \# \mathbf{T}^3$:
+at every lattice point in $\ZZ^3 \subset \RR^3$,
+cut out a ball;
+at each ball, invert the exterior into itself;
+repeat this process infinitely.
+\end{remark}
+
+
+\begin{example}
+Consider $C = \Vect_{G}$ for a finite group $G$.
+We will focus on two of its algebras,
+the trivial algebra $\kk_e$
+and the group algebra $\kk[G] = \bigoplus \kk_g$,
+which we denote by $e$ and $f$, respectively,
+as objects of $C$.
+
+Clearly $\amod{e}(C)$ is simply $C$ itself
+as a right module category over itself.
+For $r$, it is clear that a module over $r$ in $C$
+is determined by any of its components
+(as a $G$-graded vector space),
+thus $\amod{f}(C) \simeq \Vect$,
+with right $C$-module action given by forgeting
+the grading on $C$.
+
+Next we study the functor categories.
+Clearly the $C$-endofunctors of $C_C$ is $C$ itself.
+For $\amod{f}(C)$,
+an endofunctor is given by an $f$-$f$-bimodule in $C$.
+Let $m \in \bimod{f}{f}(C)$;
+write $m = \bigoplus m_g$.
+The right $f$-action on $m$ makes all the $m_g$ isomorphic
+in a coherent manner.
+For $h \in G$, conjugation (left action by $h$ and right action
+by $h^\inv$) gives an action of $G$ on $m_e$;
+this action completely determines the left action
+on other components $m_g$ as well.
+Thus, $\ModA{C}(f,f) \simeq \Rep(G)$,
+where we simply write $f$ for $\amod{f}(C)$ for simplicity.
+
+For functor categories between them, we see that
+$\ModA{C}(e,f) \simeq \bimod{f}{e}(C) \simeq \amod{f}(C)
+\simeq \Vect$
+and
+$\ModA{C}(f,e) \simeq \bimod{e}{f}(C) \simeq \moda{f}(C)
+\simeq \Vect$.
+
+Thus we recover the running example of $\ModA{\Vect_{\ZZ/2}}$;
+we note that in the simple case of $G = \ZZ/2$,
+$\Vect_{\ZZ/2} \simeq \Rep(\ZZ/2)$,
+but here we see a difference between the endomorphism
+categories of the two objects we considered.
+
+
+Of course, there are many other algebras.
+For a subgroup $H \subseteq G$,
+we can consider the group algebra $\kk[H]$,
+which we denote by $h$ as an object in $C$.
+The category of modules $\amod{h}(C)$
+is simply the direct sum $\bigoplus_{H \backslash G} \Vect$,
+as the components $m_g$ of an $h$-module
+must be the same within each $H$-orbit.
+The endomorphism category seems a lot more complicated.
+\end{example}
+
 
 
 \begin{thebibliography}{1}
@@ -532,6 +827,15 @@ of a multifusion category.
 
 \bibitem{Ostrik} Ostrik, Victor. ``Module categories, weak Hopf algebras and
 modular invariants.'' Transformation groups 8, no. 2 (2003): 177-206.
+
+\bibitem{DSPSa} C. L. Douglas, C. Schommer-Pries, and N. Snyder. The balanced tensor product of module
+categories. Kyoto J. Math., 2017. arXiv:1406.4204.
+
+\bibitem{DSPSb} C. L. Douglas, C. Schommer-Pries, and N. Snyder. Dualizable tensor categories. Mem. Amer.
+Math. Soc., 2017. arXiv:1312.7188.
+
+\bibitem{EGNO} P. Etingof, S. Gelaki, D. Nikshych, and V. Ostrik. Tensor Categories. American Mathematical
+Society, 2015. Available online at http://www.math.mit.edu/~etingof/egnobookfinal.pdf.
 
 \end{thebibliography}
 
