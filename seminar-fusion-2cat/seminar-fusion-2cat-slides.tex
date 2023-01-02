@@ -20,6 +20,8 @@
 \DeclareMathOperator{\Hom}{Hom} % \hom is already defnd
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\Obj}{Obj}
+\DeclareMathOperator{\Rep}{Rep}
+\newcommand{\inv}{{-1}} % annoying to type {-1} when taking inverse
 
 \newtheorem{proposition}[theorem]{Proposition}
 
@@ -766,6 +768,165 @@ hence $f \dashv g$ is a separable adjunction.
 Thus, by uniqueness of separable splittings,
 $Y$ is in the essential image of $F^\nabla$.
 \end{proof}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Main results}
+
+
+The only property of $X$ that we used is the fact that
+there exists a nonzero 1-morphism from $X$ to every simple
+in $\cC$,
+and thus any nonzero $X$ will do.
+\pause
+Taking, say, $X = \boxplus X_i$,
+where the sum is over equivalence classes of simples,
+would result in a multifusion $C = \cC(X,X)$.
+
+\pause
+We can also avoid the first step of taking only one component
+of $\cC$,
+take $X$ with at least one object from each $\cC_j$
+in its direct sum decomposition.
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Main results}
+
+Every object contains within them
+the data to reconstruct the whole 2-category.
+
+\begin{tikzpicture}
+\draw (0.9,0.5) circle (2.5cm);
+\node (x) at (0,0) {$X$};
+\node (y) at (2,0) {$Y$};
+\node (z) at (1,1.5) {$\amod{a}(C)$};
+%%
+\draw[->] (x) .. controls +(-120:1cm) and +(180:1cm) .. (x);
+\draw[->] (y) .. controls +(0:1cm) and +(-60:1cm) .. (y);
+\draw[->] (z) .. controls +(120:1cm) and +(60:1cm) .. (z);
+\node at (-0.2,-0.8) {$C \ni a$};
+%
+\draw[->] (x) .. controls +(20:0.8cm) and +(160:0.8cm) .. (y);
+\draw[->] (z) .. controls +(-100:0.8cm) and +(40:0.8cm) .. (x);
+%
+\draw[->] (y) .. controls +(-160:0.8cm) and +(-20:0.8cm) .. (x);
+\draw[->] (z) -- (y)
+	node[pos=0.5,right] {$\simeq$};
+\draw[->] (x) .. controls +(80:0.8cm) and +(-140:0.8cm) .. (z);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{scope}[shift={(5,0.5)}]
+\draw (1,0) circle (2cm);
+\node (a) at (0,0) {$A$};
+\node (b) at (2,0) {$B$};
+%%
+\draw[->] (a) .. controls +(-150:1cm) and +(150:1cm) .. (a);
+\draw[->] (b) .. controls +(30:1cm) and +(-30:1cm) .. (b);
+%
+\draw[->] (a) .. controls +(20:0.8cm) and +(160:0.8cm) .. (b);
+\draw[->] (b) .. controls +(-160:0.8cm) and +(-20:0.8cm) .. (a);
+\end{scope}
+\end{tikzpicture}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Example}
+
+$C = \Vect_{G}$ for a finite group $G$.
+
+\pause
+$e$: trivial algebra $\kk_e$
+\;\;\;
+$\amod{e}(C) \simeq C_C$
+\\
+\pause
+$f$: the group algebra $\kk[G] = \bigoplus \kk_g$
+\;\;\;
+$\amod{f}(C) \simeq \Vect$\\
+(right action on $\Vect$ = forget $G$-grading)
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Example}
+
+Next we study the functor categories.
+Clearly the $C$-endofunctors of $C_C$ is $C$ itself.
+\\
+\pause
+For $\amod{f}(C)$,
+an endofunctor is given by some $m \in \bimod{f}{f}(C)$;
+write $m = \bigoplus m_g$.
+\pause
+The right $f$-action on $m$ makes all the $m_g$ isomorphic
+in a coherent manner.
+\pause
+For $h \in G$, conjugation (left action by $h$ and right action
+by $h^\inv$) gives an action of $G$ on $m_e$;
+determines $m$ completely.
+
+\pause
+Thus, $\ModA{C}(f,f) \simeq \bimod{f}{f}(C) \simeq \Rep(G)$.
+
+\pause
+(One can also check that $C$-module structure on
+$m: \Vect \to \Vect$
+amounts to $G$-action on $m(\kk)$.)
+
+Thus we have:
+\[
+\ModA{\Vect_G} \simeq \ModA{\Rep(G)}
+\]
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Example}
+
+For functor categories between them, we see that
+\[
+\ModA{C}(e,f) \simeq \bimod{f}{e}(C) \simeq \amod{f}(C)
+\simeq \Vect
+\]
+\[
+\ModA{C}(f,e) \simeq \bimod{e}{f}(C) \simeq \moda{f}(C)
+\simeq \Vect
+\]
+
+\pause
+Note for $G = \ZZ/2$,
+$\Vect_{\ZZ/2} \simeq \Rep(\ZZ/2)$,
+don't see difference in endomorphism categories.
+
+\pause
+Of course, there are many other objects in $\ModA{C}$,
+e.g. for a subgroup $H \subseteq G$,
+have group algebra $\kk[H]$.
+%which we denote by $h$ as an object in $C$.
+%The category of modules $\amod{h}(C)$
+%is simply the direct sum $\bigoplus_{H \backslash G} \Vect$,
+%as the components $m_g$ of an $h$-module
+%must be the same within each $H$-orbit.
+%The endomorphism category seems a lot more complicated.
+%\end{example}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+
+\begin{center}
+\Huge End!
+\end{center}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
