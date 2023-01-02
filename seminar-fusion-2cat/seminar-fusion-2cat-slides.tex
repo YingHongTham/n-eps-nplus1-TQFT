@@ -158,6 +158,8 @@ between 2-categories will always be locally $\kk$-linear.
 \begin{frame}
 \frametitle{Additive 2-category, direct sum of objects}
 
+\pause
+
 \begin{definition}[direct sum of objects in 2-category]
 A \emph{direct sum} of two objects $A_1,A_2$ in $\cC$
 is an object $A_1 \boxplus A_2$ together with
@@ -230,6 +232,8 @@ $
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Idempotent completeness, separable monads, splittings}
+
+\pause
 
 \begin{definition}
 A \emph{separable algebra} $(a,\mu,\eta)$ in a tensor category $C$
@@ -336,6 +340,27 @@ that commutes with $I$'s.
 
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Idempotent completeness, 2-category}
+
+Key example:
+
+$\cB C$: one object $*$ with endomorphism category
+$\cB C(*,*)$.
+
+\[
+(\cB C)^\nabla =
+\begin{cases}
+	\Obj: \text{ separable algebras in } C
+	\\
+	\text{Mor}: (\cB C)^\nabla (a,b) = \bimod{b}{a}(C)
+\end{cases}
+\]
+
+
+\end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Idempotent completeness, 2-category}
@@ -370,28 +395,10 @@ is also fully faithful.
 \frametitle{Idempotent completeness, 2-category}
 
 
-\[
-(\cB C)^\nabla =
-\begin{cases}
-	\Obj: \text{ separable algebras in } C
-	\\
-	\text{Mor}: (\cB C)^\nabla (a,b) = \bimod{b}{a}(C)
-\end{cases}
-\]
-
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-\frametitle{Idempotent completeness, 2-category}
-
-
-\begin{proposition}[\cite{DRfusion}*{Prop 1.3.13}]
+\begin{proposition}[\cite{DRfusion}{Prop 1.3.13}]
 \label{p:modC-deloop}
 For a multifusion category $C$,
 the following 2-functor is an equivalence:
-
 \begin{align*}
 \amod{(-)}(C): (\cB C)^\nabla
 	& \to
@@ -408,21 +415,32 @@ a & \mapsto
 \end{align*}
 \end{proposition}
 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Idempotent completeness, 2-category}
 
 \begin{proof}
 Essential surjectivity follows from:\\
--\cite{Ostrik}*{Theorem 1}: for a finite semisimple right module
+-\cite{Ostrik}{Theorem 1}: for a finite semisimple right module
 category over multifusion $C$, there exists a semisimple algebra
 $a$ in $C$ such that $M \simeq \amod{a}(C)$
-as right $C$-module categories; and\\
--\cite{DSPSb}*{Corollary 2.6.9}: When $C$ is multifusion over
+as right $C$-module categories; and
+
+\pause
+-\cite{DSPSb}{Corollary 2.6.9}: When $C$ is multifusion over
 a field of characterisitc 0,
 a right $C$-module category $M$ is separable
 ($\simeq \amod{a}(C)$ for a separable algebra $a$)
 if and only if it is semisimple.
 
-Fully faithfulness follows from \cite{EGNO}*{Prop 7.11.1}.
+\pause
+
+Fully faithfulness follows from \cite{EGNO}{Prop 7.11.1}.
 \end{proof}
+
+\pause
 
 This is almost one half of the main result;
 one still needs to prove local semisimplicity
@@ -434,6 +452,8 @@ which we show later.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Simple objects}
+
+\pause
 
 \begin{proposition}[equivalent notions of simple-ness]
 Let $\cC$ be a locally finite semisimple and
@@ -459,12 +479,47 @@ Then the following notions of $X$ being simple are equivalent:
 
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Simple objects}
+
+\begin{proof}[Proof sketch]
+(1) $\Rightarrow$ (2): Contravariant statement
+follows from fully faithfulness of
+$i_k: A_k \to A_1 \boxplus A_2$.
+
+\pause
+
+(2) $\Rightarrow$ (3): Contravariant statement is
+``identity splitting implies object splitting'',
+uses idempotent completeness of $\cC$
+to split out objects corresponding to summands of $\id_X$
+(which are separable monads)
+(see \cite{DRfusion}{Prop 1.3.16}).
+
+\pause
+
+(3) $\Rightarrow$ (1): for non-zero fully faithful $r: Y \to X$,
+with $\id_X$ simple,
+consider the left adjoint $l: X \to Y$,
+use fully faithfulness to get a preimage
+$\delta : \id_Y \Rightarrow lr$ of
+$\eta \circ r: r \Rightarrow rlr$.
+Use simplicity of $\id_X$ to get section of the unit $\eta$.
+Show $\delta$ is a section of the counit. Etc.
+(See \cite{DRfusion}{Prop 1.2.14})
+\end{proof}
+
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Semisimple 2-category}
 
 \begin{definition}[(finite) semisimple 2-category]
+
+\pause
+
 A 2-category $\cC$ is \emph{semisimple}
 if it is:
 \begin{itemize}
@@ -526,9 +581,7 @@ non-equivalent simple objects - weird!
 
 \pause
 
-Such nonzero morphisms turn out to be
-an important aspect of semisimple 2-categories since
-they capture ``2-Morita equivalences'' between fusion categories.
+``2-Morita equivalences'' between fusion categories
 
 
 \end{frame}
@@ -538,7 +591,7 @@ they capture ``2-Morita equivalences'' between fusion categories.
 \frametitle{Schur's lemma}
 
 \begin{proposition}
-[Schur's Lemma, \cite{DRfusion}*{Prop 1.2.19}]
+[Schur's Lemma, \cite{DRfusion}{Prop 1.2.19}]
 \label{p:schur-lemma}
 In a semisimple 2-category $\cC$,
 if $f: A \to B, g: B \to C$ are nonzero 1-morphisms
@@ -554,7 +607,7 @@ then $g \circ f$ is also nonzero.
 \node (a) at (0,0) {$A$};
 \node (b) at (2,0) {$B$};
 \node (c) at (4,0) {$C$};
-\draw[->] (b) -- (c);
+\draw[->] (b) -- (c) node[pos=0.5,above] {$g$};
 \draw[->] (a) .. controls +(45:1cm) and +(135:1cm) .. (b)
 	node[pos=0.5,above] {$f$};
 \draw[->] (b) .. controls +(-135:1cm) and +(-45:1cm) .. (a)
@@ -623,7 +676,7 @@ $\cC \simeq \bigboxplus_{j \in J} \cC_j$.
 \begin{frame}
 \frametitle{Main results}
 
-\begin{theorem}[\cite{DRfusion}*{Theorem 1.4.8}]
+\begin{theorem}[\cite{DRfusion}{Theorem 1.4.8}]
 The 2-category of finite semisimple module categories
 of a multifusion category $C$
 is a finite semisimple 2-category.
@@ -638,9 +691,9 @@ $\ModA{C}$ is clearly already additive.
 
 
 Locally semisimple-ness follows directly from
-\cite{DSPSb}*{Corollary 2.5.6},
+\cite{DSPSb}{Corollary 2.5.6},
 and existence of adjoints for 1-morphisms
-follows from \cite{DSPSa}*{Corollary 2.13}.
+follows from \cite{DSPSa}{Corollary 2.13}.
 
 \end{proof}
 
@@ -649,7 +702,70 @@ follows from \cite{DSPSa}*{Corollary 2.13}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
+\frametitle{Main results}
 
+\begin{theorem}[\cite{DRfusion}{Theorem 1.4.9}]
+Every finite semisimple 2-category is equivalent to
+the 2-category of finite semisimple module categories
+of a multifusion category.
+\end{theorem}
+
+\begin{proof}\renewcommand{\qedsymbol}{}
+Assume that $\cC$ has only one component.
+
+\pause
+($\cC =\simeq \bigboxplus_{j \in J} \cC_j$
+and $\cC_j \simeq \ModA{C_j}$ for multifusion $C_j$,
+then $\cC \simeq \ModA{\bigoplus_{j \in J} C_j}$.)
+
+\pause
+Fix simple object $X$, let $C = \cC(X,X)$.
+\pause
+%Since $\id_X$ is simple, $C$ is in fact fusion.
+
+We show $\cC \simeq (\cB C)^\nabla$.
+
+\end{proof}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Main results}
+
+\begin{proof}[Proof (Cont.)]
+
+Consider the inclusion 2-functor
+\begin{align*}
+F : \cB C &\to \cC
+\\
+* &\mapsto X
+\end{align*}
+which is fully faithful by construction.
+\pause
+Then
+\[
+F^\nabla: \cB C \to \cC
+\]
+is fully faithful.
+\pause
+Remains to show other simples are in essential image.
+
+\pause
+Simple object $Y$,
+\pause
+$\exists$ nonzero 1-morphism $f: X \to Y$;
+\pause
+has (nonzero) right adjoint $g: Y \to X$,
+with counit $\veps : fg \Rightarrow \id_Y$.
+\pause
+$\id_Y$ is simple, so $\veps$ admits a section,
+\pause
+hence $f \dashv g$ is a separable adjunction.
+\pause
+Thus, by uniqueness of separable splittings,
+$Y$ is in the essential image of $F^\nabla$.
+\end{proof}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

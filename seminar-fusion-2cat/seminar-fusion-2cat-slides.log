@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.25)  2 JAN 2023 13:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.25)  2 JAN 2023 16:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1121,13 +1121,13 @@ LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <6> not available
 
 ] [12
 
+] [13
+
 ]
 
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 228.
+LaTeX Font Warning: Command \Huge invalid in math mode on input line 230.
 
-[13
-
-] [14
+[14
 
 ] [15
 
@@ -1155,13 +1155,9 @@ LaTeX Font Warning: Command \Huge invalid in math mode on input line 228.
 
 ] [27
 
-]
-[28
+] [28
 
 ]
-Overfull \vbox (91.71121pt too high) detected at line 433
- []
-
 [29
 
 ] [30
@@ -1176,14 +1172,7 @@ Overfull \vbox (91.71121pt too high) detected at line 433
 
 ] [35
 
-]
-LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <9> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 534.
-
-LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <5> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 534.
-
- [36
+] [36
 
 ] [37
 
@@ -1204,35 +1193,22 @@ LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <5> not available
 
 ] [45
 
-]
-
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 619.
-
-[46
+] [46
 
 ]
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <9> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 587.
 
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 619.
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <5> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 587.
 
-[47
+ [47
 
-]
+] [48
 
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 619.
+] [49
 
-[48
-
-]
-
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 619.
-
-[49
-
-]
-
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 619.
-
-[50
+] [50
 
 ] [51
 
@@ -1241,6 +1217,88 @@ LaTeX Font Warning: Command \Huge invalid in math mode on input line 619.
 ] [53
 
 ] [54
+
+] [55
+
+] [56
+
+]
+
+LaTeX Font Warning: Command \Huge invalid in math mode on input line 672.
+
+[57
+
+]
+
+LaTeX Font Warning: Command \Huge invalid in math mode on input line 672.
+
+[58
+
+]
+
+LaTeX Font Warning: Command \Huge invalid in math mode on input line 672.
+
+[59
+
+]
+
+LaTeX Font Warning: Command \Huge invalid in math mode on input line 672.
+
+[60
+
+]
+
+LaTeX Font Warning: Command \Huge invalid in math mode on input line 672.
+
+[61
+
+] [62
+
+] [63
+
+]
+
+LaTeX Font Warning: Command \Huge invalid in math mode on input line 730.
+
+[64
+
+]
+
+LaTeX Font Warning: Command \Huge invalid in math mode on input line 730.
+
+[65
+
+]
+
+LaTeX Font Warning: Command \Huge invalid in math mode on input line 730.
+
+[66
+
+]
+
+LaTeX Font Warning: Command \Huge invalid in math mode on input line 730.
+
+[67
+
+] [68
+
+] [69
+
+] [70
+
+] [71
+
+] [72
+
+] [73
+
+] [74
+
+] [75
+
+] [76
+
+] [77
 
  </usr/local/texlive/2021/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
 \tf@nav=\write6
@@ -1252,48 +1310,52 @@ LaTeX Font Warning: Command \Huge invalid in math mode on input line 619.
 \tf@snm=\write8
 \openout8 = `seminar-fusion-2cat-slides.snm'.
 
- (./seminar-fusion-2cat-slides.aux)
+
+(./seminar-fusion-2cat-slides.aux)
 Package rerunfilecheck Info: File `seminar-fusion-2cat-slides.out' has not chan
 ged.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27696 strings out of 478599
- 528228 string characters out of 5854100
- 792916 words of memory out of 5000000
- 44893 multiletter control sequences out of 15000+600000
+ 27749 strings out of 478599
+ 528725 string characters out of 5854100
+ 794367 words of memory out of 5000000
+ 44899 multiletter control sequences out of 15000+600000
  426554 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,17n,124p,486b,946s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{/
-usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}{/usr/
-local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{/usr/loca
-l/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolS.enc}{/usr/local/te
-xlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/usr/local/texliv
-e/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolA.enc}</usr/local/texlive/20
-21/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol10.pfb></usr/local/texlive/20
-21/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol6.pfb></usr/local/texlive/202
-1/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol8.pfb></usr/local/texlive/2021
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2021/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2021/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2021/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2021/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2021/texmf-dist/font
-s/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2021/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2021/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/t
-ype1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2021/texmf-dist/fon
-ts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on seminar-fusion-2cat-slides.pdf (54 pages, 338953 bytes).
+pdfTeX warning (dest): name{Navigation78} has been referenced but does not ex
+ist, replaced by a fixed one
+
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{/us
+r/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}{/usr/lo
+cal/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{/usr/local/
+texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolS.enc}{/usr/local/texl
+ive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/usr/local/texlive/
+2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolA.enc}</usr/local/texlive/2021
+/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol10.pfb></usr/local/texlive/2021
+/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol6.pfb></usr/local/texlive/2021/
+texmf-dist/fonts/type1/public/mnsymbol/MnSymbol8.pfb></usr/local/texlive/2021/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2021/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2021/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2021/texmf-dist/font
+s/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2021/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2021/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2021/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/typ
+e1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2021/texmf-dist/fonts
+/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on seminar-fusion-2cat-slides.pdf (77 pages, 392453 bytes).
 PDF statistics:
- 1582 PDF objects out of 1728 (max. 8388607)
- 1455 compressed objects within 15 object streams
- 117 named destinations out of 1000 (max. 500000)
+ 2203 PDF objects out of 2487 (max. 8388607)
+ 2047 compressed objects within 21 object streams
+ 164 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
