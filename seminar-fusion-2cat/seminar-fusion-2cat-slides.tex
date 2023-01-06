@@ -50,7 +50,7 @@
 \frametitle{Goal}
 $\{\text{multifusion category}\}
 \xrightarrow[\simeq]{\Mod_{s.s.}^{fin}(-)}
-\{\text{semisimple 2-cat}\}$
+\{\text{finite semisimple 2-cat}\}$
 \\
 
 \begin{itemize}
@@ -113,20 +113,21 @@ in a 2-category $\cC$,
 for $\alpha \in \cC(X,Y)(f,f'),
 \beta \in \cC(Y,Z)(g,g'),
 \gamma \in \cC(X,Y)(f',f'')$,
-we write
+we write:
+
+for composition of 1-morphisms,
 \[
 g \circ f, g \circ f', \ldots : X \to Z
 \]
-for composition of 1-morphisms,
+for horizontal composition of 2-morphisms,
 \[
 \beta \circ \alpha: (g \circ f) \Rightarrow (g' \circ f'):
 	X \to Z
 \]
-for horizontal composition of 2-morphisms,
+for vertical composition of 2-morphisms,
 \[
 \gamma \cdot \alpha: f \Rightarrow f'' : X \to Y
 \]
-for vertical composition of 2-morphisms.
 
 \end{frame}
 
@@ -176,6 +177,24 @@ such that
 \end{itemize}
 \end{definition}
 
+\pause
+
+\begin{definition}[zero object]
+A \emph{zero object} in $\cC$
+is an object $0$ with trivial endomorphism category
+$\cC(0,0)$ (has one object $\id_0$
+with only identity morphism $\id_{\id_0}$.
+\end{definition}
+
+\pause
+
+\begin{definition}
+2-category $\cC$ is \emph{additive}
+if finite direct sums of objects exist,
+has a zero object,
+(and is locally additive).
+\end{definition}
+
 
 \end{frame}
 
@@ -216,16 +235,24 @@ Given 2-categories $\cC_j$, $j \in J$,
 we may consider the direct sum 2-category
 $\cC := \bigboxplus_{j \in J} \cC_j$:
 \begin{itemize}
-\item $\Obj \cC = \bigsqcup_{j \in J} \Obj \cC_j$
+\item $\Obj \cC = \prod_{j \in J} \Obj \cC_j$
 
-\item for $X \in \cC_i, Y \in \cC_j$,
-	$\cC(X,Y) =
+\pause
+
+\item for $X_i \in \cC_i, Y_j \in \cC_j$,
+	$\cC(X_i,Y_j) =
 \begin{cases}
-	\cC_j(X,Y) \;\; \text{if } i = j
+	\cC_j(X_i,Y_j) \;\; \text{if } i = j
 	\\
 	0 \;\; \text{if } i \neq j
 \end{cases}
 $
+
+\pause
+
+\item extend by direct sums:
+	$\cC(\boxplus X_i, \boxplus Y_j)
+	= \bigoplus \cC_i(X_i, Y_i)$
 \end{itemize}
 \end{definition}
 
@@ -314,7 +341,8 @@ up to equivalence.
 
 \begin{definition}
 A 2-category $\cC$ is \emph{idempotent complete}
-if every separable monad admits a splitting.
+if every separable monad admits a splitting
+and is locally idempotent complete.
 \end{definition}
 
 \pause
@@ -507,7 +535,7 @@ consider the left adjoint $l: X \to Y$,
 use fully faithfulness to get a preimage
 $\delta : \id_Y \Rightarrow lr$ of
 $\eta \circ r: r \Rightarrow rlr$.
-Use simplicity of $\id_X$ to get section of the unit $\eta$.
+%Use simplicity of $\id_X$ to get section of the unit $\eta$.
 Show $\delta$ is a section of the counit. Etc.
 (See \cite{DRfusion}{Prop 1.2.14})
 \end{proof}
@@ -554,7 +582,7 @@ has finitely many equivalence classes of simple objects.
 \frametitle{Schur's lemma}
 
 The equivalence between notions of a simple object
-in a seimsimple 2-category,
+in a semisimple 2-category,
 is similar to the semisimple 1-category case.
 
 \pause
@@ -612,29 +640,34 @@ then $g \circ f$ is also nonzero.
 \draw[->] (b) -- (c) node[pos=0.5,above] {$g$};
 \draw[->] (a) .. controls +(45:1cm) and +(135:1cm) .. (b)
 	node[pos=0.5,above] {$f$};
+\pause %%%%%%%%%%%%%%%%%%%%%%%
 \draw[->] (b) .. controls +(-135:1cm) and +(-45:1cm) .. (a)
 	node[pos=0.5,below] {$f^*$};
 \draw[->] (b) .. controls +(-150:1cm) and +(150:1cm) .. (b);
-\draw[->] (0.35,0.025) -- (1.2,0.025)
+\draw[-{Implies},double] (0.35,0.05) -- (1.2,0.05)
 	node[pos=0.5,above] {\scriptsize $\veps$};
-\draw[->] (1.15,-0.025) -- (0.3,-0.025)
+\pause %%%%%%%%%%%%%%%%%%%%%%%
+\draw[-{Implies},double] (1.15,-0.05) -- (0.3,-0.05)
 	node[pos=0.5,below] {\scriptsize $\exists \delta$};
-%\node at (1.6,0) {\scriptsize $\id_B$};
+\pause %%%%%%%%%%%%%%%%%%%%%%%
+\node at (6,-1) {
+	$\id_g = (\id_g \circ \veps) \cdot (\id_g \circ \delta):
+g \Rightarrow gff^* \Rightarrow g$};
 \end{tikzpicture}
 
 \pause
 Let $f^*: B \to A$ be a right adjoint to $f$.
-\pause
+%\pause
 Since $\id_B$ is simple, $\exists$ section
 $\delta: \id_B \Rightarrow ff^*$
 to counit $\veps: ff^* \Rightarrow \id_B$.
-\pause
+%\pause
 Postcomposing with $g$,
 we have $\id_g = (\id_g \circ \veps) \cdot (\id_g \circ \delta):
 g \Rightarrow gff^* \Rightarrow g$.
-\pause
+%\pause
 Thus if $gf = 0$, then $\id_g = 0$,
-contradicting nonzero-ness of $B$.
+contradicting nonzero-ness of $g$.
 \end{proof}
 
 \end{frame}
@@ -716,7 +749,7 @@ of a multifusion category.
 Assume that $\cC$ has only one component.
 
 \pause
-($\cC =\simeq \bigboxplus_{j \in J} \cC_j$
+($\cC \simeq \bigboxplus_{j \in J} \cC_j$
 and $\cC_j \simeq \ModA{C_j}$ for multifusion $C_j$,
 then $\cC \simeq \ModA{\bigoplus_{j \in J} C_j}$.)
 
@@ -735,7 +768,7 @@ We show $\cC \simeq (\cB C)^\nabla$.
 \begin{frame}
 \frametitle{Main results}
 
-\begin{proof}[Proof (Cont.)]
+\begin{proof}[Proof (Cont.)]\renewcommand{\qedsymbol}{}
 
 Consider the inclusion 2-functor
 \begin{align*}
@@ -747,26 +780,65 @@ which is fully faithful by construction.
 \pause
 Then
 \[
-F^\nabla: \cB C \to \cC
+F^\nabla: (\cB C)^\nabla \to \cC
 \]
 is fully faithful.
 \pause
 Remains to show other simples are in essential image.
 
+\end{proof}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Main results}
+
+\begin{proof}[Proof (Cont.)]\renewcommand{\qedsymbol}{}
+
+\begin{tikzpicture}
+\node (st) at (0,0) {$*$};
+\node (x) at (4,0) {$X$};
+\node (y) at (5,2) {$Y$};
+\draw[|->] (st) -- (x) node[pos=0.5,above] {$F^\nabla$};
+\pause %%%%%%%%%%%%%%%%%%%%%%%%%
+\draw[->] (x) to[out=80,in=-130] (y);
+\node at (4.1,1) {$f$};
+\pause %%%%%%%%%%%%%%%%%%%%%%%%%
+\draw[->] (y) to[out=-100,in=50] (x);
+\node at (4.9,1) {$g$};
+\node at (4.5,1) {$\dashv$};
+\pause %%%%%%%%%%%%%%%%%%%%%%%%%
+\draw[->] (st) .. controls +(80:0.8cm) and +(40:0.8cm) .. (st);
+\node at (0.7,0.7) {$gf$};
+\pause %%%%%%%%%%%%%%%%%%%%%%%%%
+\node (a) at (-1,2) {$(*,gf)$};
+\draw[->] (st) to[out=130,in=-80] (a);
+\draw[->] (a) to[out=-50,in=100] (st);
+\pause %%%%%%%%%%%%%%%%%%%%%%%%%
+\node (b) at (3,2) {$F^\nabla(*,gf)$};
+\draw[->] (x) to[out=130,in=-80] (b);
+\draw[->] (b) to[out=-50,in=100] (x);
+\draw[|->] (a) -- (b) node[pos=0.5,above] {$F^\nabla$};
+\pause %%%%%%%%%%%%%%%%%%%%%%%%%
+\draw[->] (b) -- (y) node[pos=0.5,above] {$\simeq$};
+\end{tikzpicture}
+
 \pause
 Simple object $Y$,
-\pause
+%\pause
 $\exists$ nonzero 1-morphism $f: X \to Y$;
-\pause
+%\pause
 has (nonzero) right adjoint $g: Y \to X$,
 with counit $\veps : fg \Rightarrow \id_Y$.
-\pause
+%\pause
 $\id_Y$ is simple, so $\veps$ admits a section,
-\pause
+%\pause
 hence $f \dashv g$ is a separable adjunction.
-\pause
+%\pause
 Thus, by uniqueness of separable splittings,
 $Y$ is in the essential image of $F^\nabla$.
+
 \end{proof}
 
 \end{frame}
