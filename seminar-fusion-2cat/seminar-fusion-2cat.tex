@@ -24,6 +24,11 @@ dotnode/.style={fill=black,circle,minimum size=2.5pt, inner sep=1pt, outer sep=0
 \newcommand{\moda}[1]{{\textrm{mod-}#1}}
 \newcommand{\ModA}[1]{{\Mod(#1)}}
 
+\newcommand{\ihom}{{\underline{\textrm{Hom}}}}
+\newcommand{\lact}{{\triangleright}}
+\newcommand{\ract}{{\triangleleft}}
+\newcommand{\icirc}{{\underline{\circ}}}
+
 
 \begin{document}
 
@@ -417,6 +422,169 @@ This will follow from more results from \cite{DSPSa},\cite{DSPSb},
 which we show later.
 
 
+\begin{proof}[More details on proofs (again mostly just an outline)]
+
+The first part of essential surjectivity,
+$M \simeq \amod{a}(C)$ for some algebra,
+as proved in \cite{Ostrik}*{Theorem 1},
+uses ``internal Homs''.
+For objects $m_1,m_2 \in M_C$ in a
+\emph{right} $C$-module category (see note after),
+we define $\ihom(m_1,m_2)$
+to be the object representing the functor
+$C(m_1 \ract -, m_2)$:
+\[
+C(a, \ihom(m_1,m_2))
+\simeq
+M(m_1 \ract a, m_2)
+\]
+
+(Note \cite{Ostrik} considers left $C$-module categories;
+one may consider $M$ as $\prescript{}{C^{mp}}M$
+and define the internal homs as objects in $C^{mp}$.
+The main confusing thing is that
+internal homs for right $C$-module category
+compose the other way.)
+
+In a semisimple $M$,
+simple objects do not ``talk'' to each other,
+but they do ``interact'' if acted upon by $C$;
+the internal hom captures that interaction.
+In particular, if $M$ is indecomposable as a $C$-module cat,
+then internal hom between any pair of nonzero objects
+is nonzero.
+
+The plain hom $M(m_1,m_2)$ can be recovered as
+$M(m_1,m_2) = C(\one, \ihom(m_1,m_2))$.
+``Precomposing'' or ``postcomposing'' by morphisms in $M$
+also gives corresponding morphisms in $C$:
+for $f: m_1 \to m_1'$, $g: m_2 \to m_2'$,
+composing $g \circ - \circ f: M(m_1 \ract a, m_2)
+\to M(m_1' \ract a, m_2')$ gives
+\[
+g \circ - \circ f : \ihom(m_1, m_2) \to \ihom(m_1', m_2')
+\]
+
+The identity $\id \in C(\ihom(m_1,m_2), \ihom(m_1,m_2))$
+becomes, in $M$,
+\[
+\ev : m_1 \ract \ihom(m_1,m_2) \to m_2
+\]
+and then composing two such $\ev$,
+\[
+m_1 \ract \ihom(m_1,m_2) \ract \ihom(m_2,m_3) \to m_3
+\]
+and then translating back to $C$, we get composition
+\[
+\icirc: \ihom(m_1,m_2) \tnsr \ihom(m_2,m_3) \to \ihom(m_1,m_3)
+\]
+in particular, for any $x\in M$, $\ihom(x,x)$ is a monoid,
+and in fact an algebra:
+the identity $\id \in M(x \ract \one,x)$ translates to
+the unit map for $\ihom(x,x)$.
+
+
+Furthermore, $\ihom(x,y)$ is a left module over $\ihom(x,x)$.
+Write $a = \ihom(x,x)$ for nonzero $x$.
+If $M$ is indecomposable
+(or just that $\ihom(x,y) \not\simeq 0$ for all nonzero $y$),
+then the functor
+\begin{align*}
+M &\to \amod{a}(C)
+\\
+y &\mapsto \ihom(x,y)
+\end{align*}
+is an equivalence.
+
+
+Note weirdness of conflict of direction of composition
+like in Arabic;
+e.g.
+\[
+M(m_4,m_5) \tnsr
+\ihom(m_2,m_3) \tnsr \ihom(m_3,m_4) \tnsr
+M(m_1,m_2) \tnsr
+\ihom(m_5,m_6)
+\to
+\]
+we should think of the composition by
+morphisms in $M$ as some sort of action.
+Note the $M(m_4,m_5)$ could actually act
+on the right on the last factor.
+Consider the more modest example:
+\[
+\begin{tikzcd}
+M(m_2,m_3) \tnsr \ihom(m_1,m_2) \tnsr \ihom(m_3,m_4)
+\ar[r,"\circ"] \ar[dd,"\simeq"]
+& \ihom(m_1,m_3) \tnsr \ihom(m_3,m_4)
+\ar[d,"\icirc"]
+\\
+& \ihom(m_1,m_4)
+\\
+\ihom(m_1,m_2) \tnsr \ihom(m_3,m_4) \tnsr M(m_2,m_3)
+\ar[r,"\circ"]
+& \ihom(m_1,m_2) \tnsr \ihom(m_2,m_4)
+\ar[u,"\icirc"]
+\end{tikzcd}
+\]
+This diagram commutes.
+It is confusing to work with these internal hom objects
+directly; easier to ``pick coordinates'',
+that is, use objects in $C$ to probe the internal homs.
+Take $a_1,a_3 \in C$, and let
+\begin{align*}
+\vphi_1 &\in C(a_1, \ihom(m_1,m_2)) \simeq M(m_1 \ract a_1,m_2)
+\\
+\psi_2 &\in M(m_2,m_3)
+\\
+\vphi_3 &\in C(a_1, \ihom(m_3,m_4)) \simeq M(m_3 \ract a_3,m_4)
+\end{align*}
+Then the equality of the two ways to compose
+comes down to associtativity:
+\[
+\vphi_3 \circ (\psi_2 \circ \vphi_1)
+= (\vphi_3 \circ \psi_2) \circ \vphi_1
+\in M(m_1 \ract a_1 \ract a_3, m_4)
+\simeq C(a_1 \tnsr a_3, \ihom(m_1,m_4))
+\]
+\\
+
+The second part of essential surjectivity,
+the equivalence of semisimple and separable,
+is more involved.
+However, one direction, separable module cat
+is semisimple, is fairly straightforward,
+and quite neat,
+as we see another reason ``why'' the section to the
+multiplication map is required to be a bimodule map.
+See \cite{DSPSb}*{Prop 2.5.3}.
+
+We show all objects of $M \simeq \amod{a}(C)$ are projective.
+$\one \in C$ is simple, so is projective.
+This implies a separable algebra $a$ is projective.
+(For $m \in M$, $C(\one, m) \simeq M(a,m)$).
+So free $a$-modules, $m \tnsr a$, are projective.
+Any module $m \simeq a \tnsr_a m$,
+and by the separability,
+is furthermore a summand of $a \tnsr m$ by
+$a \tnsr_a m \to (a \tnsr a) \tnsr_a m
+\simeq a \tnsr m$.
+
+
+For fully faithfulness,
+I haven't looked at the original proof,
+but, lest I am missing something,
+it seems pretty straightforward.
+Functors between semisimple categories are exact,
+in particular right exact.
+For $F: \amod{a}(C) \to \amod{b}(C)$,
+by being $C$-module functor,
+we have, for free $a$-modules,
+$F(a \tnsr x) \simeq F(a) \tnsr x$,
+and by right exactness, we have
+$F(m) \simeq F(a \tnsr_a m) \simeq F(a) \tnsr_a m$.
+\end{proof}
+
 
 
 \subsection{Simple objects}
@@ -589,13 +757,12 @@ Locally semisimple-ness follows directly from
 \cite{DSPSb}*{Corollary 2.5.6},
 and existence of adjoints for 1-morphisms
 follows from \cite{DSPSa}*{Corollary 2.13}.
+\end{proof}
 
-For self understanding, more details of proofs of these two
-properties:
-
+\begin{proof}[Proof, slightly more detailed]
 Locally semisimple-ness:
 One of the main results of \cite{DSPSb} is
-Theorem 2.5.5, which states that
+\cite{DSPSb}*{Theorem 2.5.5}, which states that
 the relatie Deligne tensor product
 of separable bimodule categories is also separable.
 Separable-ness is the stand in for semisimple-ness
@@ -618,6 +785,121 @@ to respect the bimodule structures.
 exists adjoints that respect bimodule structures,
 but the proof actually implies more,
 that the given adjoint can be promoted.)
+\end{proof}
+
+\begin{proof}[Proof, even more details]
+For bimodule categories $\prescript{}{B}M_C$
+and $\prescript{}{C}N_E$,
+we need to show that
+$M \boxtimes_C N$ is separable as a left $A$-module category
+and separable as a right $E$-module category.
+We just discuss for $B$.
+
+Suppose $M = \amod{a}(C)$ and $N = \moda{a'}(C)$;
+then $M \boxtimes_C N \simeq \bimod{a}{a'}(C)
+\simeq \moda{a'}(M)$.
+Here $\moda{a'}(M)$ are module objects in $M$ over $a'$,
+that is, $m \in M$
+with action $m \ract a' \to m$.
+(In \cite{DSPSb} they call these
+algebra objects for the monad $T = - \ract a'$.)
+
+Now $M = \moda{b}(B)$ also.
+$C$ does not act on $B$, but acts on $b$-modules in $B$,
+in particular on $b$.
+
+One checks that $b' := b \ract a'$
+is the algebra object $B$ that gives $M \boxtimes_C N$
+as a left $B$-module category,
+i.e. $M \boxtimes_C N \simeq \moda{b'}(B)$.
+Constructing the algbera map on $b'$
+and proving the rest is not hard,
+and generally quite natural,
+but is a bit confusing because you have to keep track
+of exactly where the morphisms are taking place.
+
+The separability of $b'$
+comes from combining the sections for $b$ and $a'$
+in an obvious way (obvious once you understand $b'$ better).
+
+
+For existence of adjoints for 1-morphisms:
+these can be constructed explicitly.
+Consider $x \in \bimod{b}{a}(C)$,
+\[
+x \tnsr_a - : \amod{a}(C) \to \amod{b}(C)
+\]
+is (right) exact;
+let $G: \amod{b}(C) \to \amod{a}(C)$
+be its right adjoint.
+Write $A = \amod{a}(C), B = \amod{b}(C)$.
+We must have $A(a, G(n)) \simeq B(x, n)
+\simeq C(\one, \ihom_B(x,n))$.
+This suggests that we (1) find a left $a$-module
+structure on $\ihom_B(x,n)$, and
+(2) define $G(n) = \ihom_B(x,n)$
+so that
+\[
+A(a,G(n)) = A(a,\ihom_B(x,n)) \simeq C(\one,\ihom_B(x,n))
+\simeq B(x,n)
+\]
+
+From the right $a$-module structure on $x$,
+$x \tnsr a \to x$,
+we have
+\[
+\ihom_B(x,n) \to \ihom_B(x \tnsr a,n)
+\simeq \prescript{*}{}a \tnsr \ihom_B(x,n)
+\]
+which gives
+\[
+a \tnsr \ihom_B(x,n) \to \ihom_B(x,n)
+\]
+
+Now we check the adjunction for free modules
+$a \tnsr c$:
+\[
+A(a \tnsr c, G(n))
+\simeq C(c, \ihom_B(x,n))
+\simeq B(x \ract c, n)
+\]
+then by right exactness, it's good on arbitrary
+$a$-modules $m \simeq a \tnsr_a m$.
+
+The unit (on free modules) and counit are:
+\begin{align*}
+\eta &\in A(a \tnsr m,\ihom_B(x,x \tnsr m))
+\simeq C(m, \ihom_B(x, x \tnsr m)
+\simeq B(x \tnsr m, x \tnsr m) \ni \id
+\\
+\veps &\in B(x \tnsr_a \ihom_B(x,n), n)
+\xleftarrow{\ev} B(n,n) \ni \id
+\end{align*}
+For $\veps$, we have to check that
+$\ev: x \tnsr \ihom_B(x,n) \to n$
+coequalizes the $a$-actions:
+
+\[
+\begin{tikzcd}
+B(x \tnsr a \tnsr \ihom_B(x,n), n)
+\ar[r,"\simeq"]
+\ar[d,"\simeq"]
+&
+C(a \tnsr \ihom_B(x,n), \ihom_B(x, n))
+\ar[d,"\simeq"]
+\\
+%%%
+C(\ihom_B(x,n), \ihom_B(x \tnsr a, n))
+&
+C(\ihom_B(x,n), \prescript{*}{}a \tnsr \ihom_B(x, n))
+\ar[l,"\simeq"]
+\\
+%%%
+C(\ihom_B(x,n), \ihom_B(x,n))
+\ar[u,"\text{right } a\text{-action on } x"]
+\ar[uur,"\text{left} a\text{-action on }\ihom_B(x{,}n)"' near start]
+\end{tikzcd}
+\]
 \end{proof}
 
 
