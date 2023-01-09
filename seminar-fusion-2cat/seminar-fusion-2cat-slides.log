@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.25)  6 JAN 2023 22:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.25)  8 JAN 2023 20:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1097,17 +1097,7 @@ thkerncmss.
 
 ] [5
 
-]
-LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 150.
-
-LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <8> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 150.
-
-LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <6> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 150.
-
- [6
+] [6
 
 ] [7
 
@@ -1117,7 +1107,17 @@ LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <6> not available
 
 ] [10
 
-] [11
+]
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 167.
+
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <8> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 167.
+
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <6> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 167.
+
+ [11
 
 ] [12
 
@@ -1127,31 +1127,32 @@ LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <6> not available
 
 ] [15
 
-]
+] [16
 
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 259.
-
-[16
+] [17
 
 ]
-
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 259.
-
-[17
-
-]
-
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 259.
-
 [18
 
 ] [19
 
-] [20
+]
 
-] [21
+LaTeX Font Warning: Command \Huge invalid in math mode on input line 281.
 
-] [22
+[20
+
+]
+
+LaTeX Font Warning: Command \Huge invalid in math mode on input line 281.
+
+[21
+
+]
+
+LaTeX Font Warning: Command \Huge invalid in math mode on input line 281.
+
+[22
 
 ] [23
 
@@ -1173,8 +1174,7 @@ LaTeX Font Warning: Command \Huge invalid in math mode on input line 259.
 
 ] [32
 
-]
-[33
+] [33
 
 ] [34
 
@@ -1182,7 +1182,8 @@ LaTeX Font Warning: Command \Huge invalid in math mode on input line 259.
 
 ] [36
 
-] [37
+]
+[37
 
 ] [38
 
@@ -1204,29 +1205,29 @@ LaTeX Font Warning: Command \Huge invalid in math mode on input line 259.
 
 ] [47
 
-]
-[48
+] [48
 
 ] [49
 
 ] [50
 
+] [51
+
 ]
-LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <9> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 617.
-
-LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <5> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 617.
-
- [51
-
-] [52
+[52
 
 ] [53
 
 ] [54
 
-] [55
+]
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <9> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 643.
+
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <5> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 643.
+
+ [55
 
 ] [56
 
@@ -1238,73 +1239,73 @@ LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <5> not available
 
 ] [60
 
-]
+] [61
 
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 707.
+] [62
 
-[61
+] [63
 
-]
+] [64
 
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 707.
-
-[62
+] [65
 
 ]
 
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 707.
+LaTeX Font Warning: Command \Huge invalid in math mode on input line 740.
 
-[63
-
-]
-
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 707.
-
-[64
+[66
 
 ]
 
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 707.
+LaTeX Font Warning: Command \Huge invalid in math mode on input line 740.
 
-[65
-
-] [66
-
-] [67
+[67
 
 ]
 
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 765.
+LaTeX Font Warning: Command \Huge invalid in math mode on input line 740.
 
 [68
 
 ]
 
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 765.
+LaTeX Font Warning: Command \Huge invalid in math mode on input line 740.
 
 [69
 
 ]
 
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 765.
+LaTeX Font Warning: Command \Huge invalid in math mode on input line 740.
 
 [70
 
-]
-
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 765.
-
-[71
+] [71
 
 ] [72
 
-] [73
+]
 
-] [74
+LaTeX Font Warning: Command \Huge invalid in math mode on input line 797.
 
-] [75
+[73
 
-] [76
+]
+
+LaTeX Font Warning: Command \Huge invalid in math mode on input line 797.
+
+[74
+
+]
+
+LaTeX Font Warning: Command \Huge invalid in math mode on input line 797.
+
+[75
+
+]
+
+LaTeX Font Warning: Command \Huge invalid in math mode on input line 797.
+
+[76
 
 ] [77
 
@@ -1324,28 +1325,37 @@ LaTeX Font Warning: Command \Huge invalid in math mode on input line 765.
 
 ] [85
 
-]
-[86
+] [86
 
-]
-<indrasNet.jpg, id=2286, 642.4pt x 481.8pt>
-File: indrasNet.jpg Graphic file (type jpg)
-<use indrasNet.jpg>
-Package pdftex.def Info: indrasNet.jpg  used on input line 914.
-(pdftex.def)             Requested size: 284.52756pt x 213.39682pt.
- [87
+] [87
 
- <./indrasNet.jpg>] [88
+] [88
 
 ] [89
 
 ] [90
 
-] [91
+]
+[91
 
-] [92
+]
+<indrasNet.jpg, id=2412, 642.4pt x 481.8pt>
+File: indrasNet.jpg Graphic file (type jpg)
+<use indrasNet.jpg>
+Package pdftex.def Info: indrasNet.jpg  used on input line 951.
+(pdftex.def)             Requested size: 284.52756pt x 213.39682pt.
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <14.4> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 951.
 
-] [93
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 951.
+
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <7> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 951.
+
+ [92
+
+ <./indrasNet.jpg>] [93
 
 ] [94
 
@@ -1353,8 +1363,7 @@ Package pdftex.def Info: indrasNet.jpg  used on input line 914.
 
 ] [96
 
-]
-[97
+] [97
 
 ] [98
 
@@ -1363,6 +1372,19 @@ Package pdftex.def Info: indrasNet.jpg  used on input line 914.
 ] [100
 
 ] [101
+
+]
+[102
+
+] [103
+
+] [104
+
+] [105
+
+] [106
+
+] [107
 
  </usr/local/texlive/2021/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
 \tf@nav=\write6
@@ -1380,54 +1402,42 @@ ged.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27942 strings out of 478599
- 531749 string characters out of 5854100
- 799779 words of memory out of 5000000
- 45039 multiletter control sequences out of 15000+600000
- 426554 words of font info for 105 fonts, out of 8000000 for 9000
+ 28008 strings out of 478599
+ 532709 string characters out of 5854100
+ 797903 words of memory out of 5000000
+ 45081 multiletter control sequences out of 15000+600000
+ 436919 words of font info for 141 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,17n,124p,486b,972s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Navigation102} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Navigation105} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{Navigation104} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{Navigation109} has been referenced but does not exi
-st, replaced by a fixed one
-
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{/us
-r/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}{/usr/lo
-cal/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{/usr/local/
-texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolS.enc}{/usr/local/texl
-ive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/usr/local/texlive/
-2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolA.enc}</usr/local/texlive/2021
-/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol10.pfb></usr/local/texlive/2021
-/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol6.pfb></usr/local/texlive/2021/
-texmf-dist/fonts/type1/public/mnsymbol/MnSymbol8.pfb></usr/local/texlive/2021/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2021/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2021/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2021/texmf-dist/font
-s/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2021/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2021/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2021/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/typ
-e1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2021/texmf-dist/fonts
-/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on seminar-fusion-2cat-slides.pdf (101 pages, 548945 bytes).
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{/
+usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}{/usr/
+local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{/usr/loca
+l/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolS.enc}{/usr/local/te
+xlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/usr/local/texliv
+e/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolA.enc}</usr/local/texlive/20
+21/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol10.pfb></usr/local/texlive/20
+21/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol6.pfb></usr/local/texlive/202
+1/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol8.pfb></usr/local/texlive/2021
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2021/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2021/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2021/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2021/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2021/texmf-dist/font
+s/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2021/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2021/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/t
+ype1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2021/texmf-dist/fon
+ts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on seminar-fusion-2cat-slides.pdf (107 pages, 556959 bytes).
 PDF statistics:
- 2826 PDF objects out of 2984 (max. 8388607)
- 2639 compressed objects within 27 object streams
- 215 named destinations out of 1000 (max. 500000)
+ 2980 PDF objects out of 2984 (max. 8388607)
+ 2786 compressed objects within 28 object streams
+ 223 named destinations out of 1000 (max. 500000)
  48 words of extra memory for PDF output out of 10000 (max. 10000000)
 

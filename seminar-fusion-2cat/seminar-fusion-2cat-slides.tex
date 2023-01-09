@@ -67,6 +67,23 @@ $\cC \simeq \Mod_{s.s.}^{fin}(C)$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
+\frametitle{Overview}
+
+\begin{itemize}
+\item direct sum
+\pause
+\item idempotent completion, separable stuff
+\pause
+\item simple objects
+\pause
+\item `Schur lemma'
+\pause
+\item main results
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
 \frametitle{Conventions}
 In relation to a 2-category:
 \begin{itemize}
@@ -203,13 +220,13 @@ has a zero object,
 \begin{frame}
 \frametitle{Additive 2-category, direct sum of objects}
 
-\begin{proposition}
-$i_k,p_k$ are two-sided adjoints to each other.
-\end{proposition}
+%\begin{proposition}
+%$i_k,p_k$ are two-sided adjoints to each other.
+%\end{proposition}
+%
+%\pause
 
-\pause
-
-\begin{definition}
+\begin{definition}[subobject]
 A 1-morphism $i: X \to Y$ is \emph{fully faithful}
 (or $(X,i)$ is a \emph{subobject} of $Y$)
 if it induces fully faithful functors between hom-categories
@@ -231,7 +248,7 @@ $i_k: A_k \to A_1 \boxplus A_2$ is fully faithful.
 \frametitle{Additive 2-category, direct sum of objects}
 
 \begin{definition}[Direct sum of 2-categories]
-Given 2-categories $\cC_j$, $j \in J$,
+Given additive 2-categories $\cC_j$, $j \in J$,
 we may consider the direct sum 2-category
 $\cC := \bigboxplus_{j \in J} \cC_j$:
 \begin{itemize}
@@ -239,19 +256,24 @@ $\cC := \bigboxplus_{j \in J} \cC_j$:
 
 \pause
 
-\item for $X_i \in \cC_i, Y_j \in \cC_j$,
-	$\cC(X_i,Y_j) =
-\begin{cases}
-	\cC_j(X_i,Y_j) \;\; \text{if } i = j
-	\\
-	0 \;\; \text{if } i \neq j
-\end{cases}
-$
+\item $X_i \in \cC_i$ becomes
+$(\ldots,0,X_i,0,\ldots) \in \cC$.
 
 \pause
 
-\item extend by direct sums:
-	$\cC(\boxplus X_i, \boxplus Y_j)
+%\item for $X_i \in \cC_i, Y_j \in \cC_j$,
+%	$\cC(X_i,Y_j) =
+%\begin{cases}
+%	\cC_j(X_i,Y_j) \;\; \text{if } i = j
+%	\\
+%	0 \;\; \text{if } i \neq j
+%\end{cases}
+%$
+%
+%\pause
+
+\item %extend by direct sums:
+	$\cC((X_i)_{i\in J}, (Y_j)_{j \in J})
 	= \bigoplus \cC_i(X_i, Y_i)$
 \end{itemize}
 \end{definition}
@@ -303,7 +325,9 @@ if $\veps$ admits a section.
 \pause
 
 Clearly, if an adjunction $l \dashv r$ is separable,
-then the monad $rl$ is separable.
+then the monad $rl$ is separable -
+the splitting gives
+$rl \simeq r(\id_Y)l \Rightarrow r(lr)l \simeq (rl)(rl)$
 
 \pause
 
@@ -318,16 +342,17 @@ $\psi: rl \simeq t$ as monads on $X$.
 
 \pause
 
-Under the right conditions
-(local idempotent completeness of $\cC$),
-splittings are unique:
+%Under the right conditions
+%(local idempotent completeness of $\cC$),
+%splittings are unique:
 
 \begin{proposition}[Uniqueness of splitting]
 [\cite{DRfusion}, Theorem A.3.1]
 \label{p:splitting-unique}
-In a locally idempotent complete 2-category $\cC$,
-splittings of a separable monad are unique
-up to equivalence.
+In locally idempotent complete 2-category $\cC$,
+separable splitting of monad,
+if exists,
+is unique up to equivalence.
 \end{proposition}
 
 %In particular, this holds true when $\cC$
@@ -377,7 +402,8 @@ that commutes with $I$'s.
 Key example:
 
 $\cB C$: one object $*$ with endomorphism category
-$\cB C(*,*)$.
+$\cB C(*,*) = C$
+(with $x \otimes y = x \circ y$)
 
 \[
 (\cB C)^\nabla =
@@ -486,8 +512,8 @@ which we show later.
 \pause
 
 \begin{proposition}[equivalent notions of simple-ness]
-Let $\cC$ be a locally finite semisimple and
-idempotent complete 2-category,
+Let $\cC$ be an idempotent complete and
+locally finite semisimple 2-category,
 and let $X \in \cC$ be a nonzero object.
 Then the following notions of $X$ being simple are equivalent:
 
@@ -651,23 +677,30 @@ then $g \circ f$ is also nonzero.
 	node[pos=0.5,below] {\scriptsize $\exists \delta$};
 \pause %%%%%%%%%%%%%%%%%%%%%%%
 \node at (6,-1) {
+	$\id_{\id_B} = \veps \cdot \delta$};
+\pause %%%%%%%%%%%%%%%%%%%%%%%
+\node at (6,-1.5) {
 	$\id_g = (\id_g \circ \veps) \cdot (\id_g \circ \delta):
 g \Rightarrow gff^* \Rightarrow g$};
+\pause %%%%%%%%%%%%%%%%%%%%%%%
+\node at (6,-2) {
+	if $gf \cong 0$, then $id_g = 0$, and $g \cong 0$};
 \end{tikzpicture}
 
-\pause
-Let $f^*: B \to A$ be a right adjoint to $f$.
 %\pause
-Since $\id_B$ is simple, $\exists$ section
-$\delta: \id_B \Rightarrow ff^*$
-to counit $\veps: ff^* \Rightarrow \id_B$.
-%\pause
-Postcomposing with $g$,
-we have $\id_g = (\id_g \circ \veps) \cdot (\id_g \circ \delta):
-g \Rightarrow gff^* \Rightarrow g$.
-%\pause
-Thus if $gf = 0$, then $\id_g = 0$,
-contradicting nonzero-ness of $g$.
+%Let $f^*: B \to A$ be a right adjoint to $f$.
+%%\pause
+%Since $\id_B$ is simple, $\exists$ section
+%$\delta: \id_B \Rightarrow ff^*$
+%to counit $\veps: ff^* \Rightarrow \id_B$.
+%%\pause
+%Postcomposing with $g$,
+%we have $\id_g = (\id_g \circ \veps) \cdot (\id_g \circ \delta):
+%g \Rightarrow gff^* \Rightarrow g$.
+%%\pause
+%Thus if $gf = 0$, then $\id_g = 0$,
+%contradicting nonzero-ness of $g$.
+
 \end{proof}
 
 \end{frame}
@@ -720,8 +753,7 @@ is a finite semisimple 2-category.
 \pause
 
 \begin{proof}
-$\ModA{C} \simeq (\cB C)^\nabla$ is idempotent complete
-and locally idempotent complete.
+$\ModA{C} \simeq (\cB C)^\nabla$ is idempotent complete.
 $\ModA{C}$ is clearly already additive.
 
 
@@ -794,7 +826,7 @@ Remains to show other simples are in essential image.
 \begin{frame}
 \frametitle{Main results}
 
-\begin{proof}[Proof (Cont.)]\renewcommand{\qedsymbol}{}
+\begin{proof}[Proof (Cont.)]
 
 \begin{tikzpicture}
 \node (st) at (0,0) {$*$};
@@ -808,6 +840,10 @@ Remains to show other simples are in essential image.
 \draw[->] (y) to[out=-100,in=50] (x);
 \node at (4.9,1) {$g$};
 \node at (4.5,1) {$\dashv$};
+\pause %%%%%%%%%%%%%%%%%%%%%%%%%
+\node at (7,1.5) {$\id_Y$ simple};
+\node at (7,1) {$\veps$ has section};
+\node at (7,0.5) {$\Rightarrow$ sep. adj.};
 \pause %%%%%%%%%%%%%%%%%%%%%%%%%
 \draw[->] (st) .. controls +(80:0.8cm) and +(40:0.8cm) .. (st);
 \node at (0.7,0.7) {$gf$};
@@ -824,20 +860,20 @@ Remains to show other simples are in essential image.
 \draw[->] (b) -- (y) node[pos=0.5,above] {$\simeq$};
 \end{tikzpicture}
 
-\pause
-Simple object $Y$,
 %\pause
-$\exists$ nonzero 1-morphism $f: X \to Y$;
-%\pause
-has (nonzero) right adjoint $g: Y \to X$,
-with counit $\veps : fg \Rightarrow \id_Y$.
-%\pause
-$\id_Y$ is simple, so $\veps$ admits a section,
-%\pause
-hence $f \dashv g$ is a separable adjunction.
-%\pause
-Thus, by uniqueness of separable splittings,
-$Y$ is in the essential image of $F^\nabla$.
+%Simple object $Y$,
+%%\pause
+%$\exists$ nonzero 1-morphism $f: X \to Y$;
+%%\pause
+%has (nonzero) right adjoint $g: Y \to X$,
+%with counit $\veps : fg \Rightarrow \id_Y$.
+%%\pause
+%$\id_Y$ is simple, so $\veps$ admits a section,
+%%\pause
+%hence $f \dashv g$ is a separable adjunction.
+%%\pause
+%Thus, by uniqueness of separable splittings,
+%$Y$ is in the essential image of $F^\nabla$.
 
 \end{proof}
 
@@ -908,7 +944,8 @@ the data to reconstruct the whole 2-category.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-\frametitle{Indra's Net of Pearls}
+\frametitle{Indra's Net of Pearls
+(or $\mathbf{T}^3 \# \mathbf{T}^3$)}
 
 \includegraphics[width=10cm]{indrasNet.jpg}
 \end{frame}
@@ -955,9 +992,11 @@ determines $m$ completely.
 Thus, $\ModA{C}(f,f) \simeq \bimod{f}{f}(C) \simeq \Rep(G)$.
 
 \pause
-(One can also check that $C$-module structure on
+
+(Alternatively, one can also check that $C$-module structure on
 $m: \Vect \to \Vect$
 amounts to $G$-action on $m(\kk)$.)
+\pause
 
 Thus we have:
 \[
