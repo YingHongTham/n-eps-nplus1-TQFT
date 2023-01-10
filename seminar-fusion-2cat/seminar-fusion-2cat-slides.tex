@@ -22,6 +22,7 @@
 \DeclareMathOperator{\Obj}{Obj}
 \DeclareMathOperator{\Rep}{Rep}
 \newcommand{\inv}{{-1}} % annoying to type {-1} when taking inverse
+\newcommand{\one}{\mathbf{1}}
 
 \newtheorem{proposition}[theorem]{Proposition}
 
@@ -39,6 +40,11 @@
 \newcommand{\moda}[1]{{\textrm{mod-}#1}}
 \newcommand{\Mod}{{\mathcal{M}\textrm{od}}}
 \newcommand{\ModA}[1]{{\Mod(#1)}}
+
+\newcommand{\ihom}{{\underline{\textrm{Hom}}}}
+\newcommand{\lact}{{\triangleright}}
+\newcommand{\ract}{{\triangleleft}}
+\newcommand{\icirc}{{\underline{\circ}}}
 
 
 \begin{document}
@@ -403,7 +409,7 @@ Key example:
 
 $\cB C$: one object $*$ with endomorphism category
 $\cB C(*,*) = C$
-(with $x \otimes y = x \circ y$)
+(with $x \tnsr y = x \circ y$)
 
 \[
 (\cB C)^\nabla =
@@ -493,16 +499,71 @@ if and only if it is semisimple.
 
 \pause
 
-Fully faithfulness follows from \cite{EGNO}{Prop 7.11.1}.
+Fully faithfulness:
+\pause
+on free modules: $F(a \tnsr c) \simeq F(a) \tnsr c$;
+\pause
+(right) exactness: $F(m) = F(a \tnsr_a m) \simeq F(a) \tnsr_a m$
+\pause
+(\cite{EGNO}{Prop 7.11.1})
 \end{proof}
 
-\pause
+%\pause
+%This is almost one half of the main result;
+%one still needs to prove local semisimplicity
+%and existence of adjoints.
+%This will follow from more results from \cite{DSPSa},\cite{DSPSb},
+%which we show later.
 
-This is almost one half of the main result;
-one still needs to prove local semisimplicity
-and existence of adjoints.
-This will follow from more results from \cite{DSPSa},\cite{DSPSb},
-which we show later.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Idempotent completeness, 2-category}
+
+\begin{proof}[Slightly more detailed proof]
+$M_C \simeq \amod{a}(C)$:
+\pause
+use $C$-action on $M$ to enrich $M(m_1,m_2) \in \Vect$
+to object $\ihom(m_1,m_2) \in C$, ``internal hom''
+
+\pause
+\hspace{10pt}
+$C(c, \ihom(m_1,m_2)) \simeq M(m_1 \ract c, m_2)$
+
+\pause
+fix some $x \in M$;
+\pause
+$a := \ihom(x,x)$;
+\pause
+composition gives $a$-module structure
+on $\ihom(x,m)$
+
+\pause
+$M \ni m \mapsto \ihom(x,m) \in \amod{a}(C)$
+\\
+\vspace{10pt}
+
+\pause
+separable $\Rightarrow$ semisimple:
+
+\pause
+$\one \in C$ is projective,
+\pause
+$a \in \amod{a}(C)$ is projective,
+\pause
+free modules $a \tnsr c$ are projective
+
+\pause
+for left $a$-module $m$,
+\pause
+separability of $a$ gives section to
+quotient $a \tnsr m \to a \tnsr_a m \simeq m$,
+so $m$ is projective.
+
+\pause
+semisimple $\Rightarrow$ separable is more challenging
+\end{proof}
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -739,7 +800,6 @@ $\cC \simeq \bigboxplus_{j \in J} \cC_j$.
 
 \end{frame}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Main results}
@@ -758,14 +818,36 @@ $\ModA{C}$ is clearly already additive.
 
 
 Locally semisimple-ness follows directly from
-\cite{DSPSb}{Corollary 2.5.6},
-and existence of adjoints for 1-morphisms
-follows from \cite{DSPSa}{Corollary 2.13}.
+\cite{DSPSb}{Corollary 2.5.6};
+\pause
+relative Deligne tensor product of separable module categories
+is also separable
+
+\pause
+
+Existence of adjoints for 1-morphisms
+follows from \cite{DSPSa}{Corollary 2.13}:
+left/right adjoint to underlying functor
+of a $C$-module functor
+also has $C$-module structure.
+
+\pause
+(explicit right adjoint to
+$\prescript{}{b}m_a : \amod{a}(C) \to \amod{b}(C)$
+is given by $\ihom_B(m,-)$)
 
 \end{proof}
 
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}
+%\frametitle{Main results}
+%
+%\begin{proof}[Slightly more detailed proof]
+%\end{proof}
+%
+%\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
