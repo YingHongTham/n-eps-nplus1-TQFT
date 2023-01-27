@@ -11,6 +11,13 @@
 \newcommand{\sphr}[1]{{S^{#1}}}
 \newcommand{\empt}[1]{{\emptyset^{#1}}}
 
+\newcommand{\VV}{{\mathbf{V}}}
+\DeclareMathOperator{\Skein}{Skein}
+\newcommand{\opp}{{\text{op}}}
+
+\newcommand{\cB}{{\mathcal{B}}}
+\newcommand{\hatbox}{{\hat{\boxtimes}}}
+
 \begin{document}
 
 \title{Upgrading an $(n+\veps)$-TQFT to an extended $(n+1)$-TQFT}
@@ -409,6 +416,15 @@ $\disk{n-k} : \empt{n-k} \rightleftharpoons
 	\sphr{n-1-k}: \ov{\disk{n-k}}$.
 ]
 
+
+Note $\veps_k$ is not just a $k$-handle,
+but may use lower $k$;
+e.g. for $n = 3, k = 1$,
+$\veps_k: \ov{S^1 \times D^2} \sqcup S^1 \times D^2 \Rightarrow
+S^1 \times S^1 \times I$
+uses one 1-handle (connecting the solid tori)
+then a 2-handle.
+
 %(Note that one can study the adjunction
 %e.g. by considering the handle decomposition for
 %$\sphr{k} \times \disk{n-k} : \empt{n} \to
@@ -417,12 +433,230 @@ $\disk{n-k} : \empt{n-k} \rightleftharpoons
 %but this is 
 
 
+\section{Skein theory for $(1+\veps)$-theory}
+
+To study completion of a $(n+\veps)$-theory
+to an extended $(n+1)$-theory,
+we start by studying the simplest case, $n = 1$.
+
+In particular, we will study the $(1+\veps)$-theory
+arising from skeins in 1-manifolds.
+
+Manifolds with be assumed to be compact
+unless otherwise specified.
+
+We consider oriented 0-manifolds,
+denoted by tuples of signs, e.g. $(+,+,-,+)$;
+the empty 0-manifold is denoted by $()$ or $\empt{0}$.
+Note that the tuple is ordered, but the 0-manifold itself
+is not, in the sense that
+$(+,+,-,+)$ is homeomorphic to $(-,+,+,+)$;
+it is useful to keep an ordering of the points
+to keep our heads straight on the algebra.
+
+Sometimes we will denote a singleton by simply $+$,
+or $-$, or $pt^+$, or $pt^-$.
+
+Let us fix a $\kk$-linear category $\cA$.
+We will often consider the special case of
+$\cA = *//A$, where $A$ is a $\kk$-algebra.
+
+Let us first describe the objects of the category
+$Z(N)$ for an oriented 0-manifold $N$,
+so-called boundary values:
+
+\begin{definition}
+A \emph{boundary value} $\VV$ on an oriented 0-manifold $N$
+is an assignment of an object $V_b \in \cA$
+for every point $b \in N$.
+
+We denote by $\ov{\VV}$ the boundary value on $\ov{N}$
+(opposite orientation) with the same assignments as $\VV$.
+\end{definition}
+
+Note that usually (for $\dim N = 1,2$)
+a boundary value is a finite set of points in $N$
+with assigned objects;
+here we require the finite set of points of a boundary value
+to be all of $N$ because:
+(1) if $\cA$ has structure, e.g. rigid monoidal,
+we may as well assign the unit object $\one$ to points
+of $N$ that are not in the boundary value;
+(2) if $\cA$ is simply only $\kk$-linear,
+say $\cA = A-\text{mod}$,
+we can still consider skeins as we will see below,
+but if we do not assign an object to a boundary point,
+it is unclear what such a skein should do at the boundary...
+
+
+Next we define skeins in a 1-manifold.
+Let $M$ be an oriented 1-manifold.
+Its boundary, $\del M$, acquires an orientation from $M$,
+with a point $b \in \del M$ being $pt^+$ if $M$
+is outwardly-oriented at $b$, and $pt^-$ otherwise.
+
+\begin{definition}
+\label{d:A-colored-graph}
+Let $M$ be an oriented 1-manifold.
+Let $\VV$ be a boundary value on $\del M$.
+An $\cA$-colored graph $(\Gamma,\vphi)$
+is an embedded oriented graph $\Gamma$ in $M$,
+with edge oriented in accordance with $M$
+and is surjective on $M$,
+and $\vphi$ is an assignment of an object $\vphi_e$
+for each edge $e$ of $\Gamma$
+such that the assignment to the edges meeting the boundary
+agrees with the boundary value $\VV$,
+and a morphism $\vphi_v: \vphi_e \to \vphi_{e'}$
+for every internal vertex of $\Gamma$
+with an incoming edge $e$ and outgoing edge $e'$.
+\end{definition}
+
+Note finiteness of the graph is automatic.
+
+We often denote an $\cA$-colored graph simply by $\Gamma$.
+
+\begin{definition}
+\label{d:local-ev}
+Let $(\Gamma,\vphi)$ be an $\cA$-colored graph
+in an oriented 1-manifold $M$.
+Let $D$ be a 1-dimension embedded disk, i.e. an interval,
+in $M$, such that $\del D$ does not meet any internal vertex
+of $\Gamma$.
+Let $X,X'$ be the objects assigned to the edges $e,e'$,
+respectively, that contain or meet $\del D$,
+with $e$ oriented into $D$, and $e'$ oriented out of $D$.
+Let $e_0 = e, e_1,\ldots,e_k = e'$ be the edges
+of $\Gamma$ that meet $D$, and let
+$v_i$ be the vertex between $e_{i-1}$ and $e_i$.
+
+We define the \emph{evaluation of $(\Gamma,\vphi)$ in $D$}
+to be the composition
+\[
+\eval{(\Gamma,\vphi)}_D
+= \vphi_{v_k} \circ \cdots \circ \vphi_{v_1}
+\in \Hom_\cA(X,X')
+\]
+\end{definition}
+
+
+\begin{definition}
+\label{d:null-graph}
+Let $\Gamma_1,\ldots,\Gamma_k$ be $\cA$-colored graphs in $M$
+with boundary value $\VV$,
+and let $c_1,\ldots,c_k \in \kk$.
+Let $D$ be a 1-disk in $M$.
+We say that the formal $\kk$-linear combination
+$\sum c_i \cdot \Gamma_i$ is
+\emph{null (with respect to $D$)}
+if $\Gamma_i$ agree outside of $D$,
+and $\sum c_i \eval{\Gamma_i}_D = 0$.
+\end{definition}
+
+Note that $c \cdot \Gamma - c\Gamma$ is null,
+where $c\Gamma$ is the $\cA$-colored graph
+where one of the morphisms in $\Gamma$ is scaled by $c$.
+
+\begin{definition}
+\label{d:skein}
+The \emph{skein module} $\Skein(M;\VV)$
+of $M$ with boundary value $\VV$
+is the space of formal linear combinations of
+$\cA$-colored graphs in $M$ with boundary value $\VV$
+module null graphs.
+A \emph{skein} is an element of a skein module.
+\end{definition}
+
+
+Finally, we can give the full definition of the category
+$Z(N)$:
+
+\begin{definition}
+\label{d:skein-category}
+The \emph{skein category} $Z(N)$ associated to an
+oriented 0-manifold $N$
+is the category whose objects are boundary values $\VV$,
+and morphism are given by
+\[
+\Hom_{Z(N)}(\VV,\VV') = \Skein(N \times I; \ov{\VV} \cup \VV')
+\]
+\end{definition}
+
+It is straightforward to check that
+$Z(pt^+) \simeq \cA$
+and $Z(pt^-) \simeq \cA^\opp$
+(in fact these are isomorphisms).
+
+\begin{definition}
+For $\kk$-linear categories $\cB,\cC$,
+we define the category $\cB \hatbox \cC$
+as the additive completion of the category
+whose objects are pairs of objects $B_i,C_i$ from $\cB,\cC$,
+denoted $B_i \hatbox C_i$,
+and morphisms are
+\[
+\Hom(B_i \hatbox C_i, B_j \hatbox C_j)
+:=
+\Hom_\cB(B_i, B_j) \tnsr \Hom_\cC(C_i, C_j)
+\]
+\end{definition}
+
+
+\begin{proposition}
+$Z(N_1 \sqcup N_2) \simeq Z(N_1) \hatbox Z(N_2)$
+\end{proposition}
+
+\begin{definition}
+For a cobordism $M : N \to N'$,
+we define the profunctor
+$Z(M): Z(N) \nrightarrow Z(N')$
+defined by
+\[
+(\VV, \VV') \mapsto \Skein(M; \ov{\VV} \cup \VV')
+\]
+\end{definition}
+
+\begin{proposition}
+\label{p:1-cobord-compose}
+For cobordisms $M: N \to N', M': N' \to N''$,
+$Z(M' \circ M) \simeq Z(M') \circ Z(M)$.
+\end{proposition}
+
+\begin{proof}
+We need to show that, for boundary values
+$\VV,\VV''$ on $N,N''$ respectively,
+\[
+\int^{\VV'} \Skein(M';\ov{\VV'} \cup \VV'')
+\tnsr \Skein(M; \ov{\VV} \cup \VV')
+\simeq \Skein(M' \circ M; \ov{\VV} \cup \VV'')
+\]
+The obvious concatenation of graphs
+in $M,M'$ to form a graph in $M' \circ M$
+gives a map
+$\Phi_{\VV'}: \Skein(M';\ov{\VV'} \cup \VV'')
+\tnsr \Skein(M; \ov{\VV} \cup \VV')
+\to \Skein(M' \circ M; \ov{\VV} \cup \VV'')$
+for each $\VV'$.
+It is easy to see that the sum of these maps,
+$\sum_{\VV'} \Phi_{\VV'}:
+\bigoplus_{\VV'} \Skein(M';\ov{\VV'} \cup \VV'')
+\tnsr \Skein(M; \ov{\VV} \cup \VV')
+\to \Skein(M' \circ M; \ov{\VV} \cup \VV'')$,
+factors through the coend.
+
+That this map is surjective is obvious;
+for injectivity, see notes on excision
+(or see \cite{KT}).
+\end{proof}
+
 
 \begin{thebibliography}{1}
 
 \bibitem{Yprod} Kwon, Alice, and Ying Hong Tham. The Y-Product. arXiv preprint arXiv:2209.14251 (2022).
 
 \bibitem{SPries} Schommer-Pries, Christopher John. The classification of two-dimensional extended topological field theories. University of California, Berkeley, 2009.
+
+\bibitem{KT} Kirillov Jr, Alexander, and Ying Hong Tham. "Factorization homology and 4D TQFT." arXiv preprint arXiv:2002.08571 (2020).
 
 \end{thebibliography}
 
