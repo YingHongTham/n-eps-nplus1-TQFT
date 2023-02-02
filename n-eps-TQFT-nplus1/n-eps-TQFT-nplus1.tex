@@ -13,10 +13,14 @@
 
 \newcommand{\VV}{{\mathbf{V}}}
 \DeclareMathOperator{\Skein}{Skein}
-\newcommand{\opp}{{\text{op}}}
+\newcommand{\op}{{\text{op}}}
+\newcommand{\wdtld}[1]{{\widetilde{#1}}}
 
 \newcommand{\cB}{{\mathcal{B}}}
 \newcommand{\hatbox}{{\hat{\boxtimes}}}
+
+\DeclareMathOperator{\Set}{Set}
+\DeclareMathOperator{\Vect}{Vec}
 
 \begin{document}
 
@@ -433,7 +437,126 @@ then a 2-handle.
 %but this is 
 
 
+\section{Profunctors}
+
+Typically, to describe the $n$- and $(n-1)$- part of an
+extended $(n+1)$-TQFT,
+we need to assign a category $Z(N)$ to closed $(n-1)$-manifolds
+and functors $Z(M): Z(N) \to Z(N')$
+for an $n$-dimensional cobordism between $(n-1)$-manifolds
+$N,N'$.
+
+For skein theories (see \secref{s:skeins}),
+it is more natural to describe the functor
+associated to cobordisms in terms of a profunctor,
+that is, in this case,
+given any boundary value $\VV \in \Obj Z(N)$ at $N$
+and $\VV' \in \Obj Z(N')$ at $N'$,
+we assign some vector space $\wdtld{Z(M)}(\VV,\VV')$.
+We may then convert this into a functor,
+but this often requiring some additional choices.
+
+
+In this section, we recall some basic results about
+profunctors.
+
+First, we will describe profunctors valued in $\Set$,
+then profunctors valued in $\Vect$
+for $\Vect$-enriched functors.
+
+\begin{definition}
+Let $\cA,\cB$ be categories.
+A \emph{profunctor} $F$ from $\cA$ to $\cB$,
+denoted $F: \cA \nto \cB$,
+is a functor $F: \cB^\op \times \cA \to \Set$.
+\end{definition}
+
+\begin{example}
+From a functor $G: \cA \to \cB$,
+we may construct two profunctors
+$G^*: \cA \nto \cB, G_*: \cB \nto \cA$,
+defined by
+\begin{align*}
+G^* : \cB^\op \times \cA \to \Set
+\hspace{30pt}
+&;
+\hspace{30pt}
+G_* : \cA^\op \times \cB \to \Set
+\\
+(B, A) \mapsto \cB(B, GA)
+\hspace{30pt}
+&;
+\hspace{30pt}
+(A, B) \mapsto \cB(GA, B)
+\end{align*}
+\end{example}
+
+\begin{definition}
+Let $F: \cA \nto \cB, G: \cB \nto \cC$
+be profunctors.
+Their \emph{composition}
+$G \circ F: \cA \nto \cC$
+is given by
+(assuming it exists, e.g. when $\cB$ is small):
+\[
+(G \circ F)(C,A) =
+\int^B G(C,B) \times F(B,A)
+=
+\bigsqcup G(C,B) \times F(B,A) / \sim
+\]
+where the equivalence relation $\sim$
+identifies $(y, F(b,\id_A)(x)) \sim (G(\id_C,b)(y),x)$
+for $y \in G(C,B), x \in F(B,A), b: B \to B'$.
+\end{definition}
+
+One justification for defining composition as such is
+the following (simple exercise on coends):
+\begin{lemma}
+The profunctor $\id_\cA^* = \cA(-,-)$ is
+the identity for composition of profunctors,
+i.e. for $F: \cA \nto \cB$,
+$\id_\cB^* \circ F \simeq F \simeq F \circ \id_\cA^*$.
+\end{lemma}
+
+Perhaps a more philosophical reason for defining
+composition of profunctors is from
+their analogy with relations on sets.
+In a sense, functors are to functions between sets
+as profunctors are to relations between sets.
+If $R \subseteq A \times B$ is a relation from $A$ to $B$
+and $S \subseteq B \times C$ is a relation from $B$ to $C$,
+their composition is
+$S \circ R = \{(a,c) | \exists b: (a,b) \in R, (b,c) \in S\}$.
+
+
+A more practical reason is that
+this definition of composition is the standard (only?) trick
+in category of ``doing everything''
+when/if no extra choices are allowed to be made.
+
+Yet another reason is the following.
+Any object $B \in \cB$ defines a profunctor
+$G \times_B F : \cA \nto \cC$,
+by $(G \times_B F)(C,A) := G(C,B) \times F(B,A)$.
+Any self-respecting composition $G \circ F$
+should be a receptacle for this,
+that is, refering back to the idea that profunctors are
+analogs of relations,
+if $G(C,B)$ and $F(B,A)$ are thought of as generalized arrows
+from $B$ to $C$ and $B$ to $A$, respectively,
+then we should be able to compose them,
+so we should have a map
+$G(C,B) \times F(B,A) \to (G\circ F)(C,A)$.
+Moreover, if $B,B' \in \cC$ are related,
+i.e. for morphism $b: B \to B'$,
+$(G \times_B F)(C,A)$ and $(G \times_{B'} F)(C,A)$
+should be related.
+Hence coend.
+
+
+
 \section{Skein theory for $(1+\veps)$-theory}
+\label{s:skeins}
 
 To study completion of a $(n+\veps)$-theory
 to an extended $(n+1)$-theory,
@@ -584,7 +707,7 @@ and morphism are given by
 
 It is straightforward to check that
 $Z(pt^+) \simeq \cA$
-and $Z(pt^-) \simeq \cA^\opp$
+and $Z(pt^-) \simeq \cA^\op$
 (in fact these are isomorphisms).
 
 \begin{definition}
@@ -609,7 +732,7 @@ $Z(N_1 \sqcup N_2) \simeq Z(N_1) \hatbox Z(N_2)$
 \begin{definition}
 For a cobordism $M : N \to N'$,
 we define the profunctor
-$Z(M): Z(N) \nrightarrow Z(N')$
+$Z(M): Z(N) \nto Z(N')$
 defined by
 \[
 (\VV, \VV') \mapsto \Skein(M; \ov{\VV} \cup \VV')
@@ -648,6 +771,20 @@ That this map is surjective is obvious;
 for injectivity, see notes on excision
 (or see \cite{KT}).
 \end{proof}
+
+
+%(1) Understand profunctors better
+%    -set-version, then what needs to change for vect-enriched
+%
+%    -what is the correct notion of product of categories? F:A1 -> A2 ====> F* : A1^op x* A2 -> Vec, what is x*?
+%    -what conditions on categories? e.g. need coend to exist? (need composition of profunctors to make sense)
+%
+%(2) change of coefficients ==> map between theories ==> what does it do to Z(S1)? (generalization of A/[A,A] = B/[B,B] for Morita equiv A,B
+%    -is there a non-trivial Dehn twist 2-morphism? (Map(S1) ~ S1, but is connected..)
+%
+%(3) what conditions on A (the algebra) to get (1+eps)? (1+1)?
+%    -e.g. frob? finite? interesting case - A-mod is locally finite but not finite
+
 
 
 \begin{thebibliography}{1}
