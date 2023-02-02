@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.25)  1 FEB 2023 16:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.25)  2 FEB 2023 22:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -627,7 +627,7 @@ File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count300
 \l__pdf_internal_box=\box64
 )
-(./n-eps-TQFT-nplus1.aux)
+No file n-eps-TQFT-nplus1.aux.
 \openout1 = `n-eps-TQFT-nplus1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -644,7 +644,6 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
-
 (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count301
@@ -678,7 +677,20 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+
+LaTeX Warning: Reference `s:handles-from-adjunctions' on page 1 undefined on in
+put line 103.
+
+
+LaTeX Warning: Reference `p:extend-uniqueness' on page 1 undefined on input lin
+e 114.
+
+
+LaTeX Warning: Reference `f:disk-adjunction' on page 1 undefined on input line 
+133.
+
+[1
 
 {/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 <disk-adjunction-unit-counit.png, id=21, 149.55875pt x 59.22125pt>
@@ -693,32 +705,83 @@ File: disk-adjunction-snake-equation.png Graphic file (type png)
 Package pdftex.def Info: disk-adjunction-snake-equation.png  used on input line
  143.
 (pdftex.def)             Requested size: 170.71652pt x 96.30473pt.
+
+
+LaTeX Warning: Citation `SPries' on page 2 undefined on input line 151.
+
+
+LaTeX Warning: Reference `f:dual-handle' on page 2 undefined on input line 162.
+
+
 <diagram-dual-handle.jpg, id=24, 3144.74875pt x 993.7125pt>
 File: diagram-dual-handle.jpg Graphic file (type jpg)
 <use diagram-dual-handle.jpg>
 Package pdftex.def Info: diagram-dual-handle.jpg  used on input line 165.
 (pdftex.def)             Requested size: 426.79134pt x 134.85805pt.
- [2 <./disk-adjunction-unit-counit.png> <./disk-adjunction-snake-equation.png> 
-<./diagram-dual-handle.jpg>]
-<diagram-counit-unit-elementary-cobord.jpg, id=33, 3213.00375pt x 2313.64375pt>
+
+LaTeX Warning: Reference `f:elementary-cobord-counit-unit' on page 2 undefined 
+on input line 181.
+
+[2 <./disk-adjunction-unit-counit.png> <./disk-adjunction-snake-equation.png> <
+./diagram-dual-handle.jpg>]
+<diagram-counit-unit-elementary-cobord.jpg, id=34, 3213.00375pt x 2313.64375pt>
 
 File: diagram-counit-unit-elementary-cobord.jpg Graphic file (type jpg)
 <use diagram-counit-unit-elementary-cobord.jpg>
 Package pdftex.def Info: diagram-counit-unit-elementary-cobord.jpg  used on inp
 ut line 221.
 (pdftex.def)             Requested size: 426.79134pt x 307.31535pt.
- [3 <./diagram-counit-unit-elementary-cobord.jpg>] [4] [5] [6] [7]
-[8] (./n-eps-TQFT-nplus1.aux)
+
+
+LaTeX Warning: Reference `f:dual-handle' on page 3 undefined on input line 227.
+
+
+
+LaTeX Warning: Reference `f:dual-handle' on page 3 undefined on input line 227.
+
+
+
+LaTeX Warning: Citation `Yprod' on page 3 undefined on input line 243.
+
+[3 <./diagram-counit-unit-elementary-cobord.jpg>] [4]
+
+LaTeX Warning: Reference `s:skeins' on page 5 undefined on input line 449.
+
+[5]
+Overfull \hbox (22.81659pt too wide) in paragraph at lines 506--510
+\OT1/cmr/m/n/12 where the equiv-a-lence re-la-tion $\U/MnSymbolD/m/n/12 ^^B$ \O
+T1/cmr/m/n/12 iden-ti-fies $\OMX/MnSymbolE/m/n/12 ˆ\OML/cmm/m/it/12 y; F\OMX/Mn
+SymbolE/m/n/12 ˆ\OML/cmm/m/it/12 b; [][]\OMX/MnSymbolE/m/n/12 ˆ\OML/cmm/m/it/1
+2 x\OMX/MnSymbolE/m/n/12  \U/MnSymbolD/m/n/12 ^^B \OMX/MnSymbolE/m/n/12 ˆ\OML
+/cmm/m/it/12 G\OMX/MnSymbolE/m/n/12 ˆ[][]\OML/cmm/m/it/12 ; b\OMX/MnSymbolE/m/n
+/12 ˆ\OML/cmm/m/it/12 y\OMX/MnSymbolE/m/n/12 \OML/cmm/m/it/12 ; x\OMX/MnSymbo
+lE/m/n/12 $ \OT1/cmr/m/n/12 for $\OML/cmm/m/it/12 y \U/MnSymbolD/m/n/12 > \OML
+/cmm/m/it/12 G\OMX/MnSymbolE/m/n/12 ˆ\OML/cmm/m/it/12 C; B\OMX/MnSymbolE/m/n/12
+ \OML/cmm/m/it/12 ; x \U/MnSymbolD/m/n/12 >
+ []
+
+[6]
+
+LaTeX Warning: Citation `Lawvere' on page 7 undefined on input line 650.
+
+[7] [8]
+
+LaTeX Warning: Citation `KT' on page 9 undefined on input line 884.
+
+[9] [10] (./n-eps-TQFT-nplus1.aux)
+
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 18750 strings out of 478599
- 357352 string characters out of 5854100
- 628485 words of memory out of 5000000
- 36289 multiletter control sequences out of 15000+600000
- 430829 words of font info for 123 fonts, out of 8000000 for 9000
+ 18754 strings out of 478599
+ 357364 string characters out of 5854100
+ 628394 words of memory out of 5000000
+ 36294 multiletter control sequences out of 15000+600000
+ 430998 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,11n,89p,610b,640s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{/
@@ -749,11 +812,13 @@ ublic/amsfonts/cm/cmr5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmr6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmr7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmti12.pfb>
-Output written on n-eps-TQFT-nplus1.pdf (8 pages, 1735532 bytes).
+ts/cm/cmti12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmtt12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts
+/symbols/msbm10.pfb>
+Output written on n-eps-TQFT-nplus1.pdf (10 pages, 1752862 bytes).
 PDF statistics:
- 186 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
+ 202 PDF objects out of 1000 (max. 8388607)
+ 125 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

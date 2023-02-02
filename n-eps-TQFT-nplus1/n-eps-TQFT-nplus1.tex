@@ -555,6 +555,118 @@ Hence coend.
 
 
 
+=======
+\subsection{In terms of generators and relations?}
+
+Q: are there any more relations that need to be imposed
+on the $(n+1)$-dim handles?
+
+
+In \cite{SPries}, he presents $2,1,0$-Cob in terms of
+generators and relations.
+More specifically, there are four 1-morphisms,
+tensoring them generates all 1-morphisms,
+then there are two types of 2-morphism generators,
+the invertible ones - cusps,
+and the non-invertible ones - the 2-dim handles;
+there are three types relations between 2-morphisms,
+those involving only invertible 2-morphisms
+- cusp relations and swallowtail,
+those involving invertible and non-invertible - cusp flip,
+and those involving the non-invertible 2-morphisms
+- handle cancelations.
+
+It seemed to me at first that the cusp flip relation could be
+ignored if we define one type of 2d 1-handle
+in terms of the other.
+TODO picture.
+
+However, it turns out this is not enough,
+essentially because of symmetry.
+In TODO figure, we see that we could have defined
+the 1-handle using the last diagram instead of the second diagram;
+but these are not equal unless we introduce the cusp flip relations.
+
+An alternative is to define 1-handle in a way that,
+I think, is more natural from a 2-dim perspective.
+For the 0-manifold $N = (+,-,+,-)$,
+there are two ways to realize a 1-morphism
+$D^1 \times S^0 : N \to \emptyset$,
+either pairing up the first two and last two points,
+or pairing up the first and last and the middle two points
+(by pair up I mean of course attaching $D^1$ to them);
+a 2d 1-handle is a 2-morphism between them.
+
+This approach is cleaner, and now the consequences
+of the cusp flip relation
+is taken care of by stipulating that this 2-morphism
+is invariant under the $\ZZ/2$-symmetry of $N$
+swapping $+$ and $+$, $-$ and $-$.
+
+This symmetry would not exist if the objects (0-manifolds)
+are ordered...
+
+Upshot is that now we only need to types of relations of 2-morphisms,
+those involving the invertible ones, and those involving only handles.
+
+So this got me to wonder, can this be the case for higher dimensions?
+If so, then this should prove that no additional relations are imposed
+after the choice of $\eta_0$
+(assuming all criteria on the $(n+\veps)$-theory needed to extended
+are met; e.g. that some of these 1-morphisms are two-sided ``adjoint-able'').
+
+I want to understand this in terms of generators and relations.
+
+In extended $(n+1)$-Cob, there is sub-bicat,
+same objects, 1-morphisms, but 2-morphisms are only invertible ones.
+
+Suppose we understand this subcat in terms of generators and relations.
+We can't hope to have a finite number of generators,
+because in general there are infinitely many $(n-1)$-manifolds,
+so we may consider finite number of ``types'' of generators or relations,
+e.g. it is a $n$-dim $k$-handle.
+That is, we have a finite collection of ``types'' of generating 1-morphisms,
+a finite collection of ``types'' of generating 2-morphisms,
+and we have a finite collection of ``types'' of relations among 2-morphisms,
+such that for an $n$-manifold $M$,
+presented as a composition of generating 1-morphisms in two ways, $f_1,f_2$,
+and for $W = M \times I$,
+presented as a composition of generating 2-morphisms in two ways,
+$\vphi_1,\vphi_2: f_1 \Rightarrow f_2$,
+there is a finite sequence of applications of the relations
+that turns $\vphi_1$ into $\vphi_2$.
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+========================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Lawvere \cite{Lawvere} writes $\cA \bigotimes \cB$
+for $\cA \hatbox \cB$ (he consideres profunctors enriched over
+bicomplete symmetric monoidal closed category $\mathcal{V}$,
+here we just take $\mathcal{V} = \Vect$).
+
+Interesting example of profunctors
+
+\begin{example}
+A one-object $\Vect$-enriched category $*//A$
+is simply an algebra.
+Functors $F: *//A \to *//B$ are simply algebra homomorphisms,
+and natural transformations are simply central elements of $B$.
+
+On the other hand,
+a profunctor $F: *//A \nto *//B$
+is a functor $F: *//B^\op \times *//A \to \Vect$
+(since $(*//B)^\op = *//B^\op$)
+\end{example}
+
+
 \section{Skein theory for $(1+\veps)$-theory}
 \label{s:skeins}
 
@@ -794,6 +906,8 @@ for injectivity, see notes on excision
 \bibitem{SPries} Schommer-Pries, Christopher John. The classification of two-dimensional extended topological field theories. University of California, Berkeley, 2009.
 
 \bibitem{KT} Kirillov Jr, Alexander, and Ying Hong Tham. "Factorization homology and 4D TQFT." arXiv preprint arXiv:2002.08571 (2020).
+
+\bibitem{Lawvere} Lawvere, F. William. "Metric spaces, generalized logic, and closed categories." Rendiconti del seminario matématico e fisico di Milano 43 (1973): 135-166.
 
 \end{thebibliography}
 
