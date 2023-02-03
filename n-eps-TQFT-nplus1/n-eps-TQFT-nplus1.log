@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.25)  2 FEB 2023 22:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.25)  3 FEB 2023 00:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -627,23 +627,24 @@ File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count300
 \l__pdf_internal_box=\box64
 )
-No file n-eps-TQFT-nplus1.aux.
+(./n-eps-TQFT-nplus1.aux)
 \openout1 = `n-eps-TQFT-nplus1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+
 (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count301
@@ -666,122 +667,68 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 30.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 32.
 
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
 
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-LaTeX Warning: Reference `s:handles-from-adjunctions' on page 1 undefined on in
-put line 103.
-
-
-LaTeX Warning: Reference `p:extend-uniqueness' on page 1 undefined on input lin
-e 114.
-
-
-LaTeX Warning: Reference `f:disk-adjunction' on page 1 undefined on input line 
-133.
-
-[1
+) [1
 
 {/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 <disk-adjunction-unit-counit.png, id=21, 149.55875pt x 59.22125pt>
 File: disk-adjunction-unit-counit.png Graphic file (type png)
 <use disk-adjunction-unit-counit.png>
-Package pdftex.def Info: disk-adjunction-unit-counit.png  used on input line 13
-8.
+Package pdftex.def Info: disk-adjunction-unit-counit.png  used on input line 14
+0.
 (pdftex.def)             Requested size: 170.71652pt x 67.60417pt.
 <disk-adjunction-snake-equation.png, id=23, 156.585pt x 88.33pt>
 File: disk-adjunction-snake-equation.png Graphic file (type png)
 <use disk-adjunction-snake-equation.png>
 Package pdftex.def Info: disk-adjunction-snake-equation.png  used on input line
- 143.
+ 145.
 (pdftex.def)             Requested size: 170.71652pt x 96.30473pt.
-
-
-LaTeX Warning: Citation `SPries' on page 2 undefined on input line 151.
-
-
-LaTeX Warning: Reference `f:dual-handle' on page 2 undefined on input line 162.
-
-
 <diagram-dual-handle.jpg, id=24, 3144.74875pt x 993.7125pt>
 File: diagram-dual-handle.jpg Graphic file (type jpg)
 <use diagram-dual-handle.jpg>
-Package pdftex.def Info: diagram-dual-handle.jpg  used on input line 165.
+Package pdftex.def Info: diagram-dual-handle.jpg  used on input line 167.
 (pdftex.def)             Requested size: 426.79134pt x 134.85805pt.
-
-LaTeX Warning: Reference `f:elementary-cobord-counit-unit' on page 2 undefined 
-on input line 181.
-
-[2 <./disk-adjunction-unit-counit.png> <./disk-adjunction-snake-equation.png> <
-./diagram-dual-handle.jpg>]
-<diagram-counit-unit-elementary-cobord.jpg, id=34, 3213.00375pt x 2313.64375pt>
+ [2 <./disk-adjunction-unit-counit.png> <./disk-adjunction-snake-equation.png> 
+<./diagram-dual-handle.jpg>]
+<diagram-counit-unit-elementary-cobord.jpg, id=33, 3213.00375pt x 2313.64375pt>
 
 File: diagram-counit-unit-elementary-cobord.jpg Graphic file (type jpg)
 <use diagram-counit-unit-elementary-cobord.jpg>
 Package pdftex.def Info: diagram-counit-unit-elementary-cobord.jpg  used on inp
-ut line 221.
+ut line 223.
 (pdftex.def)             Requested size: 426.79134pt x 307.31535pt.
-
-
-LaTeX Warning: Reference `f:dual-handle' on page 3 undefined on input line 227.
-
-
-
-LaTeX Warning: Reference `f:dual-handle' on page 3 undefined on input line 227.
-
-
-
-LaTeX Warning: Citation `Yprod' on page 3 undefined on input line 243.
-
-[3 <./diagram-counit-unit-elementary-cobord.jpg>] [4]
-
-LaTeX Warning: Reference `s:skeins' on page 5 undefined on input line 449.
-
-[5]
-Overfull \hbox (22.81659pt too wide) in paragraph at lines 506--510
-\OT1/cmr/m/n/12 where the equiv-a-lence re-la-tion $\U/MnSymbolD/m/n/12 ^^B$ \O
-T1/cmr/m/n/12 iden-ti-fies $\OMX/MnSymbolE/m/n/12 ˆ\OML/cmm/m/it/12 y; F\OMX/Mn
-SymbolE/m/n/12 ˆ\OML/cmm/m/it/12 b; [][]\OMX/MnSymbolE/m/n/12 ˆ\OML/cmm/m/it/1
-2 x\OMX/MnSymbolE/m/n/12  \U/MnSymbolD/m/n/12 ^^B \OMX/MnSymbolE/m/n/12 ˆ\OML
-/cmm/m/it/12 G\OMX/MnSymbolE/m/n/12 ˆ[][]\OML/cmm/m/it/12 ; b\OMX/MnSymbolE/m/n
-/12 ˆ\OML/cmm/m/it/12 y\OMX/MnSymbolE/m/n/12 \OML/cmm/m/it/12 ; x\OMX/MnSymbo
-lE/m/n/12 $ \OT1/cmr/m/n/12 for $\OML/cmm/m/it/12 y \U/MnSymbolD/m/n/12 > \OML
-/cmm/m/it/12 G\OMX/MnSymbolE/m/n/12 ˆ\OML/cmm/m/it/12 C; B\OMX/MnSymbolE/m/n/12
- \OML/cmm/m/it/12 ; x \U/MnSymbolD/m/n/12 >
+ [3 <./diagram-counit-unit-elementary-cobord.jpg>] [4] [5] [6] [7]
+Overfull \hbox (18.63048pt too wide) in paragraph at lines 733--747
+\OT1/cmr/m/n/12 mor-phisms, we have $\OMS/MnSymbolS/m/n/12 B[][]A\OMX/MnSymbolE
+/m/n/12 ˆ\OML/cmm/m/it/12 B[]A; B[][]A[]\OMX/MnSymbolE/m/n/12  \U/MnSymbolA/m/
+n/12 ^^@ []\OML/cmm/m/it/12 F\OMX/MnSymbolE/m/n/12 ˆ\OML/cmm/m/it/12 B; A\OMX/M
+nSymbolE/m/n/12 \OML/cmm/m/it/12 ; F\OMX/MnSymbolE/m/n/12 ˆ\OML/cmm/m/it/12 B[
+]; A[]\OMX/MnSymbolE/m/n/12 $\OT1/cmr/m/n/12 . Since $\OMS/MnSymbolS/m/n/12 B
+[][]A\OMX/MnSymbolE/m/n/12 ˆ\OML/cmm/m/it/12 B[]A; B[][]A[]\OMX/MnSymbolE/m/n/1
+2  \U/MnSymbolD/m/n/12 ^^@
  []
 
-[6]
-
-LaTeX Warning: Citation `Lawvere' on page 7 undefined on input line 650.
-
-[7] [8]
-
-LaTeX Warning: Citation `KT' on page 9 undefined on input line 884.
-
-[9] [10] (./n-eps-TQFT-nplus1.aux)
-
-LaTeX Warning: There were undefined references.
-
+[8] [9] [10] [11] (./n-eps-TQFT-nplus1.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 18754 strings out of 478599
- 357364 string characters out of 5854100
- 628394 words of memory out of 5000000
- 36294 multiletter control sequences out of 15000+600000
- 430998 words of font info for 124 fonts, out of 8000000 for 9000
+ 18757 strings out of 478599
+ 357406 string characters out of 5854100
+ 628521 words of memory out of 5000000
+ 36296 multiletter control sequences out of 15000+600000
+ 430829 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,11n,89p,610b,640s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{/
@@ -813,12 +760,11 @@ ic/amsfonts/cm/cmr6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmr7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmti12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmtt12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts
-/symbols/msbm10.pfb>
-Output written on n-eps-TQFT-nplus1.pdf (10 pages, 1752862 bytes).
+s/symbols/msbm10.pfb>
+Output written on n-eps-TQFT-nplus1.pdf (11 pages, 1754659 bytes).
 PDF statistics:
- 202 PDF objects out of 1000 (max. 8388607)
- 125 compressed objects within 2 object streams
+ 200 PDF objects out of 1000 (max. 8388607)
+ 124 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

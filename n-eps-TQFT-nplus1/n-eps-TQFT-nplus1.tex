@@ -17,10 +17,12 @@
 \newcommand{\wdtld}[1]{{\widetilde{#1}}}
 
 \newcommand{\cB}{{\mathcal{B}}}
+\newcommand{\cV}{{\mathcal{V}}}
 \newcommand{\hatbox}{{\hat{\boxtimes}}}
 
 \DeclareMathOperator{\Set}{Set}
 \DeclareMathOperator{\Vect}{Vec}
+\newcommand{\ihom}{{\underline{\textrm{Hom}}}}
 
 \begin{document}
 
@@ -411,14 +413,13 @@ this means that everything is determined by the 0-handle.
 
 
 
-[It may be helpful to note that the adjunction
+(It may be helpful to note that the adjunction
 $\sphr{k} \times \disk{n-k} : \empt{n} \rightleftharpoons
 	\sphr{k} \times \sphr{n-k-1} : \ov{\sphr{k} \times \disk{n-k}}$
 is simply $\sphr{k}$ times
 the first example but with $n$ set to $n-k$,
 $\disk{n-k} : \empt{n-k} \rightleftharpoons
-	\sphr{n-1-k}: \ov{\disk{n-k}}$.
-]
+	\sphr{n-1-k}: \ov{\disk{n-k}}$.)
 
 
 Note $\veps_k$ is not just a $k$-handle,
@@ -436,126 +437,6 @@ then a 2-handle.
 %is given by a 0-handle followed by a $k$-handle,
 %but this is 
 
-
-\section{Profunctors}
-
-Typically, to describe the $n$- and $(n-1)$- part of an
-extended $(n+1)$-TQFT,
-we need to assign a category $Z(N)$ to closed $(n-1)$-manifolds
-and functors $Z(M): Z(N) \to Z(N')$
-for an $n$-dimensional cobordism between $(n-1)$-manifolds
-$N,N'$.
-
-For skein theories (see \secref{s:skeins}),
-it is more natural to describe the functor
-associated to cobordisms in terms of a profunctor,
-that is, in this case,
-given any boundary value $\VV \in \Obj Z(N)$ at $N$
-and $\VV' \in \Obj Z(N')$ at $N'$,
-we assign some vector space $\wdtld{Z(M)}(\VV,\VV')$.
-We may then convert this into a functor,
-but this often requiring some additional choices.
-
-
-In this section, we recall some basic results about
-profunctors.
-
-First, we will describe profunctors valued in $\Set$,
-then profunctors valued in $\Vect$
-for $\Vect$-enriched functors.
-
-\begin{definition}
-Let $\cA,\cB$ be categories.
-A \emph{profunctor} $F$ from $\cA$ to $\cB$,
-denoted $F: \cA \nto \cB$,
-is a functor $F: \cB^\op \times \cA \to \Set$.
-\end{definition}
-
-\begin{example}
-From a functor $G: \cA \to \cB$,
-we may construct two profunctors
-$G^*: \cA \nto \cB, G_*: \cB \nto \cA$,
-defined by
-\begin{align*}
-G^* : \cB^\op \times \cA \to \Set
-\hspace{30pt}
-&;
-\hspace{30pt}
-G_* : \cA^\op \times \cB \to \Set
-\\
-(B, A) \mapsto \cB(B, GA)
-\hspace{30pt}
-&;
-\hspace{30pt}
-(A, B) \mapsto \cB(GA, B)
-\end{align*}
-\end{example}
-
-\begin{definition}
-Let $F: \cA \nto \cB, G: \cB \nto \cC$
-be profunctors.
-Their \emph{composition}
-$G \circ F: \cA \nto \cC$
-is given by
-(assuming it exists, e.g. when $\cB$ is small):
-\[
-(G \circ F)(C,A) =
-\int^B G(C,B) \times F(B,A)
-=
-\bigsqcup G(C,B) \times F(B,A) / \sim
-\]
-where the equivalence relation $\sim$
-identifies $(y, F(b,\id_A)(x)) \sim (G(\id_C,b)(y),x)$
-for $y \in G(C,B), x \in F(B,A), b: B \to B'$.
-\end{definition}
-
-One justification for defining composition as such is
-the following (simple exercise on coends):
-\begin{lemma}
-The profunctor $\id_\cA^* = \cA(-,-)$ is
-the identity for composition of profunctors,
-i.e. for $F: \cA \nto \cB$,
-$\id_\cB^* \circ F \simeq F \simeq F \circ \id_\cA^*$.
-\end{lemma}
-
-Perhaps a more philosophical reason for defining
-composition of profunctors is from
-their analogy with relations on sets.
-In a sense, functors are to functions between sets
-as profunctors are to relations between sets.
-If $R \subseteq A \times B$ is a relation from $A$ to $B$
-and $S \subseteq B \times C$ is a relation from $B$ to $C$,
-their composition is
-$S \circ R = \{(a,c) | \exists b: (a,b) \in R, (b,c) \in S\}$.
-
-
-A more practical reason is that
-this definition of composition is the standard (only?) trick
-in category of ``doing everything''
-when/if no extra choices are allowed to be made.
-
-Yet another reason is the following.
-Any object $B \in \cB$ defines a profunctor
-$G \times_B F : \cA \nto \cC$,
-by $(G \times_B F)(C,A) := G(C,B) \times F(B,A)$.
-Any self-respecting composition $G \circ F$
-should be a receptacle for this,
-that is, refering back to the idea that profunctors are
-analogs of relations,
-if $G(C,B)$ and $F(B,A)$ are thought of as generalized arrows
-from $B$ to $C$ and $B$ to $A$, respectively,
-then we should be able to compose them,
-so we should have a map
-$G(C,B) \times F(B,A) \to (G\circ F)(C,A)$.
-Moreover, if $B,B' \in \cC$ are related,
-i.e. for morphism $b: B \to B'$,
-$(G \times_B F)(C,A)$ and $(G \times_{B'} F)(C,A)$
-should be related.
-Hence coend.
-
-
-
-=======
 \subsection{In terms of generators and relations?}
 
 Q: are there any more relations that need to be imposed
@@ -637,33 +518,269 @@ there is a finite sequence of applications of the relations
 that turns $\vphi_1$ into $\vphi_2$.
 
 
+Now, for $1 \leq k \leq n$,
+consider one 2-morphism
+$\gamma_k = D^k \times D^{n-k+1} : S^{k-1} \times D^{n-k+1}
+\Rightarrow D^k \times S^{n-k}
+: S^{k-1} \times S^{n-k}$;
+for $k = 0,n$, we have
+$\gamma_0 = D^{n+1} : \empt{n} \Rightarrow \empt{n}
+: \empt{n-1} \to S^{n-1}$,
+and
+$\gamma_{n+1} = D^{n+1} : \empt{n} \Rightarrow \empt{n}
+: S^{n-1} \to \empt{n-1}$.
+Let us write $\mathcal{S}^k$ for the source $(n-1)$-manifold
+for $\gamma_k$.
+
+For every 1-morphism $M$ with target $(n-1)$-manifold
+of the form $N' \sqcup \mathcal{S}^k$,
+we add the 2-morphism
+$\gamma_M = \gamma_k \circ \id_M
+: M \Rightarrow M' : N \to N'$
+as a generator.
+TODO symmetry here?
+
+Claim: For a fixed $M$, all 2-morphisms $\gamma_M$
+that can be formed by appropriately arranging $M,M'$
+are related by invertible relations of 2-morphisms,
+i.e. one can ``move'' this piece of 2-morphism
+$\gamma_k$ around, and it would not change
+the 2-morphism.
+
+Thus, one doesn't need any new relations
+relating the new 2-morphism to invertible ones.
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Profunctors}
+
+Typically, to describe the $n$- and $(n-1)$- part of an
+extended $(n+1)$-TQFT,
+we need to assign a category $Z(N)$ to closed $(n-1)$-manifolds
+and functors $Z(M): Z(N) \to Z(N')$
+for an $n$-dimensional cobordism between $(n-1)$-manifolds
+$N,N'$.
+
+For skein theories (see \secref{s:skeins}),
+it is more natural to describe the functor
+associated to cobordisms in terms of a profunctor,
+that is, in this case,
+given any boundary value $\VV \in \Obj Z(N)$ at $N$
+and $\VV' \in \Obj Z(N')$ at $N'$,
+we assign some vector space $\wdtld{Z(M)}(\VV,\VV')$.
+We may then convert this into a functor,
+but this often requiring some additional choices.
 
 
-========================================
+In this section, we recall some basic results about
+profunctors.
+All categories will be assumed to be small.
+
+First, we will describe profunctors valued in $\Set$,
+then profunctors valued in $\Vect$
+for $\Vect$-enriched functors.
+
+\begin{definition}
+Let $\cA,\cB$ be categories.
+A \emph{profunctor} $F$ from $\cA$ to $\cB$,
+denoted $F: \cA \nto \cB$,
+is a functor $F: \cB^\op \times \cA \to \Set$.
+\end{definition}
+
+\begin{example}
+From a functor $G: \cA \to \cB$,
+we may construct two profunctors
+$G^*: \cA \nto \cB, G_*: \cB \nto \cA$,
+defined by
+\begin{align*}
+G^* : \cB^\op \times \cA \to \Set
+\hspace{30pt}
+&;
+\hspace{30pt}
+G_* : \cA^\op \times \cB \to \Set
+\\
+(B, A) \mapsto \cB(B, GA)
+\hspace{30pt}
+&;
+\hspace{30pt}
+(A, B) \mapsto \cB(GA, B)
+\end{align*}
+
+(note \cite{Lawvere} uses $G^*$ for $G_*$ and
+vice versa)
+\end{example}
+
+\begin{definition}
+Let $F: \cA \nto \cB, G: \cB \nto \cC$
+be profunctors.
+Their \emph{composition}
+$G \circ F: \cA \nto \cC$
+is given by
+(assuming it exists, e.g. when $\cB$ is small):
+\[
+(G \circ F)(C,A) =
+\int^B G(C,B) \times F(B,A)
+=
+\bigsqcup G(C,B) \times F(B,A) / \sim
+\]
+where the equivalence relation $\sim$
+identifies $(y, xb) \sim (by,x)$
+for $y \in G(C,B), x \in F(B,A), b: B \to B'$
+(here we write $xb$ for $F(b,\id_A)(x)$
+and $by$ for $G(\id_C,b)(y)$).
+\end{definition}
+
+One justification for defining composition as such is
+the following (simple exercise on coends):
+\begin{lemma}
+The profunctor $\id_\cA^* = \cA(-,-)$ is
+the identity for composition of profunctors,
+i.e. for $F: \cA \nto \cB$,
+$\id_\cB^* \circ F \simeq F \simeq F \circ \id_\cA^*$.
+\end{lemma}
+
+Perhaps a more philosophical reason for defining
+composition of profunctors is from
+their analogy with relations on sets.
+In a sense, functors are to functions between sets
+as profunctors are to relations between sets.
+If $R \subseteq A \times B$ is a relation from $A$ to $B$
+and $S \subseteq B \times C$ is a relation from $B$ to $C$,
+their composition is
+$S \circ R = \{(a,c) | \exists b: (a,b) \in R, (b,c) \in S\}$.
+
+
+A more practical reason is that
+this definition of composition is the standard (only?) trick
+in category of ``doing everything''
+when/if no extra choices are allowed to be made.
+
+Yet another reason is the following.
+Any object $B \in \cB$ defines a profunctor
+$G \times_B F : \cA \nto \cC$,
+by $(G \times_B F)(C,A) := G(C,B) \times F(B,A)$.
+Any self-respecting composition $G \circ F$
+should be a receptacle for this,
+that is, refering back to the idea that profunctors are
+analogs of relations,
+if $G(C,B)$ and $F(B,A)$ are thought of as generalized arrows
+from $B$ to $C$ and $B$ to $A$, respectively,
+then we should be able to compose them,
+so we should have a map
+$G(C,B) \times F(B,A) \to (G\circ F)(C,A)$.
+Moreover, if $B,B' \in \cC$ are related,
+i.e. for morphism $b: B \to B'$,
+$(G \times_B F)(C,A)$ and $(G \times_{B'} F)(C,A)$
+should be related.
+Hence coend.
+
+There's also something about Kan extensions.
+Profunctor $F: \cA \nto \cB$ can also be written
+$\hat{F}: \cA \to \Set^{\cB^\op}$.
+Let $\hat{G}: \cB \to \Set^{\cC^\op}$ be another profunctor.
+There is the natural Yoneda embedding $Y:\cB \to \Set^{\cB^\op}$.
+Then the left Kan extension
+$L_{Y}(\hat{G}): \Set^{\cB^\op} \to \Set^{\cC^\op}$
+of $\hat{G}$ along $Y$.
+exists because $\cB$ is small and $\Set^{\cB^\op}$
+is cocomplete.
+Then we define $G\circ F$ by
+$\widehat{G\circ F} = L_{Y}(\hat{G}) \circ \hat{F}$.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Lawvere \cite{Lawvere} writes $\cA \bigotimes \cB$
-for $\cA \hatbox \cB$ (he consideres profunctors enriched over
-bicomplete symmetric monoidal closed category $\mathcal{V}$,
-here we just take $\mathcal{V} = \Vect$).
+========================================
 
-Interesting example of profunctors
+Lawvere considers also $\cV$-enriched profunctors
+for $\cV$-enriched categories,
+where $\cV$ is a
+bicomplete symmetric monoidal closed category.
+Bicomplete means complete and cocomplete
+(all small (co)limits exist),
+symmetric monoidal means symmetric monoidal,
+and closed means there is an internal hom functor
+$\ihom: \cV^\op \times \cV \to \cV$
+which is adjoint to the monoidal structure:
+there is a natural bijection
+$\cV(a,\ihom(b,c)) \simeq \cV(a \tnsr b, c)$.
+
+For our applications, we will only consider $\cV = \Vect$,
+with tensor product as the monoidal structure.
+
+\begin{definition}
+For $\kk$-linear categories $\cA,\cB$,
+we define the category $\cA \hatbox \cB$ the category
+whose set of objects is $\Obj \cA \times \Obj \cB$,
+and morphisms are
+\[
+\Hom(A \hatbox B, A' \hatbox B')
+:=
+\Hom_\cA(A, A') \tnsr \Hom_\cB(B, B')
+\]
+\end{definition}
+
+(Lawvere \cite{Lawvere} writes $\cA \bigotimes \cB$
+for $\cA \hatbox \cB$.)
+
+\begin{definition}
+For $\kk$-linear categories $\cA,\cB$,
+a profunctor $F: \cA \nto \cB$ is a $\kk$-linear functor
+$F: \cB^\op \hatbox \cA \to \Vect$.
+\end{definition}
+
+Let us unpack this definition.
+Let $A,A' \in \cA, B,B' \in \cB$,
+$a \in \cA(A,A'), b \in \cB(B',B)$.
+On morphisms, we have
+$\cB^\op \hatbox \cA (B \hatbox A, B' \hatbox A')
+\to \Vec(F(B,A), F(B',A'))$.
+Since $\cB^\op \hatbox \cA (B \hatbox A, B' \hatbox A')
+= \cB(B',B) \tnsr \cA(A,A')$,
+by $\tnsr-\Hom$ adjunction,
+we have
+$\cB(B',B) \tnsr F(B,A) \tnsr \cC(A,A') \to F(B',A')$.
+Hence, Lawvere \cite{Lawvere} also calls these
+``bimodules'';
+in the example below, we see this is literally bimodules.
+
+
+Composition of profunctors is exactly the same,
+except Cartesian product is replaced by tensor product.
+Because we work with small categories,
+the coend always exists, though the resulting vector space
+may be infinite...
+
 
 \begin{example}
-A one-object $\Vect$-enriched category $*//A$
+A one-object $\kk$-linear category $*//A$
 is simply an algebra.
 Functors $F: *//A \to *//B$ are simply algebra homomorphisms,
 and natural transformations are simply central elements of $B$.
 
 On the other hand,
 a profunctor $F: *//A \nto *//B$
-is a functor $F: *//B^\op \times *//A \to \Vect$
-(since $(*//B)^\op = *//B^\op$)
+is a functor
+$F: *//B^\op \hatbox *//A = *//(B^\op \tnsr A) \to \Vect$,
+which is equivalent to a $B$-$A$-bimodule.
+($B$ acts from left, $A$ acts from right;
+it is not so clear from writing
+$*//(B^\op \tnsr A) \to \Vect$,
+but it is clearer from considering the unpacking of
+the definition above.
+
+
+Composition of profunctors amounts to relative tensor product.
+Given $F: *//A \nto *//B, G: *//B \nto *//C$,
+equivalent to bimodules $\prescript{}{B}M_A,
+\prescript{}{C}N_B$, respectively,
+their composition is given by
+$G \circ F(*,*) = \int^* G(*,*) \tnsr F(*,*)
+= G(*,*) \tnsr F(*,*) / \sim \;\;
+= N \tnsr M / (nb \tnsr m \sim n \tnsr bm)
+= N \tnsr_B M$.
+
 \end{example}
 
 
@@ -822,24 +939,18 @@ $Z(pt^+) \simeq \cA$
 and $Z(pt^-) \simeq \cA^\op$
 (in fact these are isomorphisms).
 
-\begin{definition}
-For $\kk$-linear categories $\cB,\cC$,
-we define the category $\cB \hatbox \cC$
-as the additive completion of the category
-whose objects are pairs of objects $B_i,C_i$ from $\cB,\cC$,
-denoted $B_i \hatbox C_i$,
-and morphisms are
-\[
-\Hom(B_i \hatbox C_i, B_j \hatbox C_j)
-:=
-\Hom_\cB(B_i, B_j) \tnsr \Hom_\cC(C_i, C_j)
-\]
-\end{definition}
 
 
 \begin{proposition}
 $Z(N_1 \sqcup N_2) \simeq Z(N_1) \hatbox Z(N_2)$
 \end{proposition}
+
+\begin{proof}
+There are obvious functors to and from both sides,
+coming from pushing forward objects and skeins
+along topological maps,
+and they are clearly inverse to each other.
+\end{proof}
 
 \begin{definition}
 For a cobordism $M : N \to N'$,
