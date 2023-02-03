@@ -12,11 +12,13 @@
 \newcommand{\empt}[1]{{\emptyset^{#1}}}
 
 \newcommand{\VV}{{\mathbf{V}}}
+\newcommand{\EE}{{\mathbf{E}}}
 \DeclareMathOperator{\Skein}{Skein}
 \newcommand{\op}{{\text{op}}}
 \newcommand{\wdtld}[1]{{\widetilde{#1}}}
 
 \newcommand{\cB}{{\mathcal{B}}}
+%\newcommand{\cI}{{\mathcal{I}}}
 \newcommand{\cV}{{\mathcal{V}}}
 \newcommand{\hatbox}{{\hat{\boxtimes}}}
 
@@ -693,6 +695,9 @@ exists because $\cB$ is small and $\Set^{\cB^\op}$
 is cocomplete.
 Then we define $G\circ F$ by
 $\widehat{G\circ F} = L_{Y}(\hat{G}) \circ \hat{F}$.
+Converting this to our definition of profunctor
+gives coend, not end
+(in particular, constructing left Kan extension uses colimit).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -730,6 +735,9 @@ and morphisms are
 (Lawvere \cite{Lawvere} writes $\cA \bigotimes \cB$
 for $\cA \hatbox \cB$.)
 
+It is clear that
+this notion of tensor product is associative and symmetric.
+
 \begin{definition}
 For $\kk$-linear categories $\cA,\cB$,
 a profunctor $F: \cA \nto \cB$ is a $\kk$-linear functor
@@ -760,33 +768,52 @@ may be infinite...
 
 
 \begin{example}
-A one-object $\kk$-linear category $*//A$
+A one-object $\kk$-linear category $\cA = *//A$
 is simply an algebra.
+To avoid confusion later, let us be pedantic:
+here we have $A = \cA(*,*)$,
+and the composition gives a linear map
+$A \tnsr A = \cA(*,*) \tnsr \cA(*,*) \xrightarrow{\circ} \cA(*,*) = A$.
+So for $a,a'\in A$,
+writing $aa'$ means we apply the morphism $a'$ first,
+and then $a$
+(since we write composition from right to left).
+
 Functors $F: *//A \to *//B$ are simply algebra homomorphisms,
 and natural transformations are simply central elements of $B$.
 
-On the other hand,
-a profunctor $F: *//A \nto *//B$
+On the other hand, a profunctor $F: *//A \nto *//B$
 is a functor
-$F: *//B^\op \hatbox *//A = *//(B^\op \tnsr A) \to \Vect$,
-which is equivalent to a $B$-$A$-bimodule.
-($B$ acts from left, $A$ acts from right;
-it is not so clear from writing
-$*//(B^\op \tnsr A) \to \Vect$,
-but it is clearer from considering the unpacking of
-the definition above.
+$F: (*//B)^\op \hatbox *//A = *//(B^\op \tnsr A) \to \Vect$,
+which is equivalent to a $A$-$B$-bimodule:
+writing $M = F(*,*)$,
+for $a,a' \in A, b,b' \in B$,
+we have $F(b,a): M \to M$,
+and $F(bb',aa') = F(b',a) \circ F(b,a')$;
+this means $B$ naturally acts on the right
+and $A$ acts on the left.
+
+Alternativey,
+$(*//B)^\op \hatbox *//A = *//(B^\op) \hatbox *//A = *//(B^\op \tnsr A)$,
+so $F: *//(B^\op \tnsr A) \to \Vect$
+amounts to a (left) $B^\op \tnsr A$-module.
 
 
 Composition of profunctors amounts to relative tensor product.
 Given $F: *//A \nto *//B, G: *//B \nto *//C$,
-equivalent to bimodules $\prescript{}{B}M_A,
-\prescript{}{C}N_B$, respectively,
+equivalent to bimodules $\prescript{}{A}M_B,
+\prescript{}{B}N_C$, respectively,
 their composition is given by
-$G \circ F(*,*) = \int^* G(*,*) \tnsr F(*,*)
-= G(*,*) \tnsr F(*,*) / \sim \;\;
-= N \tnsr M / (nb \tnsr m \sim n \tnsr bm)
-= N \tnsr_B M$.
+$G \circ F(*_C,*_A) = \int^{b:* \to *} G(*_C,*) \tnsr F(*,*_A)
+= N \tnsr M / (bn \tnsr m \sim n \tnsr mb)
+= M \tnsr_B N$.
 
+\end{example}
+
+
+\begin{example}
+The $\kk$-linear category $\cI = *//\kk$
+is the unit for $\hatbox$.
 \end{example}
 
 
@@ -826,11 +853,17 @@ so-called boundary values:
 \begin{definition}
 A \emph{boundary value} $\VV$ on an oriented 0-manifold $N$
 is an assignment of an object $V_b \in \cA$
-for every point $b \in N$.
+for every point $b \in N$,
+or more concisely, $\VV: N \to \Obj \cA$.
 
 We denote by $\ov{\VV}$ the boundary value on $\ov{N}$
 (opposite orientation) with the same assignments as $\VV$.
 \end{definition}
+
+Note that this definition works for the empty 0-manifold
+$N = \empt{0}$: there is only one function $\empt{0} \to \Obj \cA$,
+so there is a unique boundary value on $\empt{0}$,
+which we denote by $\EE$.
 
 Note that usually (for $\dim N = 1,2$)
 a boundary value is a finite set of points in $N$
@@ -858,9 +891,12 @@ is outwardly-oriented at $b$, and $pt^-$ otherwise.
 Let $M$ be an oriented 1-manifold.
 Let $\VV$ be a boundary value on $\del M$.
 An $\cA$-colored graph $(\Gamma,\vphi)$
-is an embedded oriented graph $\Gamma$ in $M$,
-with edge oriented in accordance with $M$
-and is surjective on $M$,
+is an oriented finite graph $\Gamma$ with an embedding in $M$,
+with edge orientations agreeing with $M$
+and such that every vertex of $\Gamma$
+that is mapped into the interior of $M$
+has degree 2,
+%and is surjective on $M$,
 and $\vphi$ is an assignment of an object $\vphi_e$
 for each edge $e$ of $\Gamma$
 such that the assignment to the edges meeting the boundary
@@ -870,7 +906,11 @@ for every internal vertex of $\Gamma$
 with an incoming edge $e$ and outgoing edge $e'$.
 \end{definition}
 
-Note finiteness of the graph is automatic.
+Note that for the empty manifold, the only graph is the empty graph
+(which has a unique $\cA$-coloring),
+while for non-empty 1-manifold $M$,
+graphs must be surjective onto $M$
+(from the boundary value condition and internal vertex condition).
 
 We often denote an $\cA$-colored graph simply by $\Gamma$.
 
@@ -926,6 +966,15 @@ A \emph{skein} is an element of a skein module.
 \end{definition}
 
 
+For the empty 1-manifold $\empt{1}$,
+as we mentioned, there is a unique $\cA$-colored graph,
+and there are no relations from null graphs
+because there are no disks $D \to \empt{1}$;
+thus, $\Skein(\empt{1};\EE) = \kk$,
+where recall $\EE$ is the unique boundary value on
+the empty 0-manifold $\empt{0}$.
+
+
 Finally, we can give the full definition of the category
 $Z(N)$:
 
@@ -945,6 +994,8 @@ $Z(pt^+) \simeq \cA$
 and $Z(pt^-) \simeq \cA^\op$
 (in fact these are isomorphisms).
 
+We see that $Z(\empt{0}) = *//\kk$.
+
 
 
 \begin{proposition}
@@ -952,11 +1003,54 @@ $Z(N_1 \sqcup N_2) \simeq Z(N_1) \hatbox Z(N_2)$
 \end{proposition}
 
 \begin{proof}
-There are obvious functors to and from both sides,
-coming from pushing forward objects and skeins
-along topological maps,
-and they are clearly inverse to each other.
+There is a natural bijection for the objects
+$\Obj Z(N_1 \sqcup N_2) = \{N_1 \sqcup N_2 \to \Obj \cA\}
+\simeq \{N_1 \to \Obj \cA\} \times \{N_1 \to \Obj \cA\}
+= \Obj Z(N_1) \times \Obj Z(N_2)$.
+We denote by $\VV_1 \sqcup \VV_2$ the object of $Z(N_1 \sqcup N_2)$
+corresponding to $(\VV_1,\VV_2)$ under the bijection above.
+
+Fix objects $\VV_1,\VV_1' \in \Obj Z(N_1)$,
+$\VV_2,\VV_2' \in \Obj Z(N_2)$.
+For $f_1 = (\Gamma_1,\vphi_1) \in Z(N_1)(\VV_1,\VV_1')$,
+$f_2 = (\Gamma_2,\vphi_2) \in Z(N_2)(\VV_2,\VV_2')$,
+we have the morphism
+\[
+f_1 \tnsr f_2 \in
+Z(N_1)(\VV_1,\VV_1') \tnsr Z(N_2)(\VV_2,\VV_2')
+= Z(N_1) \hatbox Z(N_2)(\VV_1 \hatbox \VV_2, \VV_1' \hatbox \VV_2')
+\]
+and also the morphism
+\[
+f_1 \sqcup f_2 = (\Gamma_1 \sqcup \Gamma_2, \vphi_1 \sqcup \vphi_2)
+\in Z(N_1 \sqcup N_2) (\VV_1 \sqcup \VV_2, \VV_1' \sqcup \VV_2')
+\]
+where $\vphi_1 \sqcup \vphi_2$ is the $\cA$-coloring that
+restricts to $\vphi_1,\vphi_2$ on $\Gamma_1,\Gamma_2$ respectively.
+It is straightforward to check that
+the latter assigment $f_1 \sqcup f_2$ is bilinear,
+thus inducing a map
+\[
+Z(N_1) \hatbox Z(N_2)(\VV_1 \hatbox \VV_2, \VV_1' \hatbox \VV_2')
+\to Z(N_1 \sqcup N_2) (\VV_1 \sqcup \VV_2, \VV_1' \sqcup \VV_2')
+\]
+and that this map is an isomorphism.
+It is also clear that this isomorphism is functorial,
+thus gives the desired isomorphism
+$Z(N_1 \sqcup N_2) \simeq Z(N_1) \hatbox Z(N_2)$.
 \end{proof}
+
+Note that we did not rely on any non-emptiness assumptions
+on $N_1$ or $N_2$.
+Applying this to $\empt{0}$,
+we have
+\[
+Z(N) = Z(N \sqcup \empt{0}) \simeq Z(N) \hatbox Z(\empt{0})
+\simeq Z(N) \hatbox *//\kk
+\]
+which is in agreement with the fact that
+$*//\kk$ is the unit for $\hatbox$.
+
 
 \begin{definition}
 For a cobordism $M : N \to N'$,

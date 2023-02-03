@@ -1,0 +1,176 @@
+23.11.2022
+continued discussion of skein categories
+-Salvatore-Wahl Framed disc operads equivariant recognition principle
+-framing of D2 important for monoidal structure
+-E2-algebra
+-tangent: spin/framed disk operads?
+
+Street Formal Theory of Monads
+
+Z(Ann) = Kleisli of Z(D2) (with central monad)
+..or is it?
+-got stuck on defining Kleisli -> Z(Ann) on morphisms
+(when not semisimple, the coend is wrong way)
+-maybe it's coKleisli, using the fact that under some conditions,
+coend can be end [Fuchs,Schaumann,Fuchs - ... S4 Radford]
+	-identification of end with coend is the source of d_i's
+		in the sum in Kirby coloring in the semisimple case
+-another way is if want coKleisli, namely if want morphisms A ---> B
+	to be TA -> B,
+	then want the left adjoint in the Kleisli adjunction
+	to also be a right adjoint, so called "Frobenius"
+	(another sense of Frobenius: left/right preserve alg/coalg objects,
+	and 1 (unit) is both alg and coalg, so if left/right adjoint
+	are same, then the image of 1 is Frobenius too..)
+	so then T is now a comonad,
+	and can define coKleisli
+
+	Z(C) -> C is exact, so has left and right adjoints
+	the adjoints are isomorphic, so get Radford S4?
+
+	Nakayama functor N(X) = D.X** = **X.D (some signs missing),
+	and the equivalence is Radford S4
+
+-also should look at BenZvi-Brochier-Jordan, and Cooke
+
+===================================================================
+
+30.11.2022
+-Ingo not present
+-discussed the main excision lemma
+	(hom in Z(N') is the coend of homs in Z(N),
+	where N' is obtained from N by gluing two boundary parts)
+-fix boundary values V,V' in N
+-write hom(A,A') for hom_N(AV,V'A'),
+-write hom' for hom_N'(i(V),i(V'))
+-have maps hom(A,A') -> hom'
+-respect the coend stuff, get int(hom(A,A)) -> hom'
+-need to show is isom
+-surjectivity easy
+-injectivity etc
+
+
+===================================================================
+
+14.12.2022
+-started with my attempts at generalizing hTr(M) = T(M)? = Z(M),
+	but already done probably in
+	Fuchs-Schaumann-Schweigert: trace of bimodule
+-mentioned in non pivotal case, can consider 2-framed surfaces,
+	then annulus can be n-twisted, get twisted Drinfeld center
+	(half-braidings are Z.X -> X.D^n(Z), where D is double dual
+	(Schommer-Pries?)
+-Moved to discussion of David Reutter's slides
+-presented my understanding of the slides,
+	-from (n+eps)-TQFT to (n+1)-TQFT
+	-a bit of confusion: at (n+eps) level, are those functors required
+	to be adjoint - if so, then the 2-morphisms are data?
+	-discussed up to making claim that counit for k determines
+	unit for k+1 (ran out of time)
+-Christoph slight confusion on Skein(S3) = {modified traces},
+	because there is special modified trace associated to
+	projective ideal which is built from the Nakayama functor
+	- perhaps it means something for the resulting TQFT
+-finite MTC has unique modified trace
+-Cob_3,2,1 in terms of generators and relations (someone's paper)
+-what if consider an arbitrary tensor ideal?
+	note to self: proj ideal is smallest, so Proj in I in C
+
+for next time:
+	-study what these adjunctions mean for CY
+		(build up CY from stringnets 3+eps)
+	-figure out if adjointness is already required for a 3+eps
+		or adjointness should only appear in 3+1
+	-write up clearly the skein excision argument
+
+===================================================================
+
+11.01.2023
+-discussed dual handles - in context of extended cobordism
+	(e.g. Cob(4,3,2)), for handle as 1-morphism (e.g. 3d k-handle)
+	the dual handle is the adjoint 1-morphism
+	('dual' in dual handle is "not just poetry")
+-I made claim that there are no obstructions to extending
+	(n+eps) to (n+1)-TQFT,
+	but probably wrong;
+	Chirstoph suggests that it may have something to do with this:
+	Duality in Monoidal Categories - Sebastian Halbig, Tony Zorman
+	basically adjoints and snake relations are not enough for TQFT,
+	need a stronger form of duality
+	(my glancing impression is that (co)units must respect monoidal too)
+-considered (1+eps) to gain intuition of the adjoint stuff
+	considered (1+eps) theory where point assigned *//A
+	(cat with one point, End(*) = A)
+	(some completion of *//A gives A-mod,
+	in some cases this completion is Karoubi completion,
+	but this is more general)
+	1-morphisms would be bimodules over A or A^op etc
+
+for next time:
+	-work out the *//A stuff? probably can consult literature
+	-read the Duality in Monoidal Categories paper (it's short!)
+
+===================================================================
+
+19.01.2023
+-started with Schommer-Pries (0,1,2)-theory = symm Frob
+	some topology stuff, generators relations
+-then started describing my attempts to approach it from
+	the perspective of starting with (1+eps) and completing to (1+1)
+	-went on long detour through "skein/stringnets" on 0,1 manifolds..
+	-Z(pt+) = *//A, Z(pt-) = *//Aop
+	-Z(interval) = graphs with vertices labeled with elem of A / relations
+	-naturally get A vs Aop
+	-etc
+-insight that needing some 1-morphisms to be two-sided adjoints
+	is important
+
+for next time/hausaufgabe:
+	-type/write up Ingo's notes on today's discussion
+	-continue to understand the 1-morphisms being two-sided adjoints
+
+===================================================================
+
+27.01.2023
+-start with skein theory for 1+eps
+	-mentioned issue of whether to allow empty boundary value
+	-Christoph: makes sense that in this case, must have object
+	-in 2+eps, on 1-mflds, for the more general input data of bicat,
+		a boundary value is not just points with labels,
+		but the edges between them also get labels,
+		more specifically, the points divide the 1-mfld into edges,
+		to each edge assign object of bicat, and
+		to each point assign 1-morphism
+		-think of delooping BC for fusion C
+		so even if there's no points, there should be a label of an
+		object on the 1-mfld..
+	-talked about profunctors, tasked me to learn more:
+
+(1) Understand profunctors better
+	-set-version, then what needs to change for vect-enriched
+	-what is the correct notion of product of categories?
+	F:A1 -> A2 ====> F* : A1^op x* A2 -> Vec, what is x*?
+	-what conditions on categories? e.g. need coend to exist?
+	(need composition of profunctors to make sense)
+
+(2) change of coefficients ==> map between theories ==> what does it do to Z(S1)?
+		(generalization of A/[A,A] = B/[B,B] for Morita equiv A,B
+	-is there a non-trivial Dehn twist 2-morphism? (Map(S1) ~ S1, but is connected..)
+
+(3) what conditions on A (the algebra) to get (1+eps)? (1+1)?
+	-e.g. frob? finite? interesting case - A-mod is locally finite but not finite
+
+===================================================================
+
+composition uses coend "because" id as Hom(-,-) is identity
+if use coend, not for end
+
+Hausaufgabe
+(1) clarify empty manifold, empty skein?
+(2) skeins under diffeo
+(3) what conditions does Skein construction place on A
+	when we take *//A as input category? A finite dim? k can be ring?
+(4) think of cusps as mapping cylinders?
+	also see Juhasz Defining and Classifying TQFTs via Surgery
+future: matrix factorization in skeins? see Nils
+===================================================================
