@@ -862,7 +862,7 @@ we start by studying the simplest case, $n = 1$.
 In particular, we will study the $(1+\veps)$-theory
 arising from skeins in 1-manifolds.
 
-Manifolds with be assumed to be compact
+Manifolds will be assumed to be compact
 unless otherwise specified.
 
 We consider oriented 0-manifolds.
@@ -871,7 +871,7 @@ denoted by tuples of signs, e.g. $(+,+,-,+)$;
 the empty 0-manifold is denoted by $()$ or $\empt{0}$.
 Note that the tuple is ordered, but the 0-manifold itself
 is not, in the sense that
-$(+,+,-,+)$ is homeomorphic to $(-,+,+,+)$;
+$(+,+,-,+)$ is diffeomorphic to $(-,+,+,+)$;
 it is useful to keep an ordering of the points
 to keep our heads straight on the algebra.
 
@@ -1097,11 +1097,57 @@ It is straightforward to check that
 $Z(pt^+) \simeq \cA$
 and $Z(pt^-) \simeq \cA^\op$
 (in fact these are isomorphisms).
+For the empty 0-manifold, $Z(\empt{0}) = *//\kk$.
 
-TODO clarify geometry $Z(---<---) \hatbox Z(---<---)
-\to Z(---<---)$.
 
-We see that for the empty 0-manifold, $Z(\empt{0}) = *//\kk$.
+It is useful to think of $N \times I$ for $N = pt^+$
+as an interval going from right to left,
+$\overset{+}{\bullet}--<--\overset{+}{\bullet}$,
+so that the composition of morphisms matches the picture;
+for $a \in \cA(A,A'), a' \in \cA(A',A'')$,
+\[
+\prescript{}{A''}{\overset{+}{\bullet}}-\overset{a'}{\cdot}-<--
+\overset{+}{\bullet}_{A'}
+\;\;\;
+\circ
+\;\;\;
+\prescript{}{A'}{\overset{+}{\bullet}}-\overset{a}{\cdot}-<--
+\overset{+}{\bullet}_{A'}
+\;\;\;
+=
+\;\;\;
+\prescript{}{A}{\overset{+}{\bullet}}-\overset{a'a}{\cdot}-<--
+\overset{+}{\bullet}_{A''}
+\]
+
+On the other hand, for $N = pt^-$,
+we should think of $N \times I$ as an interval from left to right,
+and so composition is reversed:
+for $a \in \cA(A,A'), a' \in \cA(A',A'')$,
+\[
+\prescript{}{A}{\overset{+}{\bullet}}-\overset{a}{\cdot}->--
+\overset{+}{\bullet}_{A'}
+\;\;\;
+\circ
+\;\;\;
+\prescript{}{A'}{\overset{+}{\bullet}}-\overset{a'}{\cdot}->--
+\overset{+}{\bullet}_{A''}
+\;\;\;
+=
+\;\;\;
+\prescript{}{A}{\overset{+}{\bullet}}-\overset{a'a}{\cdot}->--
+\overset{+}{\bullet}_{A''}
+\]
+
+
+\begin{remark}
+\label{r:arrow-of-time}
+Note that the local relations defining the skeins is the same
+in both cases; the $\cdot^\op$ in the latter case is an artefact of the
+way we identify the arrow of time with the horizontal line,
+i.e. we write composition from right (=before) to left (=after).
+\end{remark}
+
 
 
 
@@ -1111,9 +1157,11 @@ $Z(N_1 \sqcup N_2) \simeq Z(N_1) \hatbox Z(N_2)$
 
 \begin{proof}
 There is a natural bijection for the objects
-$\Obj Z(N_1 \sqcup N_2) = \{N_1 \sqcup N_2 \to \Obj \cA\}
+\[
+\Obj Z(N_1 \sqcup N_2) = \{N_1 \sqcup N_2 \to \Obj \cA\}
 \simeq \{N_1 \to \Obj \cA\} \times \{N_1 \to \Obj \cA\}
-= \Obj Z(N_1) \times \Obj Z(N_2)$.
+= \Obj Z(N_1) \times \Obj Z(N_2)
+\]
 We denote by $\VV_1 \sqcup \VV_2$ the object of $Z(N_1 \sqcup N_2)$
 corresponding to $(\VV_1,\VV_2)$ under the bijection above.
 
@@ -1155,8 +1203,8 @@ we have
 Z(N) = Z(N \sqcup \empt{0}) \simeq Z(N) \hatbox Z(\empt{0})
 \simeq Z(N) \hatbox *//\kk
 \]
-which is in agreement with the fact that
-$*//\kk$ is the unit for $\hatbox$.
+which is in agreement with the unitors for
+$*//\kk$ as the unit for $\hatbox$.
 
 
 \begin{definition}
