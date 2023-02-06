@@ -596,6 +596,19 @@ denoted $F: \cA \nto \cB$,
 is a functor $F: \cB^\op \times \cA \to \Set$.
 \end{definition}
 
+\begin{remark}
+\label{r:profunctor-alt}
+Equivalently, we may provide the data of
+$\hat{F} : \cA \to \Set^{\cB^\op}$,
+from which we may define $F(B,A) = \hat{F}(A)(B)$,
+and $F(b^\op: B^\op \to B'^\op,a: A \to A')
+= \hat{F}(a)_B \circ \hat{F}(A)(b)
+= \hat{F}(A')(b) \circ \hat{F}(a)_{B'}$;
+or we may construct $\hat{F}$ from $F$ by
+$\hat{F}(A)(-) = F(-,A)$,
+and $\hat{F}(a:A \to A')_B = F(B,a)$.
+\end{remark}
+
 \begin{example}
 From a functor $G: \cA \to \cB$,
 we may construct two profunctors
@@ -721,10 +734,11 @@ For our applications, we will only consider $\cV = \Vect$,
 with tensor product as the monoidal structure.
 
 \begin{definition}
+\label{d:hatbox}
 For $\kk$-linear categories $\cA,\cB$,
-we define the category $\cA \hatbox \cB$ the category
-whose set of objects is $\Obj \cA \times \Obj \cB$,
-and morphisms are
+we define the category $\cA \hatbox \cB$
+with set of objects $\Obj \cA \times \Obj \cB$,
+and morphisms
 \[
 \Hom(A \hatbox B, A' \hatbox B')
 :=
@@ -739,25 +753,39 @@ It is clear that
 this notion of tensor product is associative and symmetric.
 
 \begin{definition}
+\label{d:profunctor-vec}
 For $\kk$-linear categories $\cA,\cB$,
 a profunctor $F: \cA \nto \cB$ is a $\kk$-linear functor
 $F: \cB^\op \hatbox \cA \to \Vect$.
 \end{definition}
 
-Let us unpack this definition.
+\begin{remark}
+\label{r:profunctor-alt-vec}
+Again, this is equivalent to providing
+$\hat{F}: \cA \to \Vect^{\cB^\op}$.
+Indeed, for $a: A \to A'$ in $\cA$ and
+$b: B \to B'$ in $\cB$,
+we see that the assignment from \rmkref{r:profunctor-alt},
+$F(b,a) = \hat{F}(a)_B \circ \hat{F}(A)(b)$
+is bilinear in $a,b$.
+Thus, we see that the usage of tensor product
+in composition, i.e. the bilinearity of compositon of morphisms,
+forces the tensor product in \defref{d:hatbox}.
+\end{remark}
+
+Let us further unpack \defref{d:profunctor-vec}.
 Let $A,A' \in \cA, B,B' \in \cB$,
 $a \in \cA(A,A'), b \in \cB(B',B)$.
 On morphisms, we have
 $\cB^\op \hatbox \cA (B \hatbox A, B' \hatbox A')
-\to \Vec(F(B,A), F(B',A'))$.
-Since $\cB^\op \hatbox \cA (B \hatbox A, B' \hatbox A')
-= \cB(B',B) \tnsr \cA(A,A')$,
-by $\tnsr-\Hom$ adjunction,
-we have
+\to \Vect(F(B,A), F(B',A'))$.
+%Since $\cB^\op \hatbox \cA (B \hatbox A, B' \hatbox A')
+%= \cB(B',B) \tnsr \cA(A,A')$,
+By $\tnsr-\Hom$ adjunction, we have
 $\cB(B',B) \tnsr F(B,A) \tnsr \cC(A,A') \to F(B',A')$.
-Hence, Lawvere \cite{Lawvere} also calls these
-``bimodules'';
-in the example below, we see this is literally bimodules.
+Hence, Lawvere \cite{Lawvere} also calls these ``bimodules'';
+in the example below, we see these are literally bimodules
+in certain contexts.
 
 
 Composition of profunctors is exactly the same,
@@ -770,8 +798,8 @@ may be infinite...
 \begin{example}
 A one-object $\kk$-linear category $\cA = *//A$
 is simply an algebra.
-To avoid confusion later, let us be pedantic:
-here we have $A = \cA(*,*)$,
+To avoid confusion later about the order of operations,
+let us be pedantic: here we have $A = \cA(*,*)$,
 and the composition gives a linear map
 $A \tnsr A = \cA(*,*) \tnsr \cA(*,*) \xrightarrow{\circ} \cA(*,*) = A$.
 So for $a,a'\in A$,
@@ -814,6 +842,13 @@ $G \circ F(*_C,*_A) = \int^{b:* \to *} G(*_C,*) \tnsr F(*,*_A)
 \begin{example}
 The $\kk$-linear category $\cI = *//\kk$
 is the unit for $\hatbox$.
+The unitors are isomorphisms
+$\cA \hatbox \cI \simeq \cA \simeq \cI \hatbox \cA$,
+on objects
+$A \hatbox * \mapsto A \mapsto * \hatbox A$
+and on morphisms are just the unitors for $\Vect$,
+$\cA(A,A') \tnsr \kk \simeq \cA(A,A') \simeq
+\kk \tnsr \cA(A,A')$.
 \end{example}
 
 
@@ -830,7 +865,8 @@ arising from skeins in 1-manifolds.
 Manifolds with be assumed to be compact
 unless otherwise specified.
 
-We consider oriented 0-manifolds,
+We consider oriented 0-manifolds.
+We often use certain 0-manifolds in particular,
 denoted by tuples of signs, e.g. $(+,+,-,+)$;
 the empty 0-manifold is denoted by $()$ or $\empt{0}$.
 Note that the tuple is ordered, but the 0-manifold itself
@@ -858,6 +894,12 @@ or more concisely, $\VV: N \to \Obj \cA$.
 
 We denote by $\ov{\VV}$ the boundary value on $\ov{N}$
 (opposite orientation) with the same assignments as $\VV$.
+
+For an orientation-preserving diffeomorphism of 0-manifolds
+$f: N \simeq N'$,
+we may define the \emph{push-forward} boundary value
+$f_*(\VV)$ of a boundary value $\VV$ on $N$
+to be $f_*(\VV): n' \mapsto \VV(f^\inv(n'))$.
 \end{definition}
 
 Note that this definition works for the empty 0-manifold
@@ -865,7 +907,9 @@ $N = \empt{0}$: there is only one function $\empt{0} \to \Obj \cA$,
 so there is a unique boundary value on $\empt{0}$,
 which we denote by $\EE$.
 
-Note that usually (for $\dim N = 1,2$)
+\begin{remark}
+\label{r:boundary-value}
+Usually (for $\dim N = 1,2$)
 a boundary value is a finite set of points in $N$
 with assigned objects;
 here we require the finite set of points of a boundary value
@@ -878,6 +922,7 @@ say $\cA = A-\text{mod}$,
 we can still consider skeins as we will see below,
 but if we do not assign an object to a boundary point,
 it is unclear what such a skein should do at the boundary...
+\end{remark}
 
 
 Next we define skeins in a 1-manifold.
@@ -888,19 +933,21 @@ is outwardly-oriented at $b$, and $pt^-$ otherwise.
 
 \begin{definition}
 \label{d:A-colored-graph}
-Let $M$ be an oriented 1-manifold.
-Let $\VV$ be a boundary value on $\del M$.
-An $\cA$-colored graph $(\Gamma,\vphi)$
+Let $M$ be an oriented 1-manifold,
+and let $f: \del M \simeq N$
+be a parametrization of its boundary by a given 0-manifold $N$.
+Let $\VV$ be a boundary value on $N$,
+and let $\VV' = f_*^\inv(\VV)$.
+An \emph{$\cA$-colored graph with boundary value $\VV$},
+denoted $(\Gamma,\vphi)$,
 is an oriented finite graph $\Gamma$ with an embedding in $M$,
 with edge orientations agreeing with $M$
 and such that every vertex of $\Gamma$
-that is mapped into the interior of $M$
-has degree 2,
-%and is surjective on $M$,
+that is mapped into the interior of $M$ has degree 2,
 and $\vphi$ is an assignment of an object $\vphi_e$
 for each edge $e$ of $\Gamma$
 such that the assignment to the edges meeting the boundary
-agrees with the boundary value $\VV$,
+agrees with the boundary value $\VV'$,
 and a morphism $\vphi_v: \vphi_e \to \vphi_{e'}$
 for every internal vertex of $\Gamma$
 with an incoming edge $e$ and outgoing edge $e'$.
@@ -911,6 +958,16 @@ Note that for the empty manifold, the only graph is the empty graph
 while for non-empty 1-manifold $M$,
 graphs must be surjective onto $M$
 (from the boundary value condition and internal vertex condition).
+
+\begin{remark}
+We could add an additional layer of flexibility
+by specifying that the boundary value $\VV'$
+not be exactly the push-forward of $\VV$ along $f^\inv$,
+but instead have an isomorphism
+$\vphi_n : \VV'(n) \simeq \VV(n)$ for each $n \in N$.
+However, it doesn't seem to add anything to the theory,
+only additional symbols.
+\end{remark}
 
 We often denote an $\cA$-colored graph simply by $\Gamma$.
 
@@ -974,6 +1031,42 @@ thus, $\Skein(\empt{1};\EE) = \kk$,
 where recall $\EE$ is the unique boundary value on
 the empty 0-manifold $\empt{0}$.
 
+Diffeomorphism of 1-manifolds give isomorphisms
+on skein modules (proof is straightforward):
+
+\begin{proposition}
+\label{p:diffeo}
+Let $M, M'$ be 1-manifolds,
+and let $\vphi: \del M \to N, \vphi': \del M' \to N'$
+be parametrizations of their boundaries.
+Let $f: M \simeq M', g: N \simeq N'$ be diffeomorphisms
+that are compatible with the parametrizations,
+i.e. $g \circ \vphi = \vphi' \circ f|_{\del M}$.
+Let $\VV$ be a boundary value on $N$,
+and let $\VV' = g_*(\VV)$ be its push-forward.
+
+For an $\cA$-colored graph $\Gamma$ in $M$
+with boundary value $\VV$,
+the diffeomorphism $f$ sends it to
+an $\cA$-colored graph in $M'$
+with boundary value $\VV'$,
+which we denote by $f_*(\Gamma)$.
+
+Then this operation defines an isomorphism
+$f_*: \Skein(M;\VV) \to \Skein(M';\VV')$.
+\end{proposition}
+
+Note that it may be convenient to define push-forward
+of boundary values/skeins for embeddings of manifolds,
+and at first glance this makes sense;
+however, because of our stipulation that
+boundary values assign an object to \emph{every} point,
+this is not well-defined,
+unless we specify beforehand
+what we should assign to points that were not hit
+by the embedding, e.g. a unit object of $\cA$
+(see \rmkref{r:boundary-value}).
+
 
 Finally, we can give the full definition of the category
 $Z(N)$:
@@ -987,6 +1080,17 @@ and morphism are given by
 \[
 \Hom_{Z(N)}(\VV,\VV') = \Skein(N \times I; \ov{\VV} \cup \VV')
 \]
+Composition is given by gluing two copies of $N \times I$
+and identifying it with $N \times I$.
+More precisely, for $\cA$-colored graphs $\Gamma,\Gamma'$
+representing elements in
+$\Hom_{Z(N)}(\VV,\VV'), \Hom_{Z(N)}(\VV',\VV'')$
+respectively,
+the $\cA$-colored graph $\Gamma' \circ \Gamma$
+has underlying graph in $N \times I \cup N \times I$
+given by the images of $\Gamma$ and $\Gamma'$
+and forgetting their boundary vertices
+at the points where they meet.
 \end{definition}
 
 It is straightforward to check that
@@ -994,7 +1098,10 @@ $Z(pt^+) \simeq \cA$
 and $Z(pt^-) \simeq \cA^\op$
 (in fact these are isomorphisms).
 
-We see that $Z(\empt{0}) = *//\kk$.
+TODO clarify geometry $Z(---<---) \hatbox Z(---<---)
+\to Z(---<---)$.
+
+We see that for the empty 0-manifold, $Z(\empt{0}) = *//\kk$.
 
 
 
