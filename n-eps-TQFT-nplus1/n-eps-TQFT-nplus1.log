@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.25)  6 FEB 2023 12:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.25)  6 FEB 2023 15:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -723,50 +723,46 @@ OT1/cmr/bx/n/12 V[]\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 V[]\OMX/MnSymbolE/m/n/12
  ç$
  []
 
-[11] [12] [13] (./n-eps-TQFT-nplus1.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[11] [12] [13] (./n-eps-TQFT-nplus1.aux) ) 
 Here is how much of TeX's memory you used:
  18772 strings out of 478599
  357707 string characters out of 5854100
- 628601 words of memory out of 5000000
+ 628604 words of memory out of 5000000
  36310 multiletter control sequences out of 15000+600000
  430829 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,11n,89p,610b,640s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{/
-usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolA.enc}{/usr/
-local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}{/usr/loca
-l/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolS.enc}{/usr/local/te
-xlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolB.enc}{/usr/local/texliv
-e/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/usr/local/texlive/20
-21/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}</usr/local/texlive/2021/t
-exmf-dist/fonts/type1/public/mnsymbol/MnSymbol10.pfb></usr/local/texlive/2021/t
-exmf-dist/fonts/type1/public/mnsymbol/MnSymbol12.pfb></usr/local/texlive/2021/t
-exmf-dist/fonts/type1/public/mnsymbol/MnSymbol5.pfb></usr/local/texlive/2021/te
-xmf-dist/fonts/type1/public/mnsymbol/MnSymbol6.pfb></usr/local/texlive/2021/tex
-mf-dist/fonts/type1/public/mnsymbol/MnSymbol7.pfb></usr/local/texlive/2021/texm
-f-dist/fonts/type1/public/mnsymbol/MnSymbol8.pfb></usr/local/texlive/2021/texmf
--dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2021/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2021/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2021/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2021/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2021/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmti12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfont
-s/symbols/msbm10.pfb>
-Output written on n-eps-TQFT-nplus1.pdf (13 pages, 2205499 bytes).
+{/usr/local/texlive/2021/texmf-dist/f
+onts/enc/dvips/mnsymbol/MnSymbolE.enc}{/usr/local/texlive/2021/texmf-dist/fonts
+/enc/dvips/mnsymbol/MnSymbolA.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc
+/dvips/mnsymbol/MnSymbolF.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvi
+ps/mnsymbol/MnSymbolS.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/m
+nsymbol/MnSymbolB.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsym
+bol/MnSymbolC.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/
+MnSymbolD.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/mnsymbol/M
+nSymbol10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/mnsymbol/M
+nSymbol12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/mnsymbol/M
+nSymbol5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/mnsymbol/Mn
+Symbol6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/mnsymbol/MnS
+ymbol7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/mnsymbol/MnSy
+mbol8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+bx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
+x8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi1
+0.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12
+.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.p
+fb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
+></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
+/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
+sr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
+ocal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
+al/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/
+texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
+live/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
+e/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
+021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/20
+21/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on n-eps-TQFT-nplus1.pdf (13 pages, 2205608 bytes).
 PDF statistics:
  211 PDF objects out of 1000 (max. 8388607)
  131 compressed objects within 2 object streams
