@@ -1101,6 +1101,12 @@ $\pi(N)$ removed.
 
 We say $\Gamma'$ is obtain from $\Gamma$
 by gluing $N$ to $N'$.
+This operation gives a linear map
+\[
+\Phi_{\VV} :
+\Skein(M;\VV \sqcup f_*(\ov{\VV}) \sqcup \VV_0)
+\to \Skein(M';\VV_0)
+\]
 \end{definition}
 
 
@@ -1136,11 +1142,14 @@ for graphs $\Gamma,\Gamma'$
 representing elements in
 $\Hom_{Z(N)}(\VV,\VV'), \Hom_{Z(N)}(\VV',\VV'')$,
 respectively,
-$\Gamma \sqcup \Gamma'
-\in \Skein(N \times I \sqcup N \times I;
-\ov{\VV} \sqcup \VV' \sqcup \ov{\VV'} \sqcup \VV'')$,
-glued along the common $\VV'$ boundary value,
-is $\Gamma' \circ \Gamma$.
+we define
+$\Gamma' \circ \Gamma
+= \Phi_{\VV'}(\Gamma' \sqcup \Gamma)$.
+%$\Gamma \sqcup \Gamma'
+%\in \Skein(N \times I \sqcup N \times I;
+%\ov{\VV} \sqcup \VV' \sqcup \ov{\VV'} \sqcup \VV'')$,
+%glued along the common $\VV'$ boundary value,
+%is $\Gamma' \circ \Gamma$.
 
 
 The identity morphism on an object $\VV \in Z(N)$
@@ -1264,6 +1273,11 @@ Z(N) = Z(N \sqcup \empt{0}) \simeq Z(N) \hatbox Z(\empt{0})
 \]
 which is in agreement with the unitors for
 $*//\kk$ as the unit for $\hatbox$.
+
+
+\begin{remark}
+\label{r:1-bord-direction}
+\end{remark}
 
 
 \begin{definition}
