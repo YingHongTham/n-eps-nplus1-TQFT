@@ -1068,6 +1068,31 @@ by the embedding, e.g. a unit object of $\cA$
 (see \rmkref{r:boundary-value}).
 
 
+\begin{definition}
+Let $M$ be a 1-manifold,
+and let us separate its boundary into three parts,
+$\del M \simeq N \sqcup N' \sqcup N_0$.
+Let $f: \ov{N} \simeq N'$ be an orientation-reversing
+diffeomorphism between $N$ and $N'$.
+Let $\VV,\VV',\VV_0$ be boundary values on $N,N',N_0$,
+respectively, such that $\VV' = f_*(\ov{\VV})$.
+Let $M'$ be the quotient of $M$
+obtained by identifying $N$ with $N'$ by $f$;
+let $\pi : M \to M'$ be the quotient map.
+
+For an $\cA$-colored graph $\Gamma$ in $M$
+with boudary value $\VV \sqcup \VV' \sqcup \VV_0$,
+its image $\pi(\Gamma)$ is an $\cA$-colored graph in $M'$
+with boundary value $\VV_0$;
+let $\Gamma'$ be $\pi(\Gamma)$ but with
+the (once boundary but now internal) vertices at
+$\pi(N)$ removed.
+
+We say $\Gamma'$ is obtain from $\Gamma$
+by gluing $N$ to $N'$.
+\end{definition}
+
+
 Finally, we can give the full definition of the category
 $Z(N)$:
 
@@ -1078,31 +1103,50 @@ oriented 0-manifold $N$
 is the category whose objects are boundary values $\VV$,
 and morphism are given by
 \[
-\Hom_{Z(N)}(\VV,\VV') = \Skein(N \times I; \ov{\VV} \cup \VV')
+\Hom_{Z(N)}(\VV,\VV') = \Skein(N \times I; \ov{\VV} \sqcup \VV')
 \]
-Composition is given by gluing two copies of $N \times I$
-and identifying it with $N \times I$.
-More precisely, for $\cA$-colored graphs $\Gamma,\Gamma'$
+Here $N \times I = N \times [0,1]$
+is oriented so that for $n \in N$,
+we orient $n \times [0,1]$ from $n \times 0$
+to $n \times 1$ if $n \simeq pt^+$,
+and the other way otherwise.
+Then $N \times I$ is a cobordism
+from $N \times 0$ to $N \times 1$.
+Then in $\Skein(N \times I; \ov{\VV} \sqcup \VV')$,
+we place $\VV'$ at $N \times 1$
+and $\ov{\VV}$ at $N \times 0$.
+
+Composition is given by taking graphs in
+two copies of $N \times I$
+and gluing $N \times 1$ to $N \times 0$
+(from different copies).
+To be precise,
+for graphs $\Gamma,\Gamma'$
 representing elements in
-$\Hom_{Z(N)}(\VV,\VV'), \Hom_{Z(N)}(\VV',\VV'')$
+$\Hom_{Z(N)}(\VV,\VV'), \Hom_{Z(N)}(\VV',\VV'')$,
 respectively,
-the $\cA$-colored graph $\Gamma' \circ \Gamma$
-has underlying graph in $N \times I \cup N \times I$
-given by the images of $\Gamma$ and $\Gamma'$
-and forgetting their boundary vertices
-at the points where they meet.
+$\Gamma \sqcup \Gamma'
+\in \Skein(N \times I \sqcup N \times I;
+\ov{\VV} \sqcup \VV' \sqcup \ov{\VV'} \sqcup \VV'')$,
+glued along the common $\VV'$ boundary value,
+is $\Gamma' \circ \Gamma$.
+
 
 The identity morphism on an object $\VV \in Z(N)$
 is given by the graph with no internal vertices,
 with the only possible labeling of edges.
 \end{definition}
 
-It is straightforward to check that
-$Z(pt^+) \simeq \cA$ and $Z(pt^-) \simeq \cA^\op$
-(in fact these are isomorphisms).
 For the empty 0-manifold, $Z(\empt{0}) = *//\kk$.
 
-It is useful to think of $N \times I$ for $N = pt^+$
+We check that
+$Z(pt^+) \simeq \cA$ and $Z(pt^-) \simeq \cA^\op$
+(in fact these are isomorphisms).
+That they are the same on the level of objects
+and morphisms is obvious.
+We need to check that composition of morphisms agree.
+
+We draw $N \times I$ for $N = pt^+$
 as an interval going from right to left,
 $\overset{+}{\bullet}--<--\overset{+}{\bullet}$,
 so that the composition of morphisms matches the picture;
@@ -1114,31 +1158,31 @@ for $a \in \cA(A,A'), a' \in \cA(A',A'')$,
 \circ
 \;\;\;
 \prescript{}{A'}{\overset{+}{\bullet}}-\overset{a}{\cdot}-<--
-\overset{+}{\bullet}_{A'}
+\overset{+}{\bullet}_{A}
 \;\;\;
 =
 \;\;\;
-\prescript{}{A}{\overset{+}{\bullet}}-\overset{a'a}{\cdot}-<--
-\overset{+}{\bullet}_{A''}
+\prescript{}{A''}{\overset{+}{\bullet}}-\overset{a'a}{\cdot}-<--
+\overset{+}{\bullet}_{A}
 \]
 
 On the other hand, for $N = pt^-$,
 we should think of $N \times I$ as an interval from left to right,
 and so composition is reversed:
-for $a \in \cA(A,A'), a' \in \cA(A',A'')$,
+for $b \in \cA^\op(A',A), b' \in \cA^\op(A'',A')$,
 \[
-\prescript{}{A}{\overset{+}{\bullet}}-\overset{a}{\cdot}->--
-\overset{+}{\bullet}_{A'}
+\prescript{}{A}{\overset{-}{\bullet}}-\overset{b}{\cdot}->--
+\overset{-}{\bullet}_{A'}
 \;\;\;
 \circ
 \;\;\;
-\prescript{}{A'}{\overset{+}{\bullet}}-\overset{a'}{\cdot}->--
-\overset{+}{\bullet}_{A''}
+\prescript{}{A'}{\overset{-}{\bullet}}-\overset{b'}{\cdot}->--
+\overset{-}{\bullet}_{A''}
 \;\;\;
 =
 \;\;\;
-\prescript{}{A}{\overset{+}{\bullet}}-\overset{a'a}{\cdot}->--
-\overset{+}{\bullet}_{A''}
+\prescript{}{A}{\overset{-}{\bullet}}-\overset{b'b}{\cdot}->--
+\overset{-}{\bullet}_{A''}
 \]
 
 
@@ -1148,8 +1192,10 @@ Note that the local relations defining the skeins is the same
 in both cases; the $\cdot^\op$ in the latter case is an artefact of the
 way we identify the arrow of time with the horizontal line,
 i.e. we write composition from right (=before) to left (=after).
-\end{remark}
 
+We chose to draw pictures like this
+so that composition matches with gluing.
+\end{remark}
 
 
 
@@ -1212,45 +1258,72 @@ $*//\kk$ as the unit for $\hatbox$.
 \begin{definition}
 For a cobordism $M : N \to N'$,
 we define the profunctor
-$Z(M): Z(N) \nto Z(N')$
-defined by
+$Z(M): Z(N') \nto Z(N)$ defined by
 \[
-(\VV, \VV') \mapsto \Skein(M; \ov{\VV} \cup \VV')
+(\VV', \VV) \mapsto \Skein(M; \ov{\VV} \sqcup \VV')
 \]
 \end{definition}
+
+Note the opposite direction of the profunctor.
 
 \begin{proposition}
 \label{p:1-cobord-compose}
 For cobordisms $M: N \to N', M': N' \to N''$,
-$Z(M' \circ M) \simeq Z(M') \circ Z(M)$.
+$Z(M' \circ M) \simeq Z(M) \circ Z(M')$.
+
+\begin{align*}
+N'' \overset{M'}{\longleftarrow}
+& N' \overset{M}{\longleftarrow}
+N
+\\
+Z(N'') \overset{Z(M')}{\nto}
+Z(& N') \overset{Z(M)}{\nto}
+Z(N)
+\end{align*}
 \end{proposition}
 
 \begin{proof}
 We need to show that, for boundary values
 $\VV,\VV''$ on $N,N''$ respectively,
 \[
-\int^{\VV'} \Skein(M';\ov{\VV'} \cup \VV'')
-\tnsr \Skein(M; \ov{\VV} \cup \VV')
-\simeq \Skein(M' \circ M; \ov{\VV} \cup \VV'')
+\int^{\VV'}
+\Skein(M; \ov{\VV} \sqcup \VV')
+\tnsr
+\Skein(M';\ov{\VV'} \sqcup \VV'')
+\simeq \Skein(M' \circ M; \ov{\VV} \sqcup \VV'')
 \]
-The obvious concatenation of graphs
-in $M,M'$ to form a graph in $M' \circ M$
-gives a map
-$\Phi_{\VV'}: \Skein(M';\ov{\VV'} \cup \VV'')
-\tnsr \Skein(M; \ov{\VV} \cup \VV')
-\to \Skein(M' \circ M; \ov{\VV} \cup \VV'')$
+The gluing of graphs in $M',M$ to form a graph in
+$M' \circ M$ gives a map
+\[
+\Phi_{\VV'}:
+\Skein(M; \ov{\VV} \sqcup \VV')
+\tnsr
+\Skein(M';\ov{\VV'} \sqcup \VV'')
+\to \Skein(M' \circ M; \ov{\VV} \sqcup \VV'')
+\]
 for each $\VV'$.
+We may think of $\Phi_{\VV'}$
+as a natural transformation of functors
+$Z(\ov{N}) \hatbox Z(N'') \to \Vect$.
 It is easy to see that the sum of these maps,
 $\sum_{\VV'} \Phi_{\VV'}:
-\bigoplus_{\VV'} \Skein(M';\ov{\VV'} \cup \VV'')
-\tnsr \Skein(M; \ov{\VV} \cup \VV')
-\to \Skein(M' \circ M; \ov{\VV} \cup \VV'')$,
+\bigoplus_{\VV'}
+\Skein(M; \ov{\VV} \sqcup \VV')
+\tnsr
+\Skein(M';\ov{\VV'} \sqcup \VV'')
+\to \Skein(M' \circ M; \ov{\VV} \sqcup \VV'')$,
 factors through the coend.
 
 That this map is surjective is obvious;
 for injectivity, see notes on excision
 (or see \cite{KT}).
 \end{proof}
+
+
+Note that this is consistent with
+composition of morphisms in $Z(N)$.
+In particular, let us consider $N = pt^+$.
+Let $M = M' = N \times I$.
 
 
 %(1) Understand profunctors better

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.25)  8 FEB 2023 00:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.25)  8 FEB 2023 01:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -627,7 +627,7 @@ File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count300
 \l__pdf_internal_box=\box64
 )
-No file n-eps-TQFT-nplus1.aux.
+(./n-eps-TQFT-nplus1.aux)
 \openout1 = `n-eps-TQFT-nplus1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
@@ -644,6 +644,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
+
 (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count301
@@ -677,20 +678,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-LaTeX Warning: Reference `s:handles-from-adjunctions' on page 1 undefined on in
-put line 107.
-
-
-LaTeX Warning: Reference `p:extend-uniqueness' on page 1 undefined on input lin
-e 118.
-
-
-LaTeX Warning: Reference `f:disk-adjunction' on page 1 undefined on input line 
-137.
-
-[1
+) [1
 
 {/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 <disk-adjunction-unit-counit.png, id=21, 149.55875pt x 59.22125pt>
@@ -705,94 +693,28 @@ File: disk-adjunction-snake-equation.png Graphic file (type png)
 Package pdftex.def Info: disk-adjunction-snake-equation.png  used on input line
  147.
 (pdftex.def)             Requested size: 170.71652pt x 96.30473pt.
-
-
-LaTeX Warning: Citation `SPries' on page 2 undefined on input line 155.
-
-
-LaTeX Warning: Reference `f:dual-handle' on page 2 undefined on input line 166.
-
-
 <diagram-dual-handle.jpg, id=24, 3144.74875pt x 993.7125pt>
 File: diagram-dual-handle.jpg Graphic file (type jpg)
 <use diagram-dual-handle.jpg>
 Package pdftex.def Info: diagram-dual-handle.jpg  used on input line 169.
 (pdftex.def)             Requested size: 426.79134pt x 134.85805pt.
-
-LaTeX Warning: Reference `f:elementary-cobord-counit-unit' on page 2 undefined 
-on input line 185.
-
-[2 <./disk-adjunction-unit-counit.png> <./disk-adjunction-snake-equation.png> <
-./diagram-dual-handle.jpg>]
-<diagram-counit-unit-elementary-cobord.jpg, id=34, 3213.00375pt x 2313.64375pt>
+ [2 <./disk-adjunction-unit-counit.png> <./disk-adjunction-snake-equation.png> 
+<./diagram-dual-handle.jpg>]
+<diagram-counit-unit-elementary-cobord.jpg, id=33, 3213.00375pt x 2313.64375pt>
 
 File: diagram-counit-unit-elementary-cobord.jpg Graphic file (type jpg)
 <use diagram-counit-unit-elementary-cobord.jpg>
 Package pdftex.def Info: diagram-counit-unit-elementary-cobord.jpg  used on inp
 ut line 225.
 (pdftex.def)             Requested size: 426.79134pt x 307.31535pt.
-
-
-LaTeX Warning: Reference `f:dual-handle' on page 3 undefined on input line 231.
-
-
-
-LaTeX Warning: Reference `f:dual-handle' on page 3 undefined on input line 231.
-
-
-
-LaTeX Warning: Citation `Yprod' on page 3 undefined on input line 247.
-
-[3 <./diagram-counit-unit-elementary-cobord.jpg>] [4]
-
-LaTeX Warning: Reference `f:defn-1-hdl-alt' on page 5 undefined on input line 4
-65.
-
-
-LaTeX Warning: Reference `f:defn-1-hdl-alt' on page 5 undefined on input line 4
-69.
-
-<fig-defn-1-hdl-alt.jpg, id=47, 3782.13pt x 1192.455pt>
+ [3 <./diagram-counit-unit-elementary-cobord.jpg>] [4]
+<fig-defn-1-hdl-alt.jpg, id=46, 3782.13pt x 1192.455pt>
 File: fig-defn-1-hdl-alt.jpg Graphic file (type jpg)
 <use fig-defn-1-hdl-alt.jpg>
 Package pdftex.def Info: fig-defn-1-hdl-alt.jpg  used on input line 474.
 (pdftex.def)             Requested size: 341.43306pt x 107.64383pt.
-[5] [6 <./fig-defn-1-hdl-alt.jpg>]
-
-LaTeX Warning: Reference `s:skeins' on page 7 undefined on input line 573.
-
-
-LaTeX Warning: Citation `Lawvere' on page 7 undefined on input line 631.
-
-[7]
-
-LaTeX Warning: Reference `r:profunctor-alt' on page 8 undefined on input line 7
-68.
-
-
-LaTeX Warning: Reference `d:hatbox' on page 8 undefined on input line 773.
-
-
-LaTeX Warning: Reference `d:profunctor-vec' on page 8 undefined on input line 7
-76.
-
-[8] [9] [10]
-
-LaTeX Warning: Reference `r:boundary-value' on page 11 undefined on input line 
-1068.
-
-
-Overfull \hbox (0.49751pt too wide) in paragraph at lines 1082--1094
-\OT1/cmr/m/n/12 cisely, for $\OMS/MnSymbolS/m/n/12 A$\OT1/cmr/m/n/12 -colored g
-raphs $^^@\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 ^^@[]$ rep-re-sent-ing el-e-ments 
-in $[][]\OMX/MnSymbolE/m/n/12 à\OT1/cmr/bx/n/12 V\OML/cmm/m/it/12 ; \OT1/cmr/bx
-/n/12 V[]\OMX/MnSymbolE/m/n/12 ç\OML/cmm/m/it/12 ; [][]\OMX/MnSymbolE/m/n/12 à\
-OT1/cmr/bx/n/12 V[]\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 V[]\OMX/MnSymbolE/m/n/12
- ç$
- []
-
-[11]
-Overfull \hbox (5.7661pt too wide) detected at line 1166
+ [5] [6 <./fig-defn-1-hdl-alt.jpg>] [7] [8] [9] [10] [11]
+Overfull \hbox (5.7661pt too wide) detected at line 1212
 [] \OML/cmm/m/it/12 Z\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 N[] \U/MnSymbolC/m
 /n/12 @ \OML/cmm/m/it/12 N[]\OMX/MnSymbolE/m/n/12 ç \U/MnSymbolD/m/n/12 ^^@ \OM
 X/MnSymbolE/m/n/12 ò\OML/cmm/m/it/12 N[] \U/MnSymbolC/m/n/12 @ \OML/cmm/m/it/12
@@ -806,61 +728,49 @@ cmm/m/it/12 Z\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 N[]\OMX/MnSymbolE/m/n/12 ç
 /it/12 N[]\OMX/MnSymbolE/m/n/12 ç
  []
 
-[12]
-
-LaTeX Warning: Citation `KT' on page 13 undefined on input line 1252.
-
-[13] (./n-eps-TQFT-nplus1.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[12] [13] [14] (./n-eps-TQFT-nplus1.aux) ) 
 Here is how much of TeX's memory you used:
- 18774 strings out of 478599
- 357710 string characters out of 5854100
- 628421 words of memory out of 5000000
- 36313 multiletter control sequences out of 15000+600000
- 430998 words of font info for 124 fonts, out of 8000000 for 9000
+ 18773 strings out of 478599
+ 357724 string characters out of 5854100
+ 628616 words of memory out of 5000000
+ 36311 multiletter control sequences out of 15000+600000
+ 430829 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,11n,89p,610b,640s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{/
-usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolA.enc}{/usr/
-local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}{/usr/loca
-l/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolS.enc}{/usr/local/te
-xlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolB.enc}{/usr/local/texliv
-e/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/usr/local/texlive/20
-21/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}</usr/local/texlive/2021/t
-exmf-dist/fonts/type1/public/mnsymbol/MnSymbol10.pfb></usr/local/texlive/2021/t
-exmf-dist/fonts/type1/public/mnsymbol/MnSymbol12.pfb></usr/local/texlive/2021/t
-exmf-dist/fonts/type1/public/mnsymbol/MnSymbol5.pfb></usr/local/texlive/2021/te
-xmf-dist/fonts/type1/public/mnsymbol/MnSymbol6.pfb></usr/local/texlive/2021/tex
-mf-dist/fonts/type1/public/mnsymbol/MnSymbol7.pfb></usr/local/texlive/2021/texm
-f-dist/fonts/type1/public/mnsymbol/MnSymbol8.pfb></usr/local/texlive/2021/texmf
--dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2021/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2021/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2021/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2021/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2021/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmti12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmtt12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts
-/symbols/msbm10.pfb>
-Output written on n-eps-TQFT-nplus1.pdf (13 pages, 2213419 bytes).
+{/usr/local/texlive/2021/texmf-dist/f
+onts/enc/dvips/mnsymbol/MnSymbolE.enc}{/usr/local/texlive/2021/texmf-dist/fonts
+/enc/dvips/mnsymbol/MnSymbolA.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc
+/dvips/mnsymbol/MnSymbolF.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvi
+ps/mnsymbol/MnSymbolS.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/m
+nsymbol/MnSymbolB.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsym
+bol/MnSymbolC.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/
+MnSymbolD.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/mnsymbol/M
+nSymbol10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/mnsymbol/M
+nSymbol12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/mnsymbol/M
+nSymbol5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/mnsymbol/Mn
+Symbol6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/mnsymbol/MnS
+ymbol7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/mnsymbol/MnSy
+mbol8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+bx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
+x8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi1
+0.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12
+.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.p
+fb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
+></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
+/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
+sr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
+ocal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
+al/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/
+texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
+live/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
+e/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
+021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/20
+21/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on n-eps-TQFT-nplus1.pdf (14 pages, 2210276 bytes).
 PDF statistics:
- 216 PDF objects out of 1000 (max. 8388607)
- 134 compressed objects within 2 object streams
+ 214 PDF objects out of 1000 (max. 8388607)
+ 133 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  38 words of extra memory for PDF output out of 10000 (max. 10000000)
 
