@@ -796,6 +796,7 @@ may be infinite...
 
 
 \begin{example}
+\label{x:profunctor-bimodule}
 A one-object $\kk$-linear category $\cA = *//A$
 is simply an algebra.
 To avoid confusion later about the order of operations,
@@ -835,8 +836,13 @@ their composition is given by
 $G \circ F(*_C,*_A) = \int^{b:* \to *} G(*_C,*) \tnsr F(*,*_A)
 = N \tnsr M / (bn \tnsr m \sim n \tnsr mb)
 = M \tnsr_B N$.
-
 \end{example}
+
+
+\begin{remark}
+We saw from \xmpref{x:profunctor-bimodule}
+that $F: *//A$
+\end{remark}
 
 
 \begin{example}
@@ -975,9 +981,8 @@ We often denote an $\cA$-colored graph simply by $\Gamma$.
 \label{d:local-ev}
 Let $(\Gamma,\vphi)$ be an $\cA$-colored graph
 in an oriented 1-manifold $M$.
-Let $D$ be a 1-dimension embedded disk, i.e. an interval,
-in $M$, such that $\del D$ does not meet any internal vertex
-of $\Gamma$.
+Let $D$ be a 1-dimension embedded disk, i.e. an interval, in $M$,
+such that $\del D$ does not meet any internal vertex of $\Gamma$.
 Let $X,X'$ be the objects assigned to the edges $e,e'$,
 respectively, that contain or meet $\del D$,
 with $e$ oriented into $D$, and $e'$ oriented out of $D$.
@@ -988,9 +993,15 @@ $v_i$ be the vertex between $e_{i-1}$ and $e_i$.
 We define the \emph{evaluation of $(\Gamma,\vphi)$ in $D$}
 to be the composition
 \[
+\Hom_\cA(X,X') \ni
 \eval{(\Gamma,\vphi)}_D
-= \vphi_{v_k} \circ \cdots \circ \vphi_{v_1}
-\in \Hom_\cA(X,X')
+=
+\begin{cases}
+\vphi_{v_k} \circ \cdots \circ \vphi_{v_1}
+\textrm{ if } k >0
+\\
+\id_X \textrm{ else (i.e. } e = e')
+\end{cases}
 \]
 \end{definition}
 
@@ -1211,12 +1222,13 @@ $*//\kk$ as the unit for $\hatbox$.
 
 \begin{definition}
 For a cobordism $M : N \to N'$,
-we define the profunctor
-$Z(M): Z(N) \nto Z(N')$
-defined by
-\[
-(\VV, \VV') \mapsto \Skein(M; \ov{\VV} \cup \VV')
-\]
+we define the profunctor $Z(M): Z(N) \nto Z(N')$
+given by
+\begin{align*}
+Z(N)^\op \hatbox Z(N') &\to \Vect
+\\
+\VV \hatbox \VV' &\mapsto \Skein(M; \ov{\VV} \cup \VV')
+\end{align*}
 \end{definition}
 
 \begin{proposition}
@@ -1251,6 +1263,22 @@ That this map is surjective is obvious;
 for injectivity, see notes on excision
 (or see \cite{KT}).
 \end{proof}
+
+
+\begin{example}
+Let us consider the interval $M$
+as a cobordism from $(+,-)$ to $\empt{0}$.
+We get a profunctor
+$Z(M) : Z((+,-)) \nto Z(\empt{0})$,
+
+\begin{align*}
+Z(M) : (*//\kk)^\op \hatbox \cA \hatbox \cA^\op &\to \Vect
+\\
+* \hatbox A \hatbox A' &\mapsto \cA(A',A)
+\end{align*}
+\end{example}
+
+
 
 
 %(1) Understand profunctors better

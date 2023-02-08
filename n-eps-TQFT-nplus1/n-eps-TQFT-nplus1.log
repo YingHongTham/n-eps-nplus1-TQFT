@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.4.21)  6 FEB 2023 20:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.4.21)  7 FEB 2023 15:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -696,7 +696,7 @@ Package pdftex.def Info: fig-defn-1-hdl-alt.jpg  used on input line 474.
 (pdftex.def)             Requested size: 341.43306pt x 107.64383pt.
  [5] [6 <./fig-defn-1-hdl-alt.jpg>]
 [7] [8] [9] [10]
-Overfull \hbox (0.49751pt too wide) in paragraph at lines 1082--1094
+Overfull \hbox (0.49751pt too wide) in paragraph at lines 1087--1099
 \OT1/cmr/m/n/12 cisely, for $\OMS/MnSymbolS/m/n/12 A$\OT1/cmr/m/n/12 -colored g
 raphs $^^@\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 ^^@[]$ rep-re-sent-ing el-e-ments 
 in $[][]\OMX/MnSymbolE/m/n/12 ˆ\OT1/cmr/bx/n/12 V\OML/cmm/m/it/12 ; \OT1/cmr/bx
@@ -706,7 +706,7 @@ OT1/cmr/bx/n/12 V[]\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 V[]\OMX/MnSymbolE/m/n/12
  []
 
 [11]
-Overfull \hbox (5.7661pt too wide) detected at line 1166
+Overfull \hbox (5.7661pt too wide) detected at line 1171
 [] \OML/cmm/m/it/12 Z\OMX/MnSymbolE/m/n/12 ˆ\OML/cmm/m/it/12 N[] \U/MnSymbolC/m
 /n/12 @ \OML/cmm/m/it/12 N[]\OMX/MnSymbolE/m/n/12  \U/MnSymbolD/m/n/12 ^^@ \OM
 X/MnSymbolE/m/n/12 ˜\OML/cmm/m/it/12 N[] \U/MnSymbolC/m/n/12 @ \OML/cmm/m/it/12
@@ -757,7 +757,7 @@ mr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on n-eps-TQFT-nplus1.pdf (13 pages, 2207391 bytes).
+Output written on n-eps-TQFT-nplus1.pdf (13 pages, 2209073 bytes).
 PDF statistics:
  211 PDF objects out of 1000 (max. 8388607)
  131 compressed objects within 2 object streams
