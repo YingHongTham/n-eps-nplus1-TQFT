@@ -174,3 +174,12 @@ Hausaufgabe
 	also see Juhasz Defining and Classifying TQFTs via Surgery
 future: matrix factorization in skeins? see Nils
 ===================================================================
+
+09.02.2023
+
+the presense of cusp is felt by the 2-isomorphism
+that relates compositions of 1-morphism:
+Z(fg) ~ Z(f)Z(g)
+
+===================================================================
+===================================================================

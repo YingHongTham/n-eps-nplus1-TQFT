@@ -24,7 +24,11 @@
 
 \DeclareMathOperator{\Set}{Set}
 \DeclareMathOperator{\Vect}{Vec}
+\DeclareMathOperator{\Profun}{ProFun}
+\newcommand{\Profunop}{{\Profun}^\op}
 \newcommand{\ihom}{{\underline{\textrm{Hom}}}}
+
+\newcommand{\epsCob}{{(1+\veps)-\text{Cob}}}
 
 \begin{document}
 
@@ -654,7 +658,9 @@ and $by$ for $G(\id_C,b)(y)$).
 
 One justification for defining composition as such is
 the following (simple exercise on coends):
+
 \begin{lemma}
+\label{l:id-profunctor}
 The profunctor $\id_\cA^* = \cA(-,-)$ is
 the identity for composition of profunctors,
 i.e. for $F: \cA \nto \cB$,
@@ -858,6 +864,18 @@ $\cA(A,A') \tnsr \kk \simeq \cA(A,A') \simeq
 \end{example}
 
 
+\begin{definition}
+Define $\Profun$ to be the bicategory
+whose objects are small $\kk$-linear categories,
+1-morphisms are profunctors,
+and 2-morphisms are natural transformations.
+
+We define $\Profunop$ to have 1-morphisms reversed,
+that is,
+$\Profunop(\cA,\cB) = \Profun(\cB,\cA)$.
+\end{definition}
+
+
 \section{Skein theory for $(1+\veps)$-theory}
 \label{s:skeins}
 
@@ -981,7 +999,7 @@ We often denote an $\cA$-colored graph simply by $\Gamma$.
 \label{d:local-ev}
 Let $(\Gamma,\vphi)$ be an $\cA$-colored graph
 in an oriented 1-manifold $M$.
-Let $D$ be a 1-dimension embedded disk, i.e. an interval, in $M$,
+Let $D$ be a 1-dim embedded disk, i.e. an interval, in $M$,
 such that $\del D$ does not meet any internal vertex of $\Gamma$.
 Let $X,X'$ be the objects assigned to the edges $e,e'$,
 respectively, that contain or meet $\del D$,
@@ -1029,7 +1047,7 @@ The \emph{skein module} $\Skein(M;\VV)$
 of $M$ with boundary value $\VV$
 is the space of formal linear combinations of
 $\cA$-colored graphs in $M$ with boundary value $\VV$
-module null graphs.
+modulo null graphs.
 A \emph{skein} is an element of a skein module.
 \end{definition}
 
@@ -1157,8 +1175,26 @@ is given by the graph with no internal vertices,
 with the only possible labeling of edges.
 \end{definition}
 
-For the empty 0-manifold, $Z(\empt{0}) = *//\kk$.
+Skein modules are functorial in the boundary value:
 
+\begin{proposition}
+\label{p:skein-functorial}
+The skein module construction defines a functor from
+the skein category of the boundary $\del M$ to vector spaces:
+\[
+\Skein(M;-) : Z(\del M) \to \Vect
+\]
+\end{proposition}
+\begin{proof}
+Exercise.
+\end{proof}
+
+\begin{example}
+For the empty 0-manifold, $Z(\empt{0}) = *//\kk$.
+\end{example}
+
+\begin{example}
+\label{x:point}
 We check that
 $Z(pt^+) \simeq \cA$ and $Z(pt^-) \simeq \cA^\op$
 (in fact these are isomorphisms).
@@ -1204,6 +1240,7 @@ for $b \in \cA^\op(A',A), b' \in \cA^\op(A'',A')$,
 \prescript{}{A}{\overset{-}{\bullet}}-\overset{b'b}{\cdot}->--
 \overset{-}{\bullet}_{A''}
 \]
+\end{example}
 
 
 \begin{remark}
@@ -1217,9 +1254,20 @@ We chose to draw pictures like this
 so that composition matches with gluing.
 \end{remark}
 
+\begin{proposition}
+\label{p:op-orient}
+There is an isomorphism
+$Z(\ov{N}) \simeq Z(N)^\op$,
+$\ov{\VV} \mapsto \VV$.
+\end{proposition}
+\begin{proof}
+See \xmpref{x:point}.
+\end{proof}
+
 
 
 \begin{proposition}
+\label{p:disjoint-union-skein-cat}
 $Z(N_1 \sqcup N_2) \simeq Z(N_1) \hatbox Z(N_2)$
 \end{proposition}
 
@@ -1281,14 +1329,21 @@ $*//\kk$ as the unit for $\hatbox$.
 
 
 \begin{definition}
-For a cobordism $M : N \to N'$,
-we define the profunctor $Z(M): Z(N') \nto Z(N)$
+Let $M : N \to N'$ be a cobordism,
+with $\vphi: \del_-M \simeq \ov{N}$,
+$\vphi': \del_+M \simeq N'$.
+We define the profunctor $Z(M): Z(N') \nto Z(N)$
 given by
 \begin{align*}
 Z(N)^\op \hatbox Z(N') &\to \Vect
 \\
 \VV \hatbox \VV' &\mapsto \Skein(M; \ov{\VV} \cup \VV')
 \end{align*}
+
+Here we used the functoriality of $\Skein(M;-)$
+and the isomorphisms
+$Z(\ov{N}) \hatbox Z(N') \simeq Z(\del_-M) \hatbox Z(\del_+M)
+\simeq Z(\del M)$.
 \end{definition}
 
 Note the opposite direction of the profunctor.
@@ -1356,18 +1411,175 @@ Let $M = M' = N \times I$.
 
 
 \begin{example}
+\label{x:cup-cap}
 Let us consider the interval $M$
-as a cobordism from $(+,-)$ to $\empt{0}$.
+as a cobordism from $\empt{0}$ to $(+,-)$.
 We get a profunctor
 $Z(M) : Z((+,-)) \nto Z(\empt{0})$,
 
 \begin{align*}
-Z(M) : (*//\kk)^\op \hatbox \cA \hatbox \cA^\op &\to \Vect
+Z(M) : (*//\kk)^\op \hatbox \cA \hatbox \cA^\op
+\simeq \cA \hatbox \cA^\op
+&\to \Vect
 \\
-* \hatbox A \hatbox A' &\mapsto \cA(A',A)
+A \hatbox A' &\mapsto \cA(A',A)
+\end{align*}
+
+On the other hand, if we consider the interval $M'$
+as a cobordism from $(+,-)$ to $\empt{0}$,
+we get a profunctor
+$Z(M) : Z(\empt{0}) \nto Z((+,-))$,
+
+\begin{align*}
+Z(M) : (\cA \hatbox \cA^\op)^\op \hatbox *//\kk
+\simeq \cA^\op \hatbox \cA
+&\to \Vect
+\\
+A \hatbox A' &\mapsto \cA(A,A')
 \end{align*}
 \end{example}
 
+\begin{example}
+Consider the cobordism $M_1 = M \sqcup \id_+: (+) \to (+,-,+)$,
+where $M: \empt{0} \to (+,-)$ is from \xmpref{x:cup-cap},
+and we have identifications of the incoming/outoing boundaries,
+$\ov{\empt{0} \sqcup (-)} \simeq (+)$,
+$(+,-) \sqcup (+) \simeq (+,-,+)$.
+
+With $Z((+)) \simeq \cA_1$,
+$Z((+,-,+)) \simeq \cA_2 \hatbox \cA_3^\op \hatbox \cA_4$,
+(the subscripts under $\cA$ are only meant to distinguish
+different copies of $\cA$),
+$Z(M_1)$ is a profunctor
+
+\begin{align*}
+Z(M_1) : \cA_1^\op \hatbox \cA_2 \hatbox \cA_3^\op \hatbox \cA_4
+&\to \Vect
+\\
+A_1 \hatbox A_2 \hatbox A_3 \hatbox A_4
+&\mapsto \cA(A_1,A_4) \tnsr \cA(A_3,A_2)
+\end{align*}
+
+Similarly, consider the cobordism $M_2 = \id_+ \sqcup M': (+,-,+) \to (+)$,
+where $M': (+,-) \to \empt{0}$ is from \xmpref{x:cup-cap},
+and we have identifications of the incoming/outoing boundaries,
+$\ov{(-) \sqcup (-,+)} = (+) \sqcup (+,-) \simeq (+,-,+)$
+(last two swapping places),
+$\empt{0} \sqcup (+) \simeq (+)$.
+
+With $Z((+,-,+)) \simeq \cA_5 \hatbox \cA_6^\op \hatbox \cA_7$,
+$Z((+)) \simeq \cA_8$,
+(the subscripts under $\cA$ are only meant to distinguish
+different copies of $\cA$),
+$Z(M_2)$ is a profunctor
+
+\begin{align*}
+Z(M_2) : \cA_5^\op \hatbox \cA_6 \hatbox \cA_7^\op \hatbox \cA_8
+&\to \Vect
+\\
+A_5 \hatbox A_6 \hatbox A_7 \hatbox A_8
+&\mapsto \cA(A_5,A_8) \tnsr \cA(A_7,A_6)
+\end{align*}
+
+Composing the profunctors, we have
+\begin{align*}
+Z(M_1) \circ Z(M_2) :
+\cA_1^\op \hatbox \cA_8
+&\to \Vect
+\\
+A_1 \hatbox A_8
+&\mapsto
+\int^{A_2,A_3,A_4}
+\cA(A_1,A_4) \tnsr \cA(A_3,A_2) \tnsr \cA(A_2,A_8) \tnsr \cA(A_4,A_3)
+\\
+&\simeq \cA(A_1,A_8)
+\end{align*}
+
+where the final simplification follows from
+repeated applications of \lemref{l:id-profunctor}.
+From \prpref{p:1-cobord-compose},
+we have $Z(M_1) \circ Z(M_2) \simeq Z(M_2 \circ M_1)$.
+We can see that $M_2 \circ M_1$
+is diffeomorpic to the identity 1-cobordism,
+$M_2 \circ M_1 \simeq \id_+$.
+Thus, we have an equivalence of profunctors
+$Z(M_2 \circ M_1) \simeq Z(\id_+)$,
+which is given by the simplification step above.
+\end{example}
+
+
+
+\begin{example}
+Consider the circle as a composition of cobordisms
+$S^1 \simeq M' \circ M : \empt{0} \to \empt{0}$.
+It gives the profunctor
+\begin{align*}
+Z(S^1) \simeq Z(M) \circ Z(M') :
+(*//\kk)^\op \hatbox *//\kk \to \Vect
+\\
+* \hatbox * \mapsto
+\int^{X_1 \in \cA^\op, X_2 \in \cA} \cA(X_2,X_1) \tnsr \cA(X_1,X_2) \end{align*}
+In particular, when $\cA = *//A$ for an algebra $A$,
+the coend is isomorphic to the cocenter $A/[A,A]$.
+\end{example}
+
+
+
+\subsection{Skeins as 2-functor}
+
+Let $\epsCob$ be the bicategory whose objects are
+oriented 0-manifolds,
+1-morphisms are 1-dim cobordisms,
+and 2-morphisms are invertible 2-dim cobordisms.
+An invertible 2-morphism $Q: M \to M'$
+is always of the form $M'' \times I$,
+with diffeomorphisms $M'' \times 0 \simeq \ov{M}$
+and $M'' \times 1 \simeq M'$.
+The associator
+$(M_3 \circ M_2) \circ M_1 \simeq M_3 \circ (M_2 \circ M_1)$..
+
+
+\begin{proposition}
+The skein constructions above defines a functor
+$Z: \epsCob \to \Profunop$,
+sending 0-manifold $N$ to $Z(N)$,
+1-cobordism $M: N \to N'$
+to $Z(M) : Z(N') \nto Z(N)$
+(treated as a 1-morphism from $Z(N)$ to $Z(N')$ in $\Profunop$),
+and (invertible) 2-morphisms to
+isomorphisms of skein modules.
+\end{proposition}
+
+\begin{proof}
+We send the identity 1-morphism $N \times I$ on $N$
+to the identity profunctor on $Z(N)$.
+For 1-morphisms $M_1 : N_1 \to N_2, M_2 : N_2 \to N_3$,
+we have the natural isomorphism
+$\zeta_{M_2,M_1} : Z(M_2 \circ M_1) \simeq Z(M_2) \circ Z(M_1)$
+from \prpref{p:1-cobord-compose}
+(here the orders agree because we are in $\Profunop$).
+We need to show that, for $M_3 : N_3 \to N_4$,
+the hexagon axiom holds:
+\[
+\begin{tikzcd}
+Z((M_3 \circ M_2) \circ M_1)
+\ar[r] \ar[d]
+& Z(M_3 \circ (M_2 \circ M_1))
+\ar[d]
+\\
+Z(M_3 \circ M_2) \circ Z(M_1)
+\ar[d]
+&
+Z(M_3) \circ Z(M_2 \circ M_1)
+\ar[d]
+\\
+(Z(M_3) \circ Z(M_2)) \circ Z(M_1)
+\ar[r]
+&
+Z(M_3) \circ (Z(M_2) \circ Z(M_1))
+\end{tikzcd}
+\]
+\end{proof}
 
 
 %(1) Understand profunctors better
