@@ -199,6 +199,12 @@ plans for project (see pdf for more)
 -compute dimensions? (e.g. for Z(T2), semisimple case is
 	number of simples in Drinfeld center, but nonsemisimple,
 	for projective ideal?)
+-Reynolds, Shitmizu
+	Nat(id) ~ C(unit, L) where L is coend XX*
+	in C(unit,L) there is subspace spanned by coev
+	-space of (co?)characters
+	...?
+
 ===================================================================
 ===================================================================
 ===================================================================
