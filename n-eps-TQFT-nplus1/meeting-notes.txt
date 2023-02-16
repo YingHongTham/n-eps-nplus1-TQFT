@@ -182,4 +182,24 @@ that relates compositions of 1-morphism:
 Z(fg) ~ Z(f)Z(g)
 
 ===================================================================
+
+16.02.2023
+
+plans for project (see pdf for more)
+-work out some examples for the I-admissible skeins paper
+-look at Rep(Z/2) over char k = 2
+	-two indecomp: trivial S and
+		P: dim 2, where nontrivial tau in Z/2 acts by shear (1,1;0,1)
+		all homs are 1 dim
+-Z(T2) = int^{P1,P2 in I} C(P1P2,P2P1) still holds?
+	-more generally, does the excision argument still hold for
+		I-admissible skeins?
+		(note I ideal is not abelian.. though I don't think I used that)
+-compare skein modules for inclusion of ideals
+-compute dimensions? (e.g. for Z(T2), semisimple case is
+	number of simples in Drinfeld center, but nonsemisimple,
+	for projective ideal?)
+===================================================================
+===================================================================
+===================================================================
 ===================================================================
